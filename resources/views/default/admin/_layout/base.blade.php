@@ -37,7 +37,7 @@
                     <li class="sec">00</li>
                     <li class="meridiem">NN</li>
                 </ul>
-                <div id="weather"></div>
+                <!-- <div id="weather"></div> -->
             </div>
             <div id="user">
                 <ul class="row">
@@ -56,8 +56,8 @@
                         <i class="icon_menu"></i>
                     </li>
                     @set($active = isset($active) ? $active : ''; $class[$active] = ' class="active"')
-    		<li{!! $class['floor'] or '' !!}><a href="/admin/floor"><i class="icon_large icon_flag2"></i><span>&nbsp;&nbsp;楼层管理</span></a></li>
-                    <li{!! $class['room'] or '' !!}><a href="/admin/room"><i class="icon_large icon_shop"></i><span>&nbsp;&nbsp;房间管理</span></a></li>
+    		<li{!! $class['floor'] or '' !!}><a href="/admin/floor"><i class="icon_large icon_flag2"></i><span>&nbsp;&nbsp;园区管理！！！</span></a></li>
+                    <li{!! $class['room'] or '' !!}><a href="/admin/room"><i class="icon_large icon_shop"></i><span>&nbsp;&nbsp;卡机管理！！！</span></a></li>
                     <li{!! $class['seat'] or '' !!}><a href="/admin/seat"><i class="icon_large icon_location"></i><span>&nbsp;&nbsp;工位管理</span></a></li>
                     <li{!! $class['seat_price'] or '' !!}><a href="/admin/seat_price"><i class="icon_large icon_pencil"></i><span>&nbsp;&nbsp;工位定价</span></a></li>
                     <li class="driver"></li>
@@ -65,11 +65,11 @@
                     <li{!! $class['goods'] or '' !!}><a href="/admin/goods"><i class="icon_large icon_credit"></i><span>&nbsp;&nbsp;商品管理</span></a></li>
                     <li{!! $class['charging_price'] or '' !!}><a href="/admin/charging_price"><i class="icon_large icon_pencil"></i><span>&nbsp;&nbsp;计费定价</span></a></li>
                     <li class="driver"></li>
-                    <li{!! $class['usermanage'] or '' !!}><a href="/admin/usermanage"><i class="icon_large icon_user2"></i><span>&nbsp;&nbsp;账户管理</span></a></li>
+                    <li{!! $class['usermanage'] or '' !!}><a href="/admin/usermanage"><i class="icon_large icon_user2"></i><span>&nbsp;&nbsp;账户管理！！！</span></a></li>
                     <li{!! $class['order'] or '' !!}><a href="/admin/order"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;订单管理</span></a></li>
                     <li class="driver"></li>
                     <li{!! $class['setting'] or '' !!}><a href="/admin/setting"><i class="icon_large icon_star"></i><span>&nbsp;&nbsp;系统设置</span></a></li>
-                    
+
                 </ul>
             </div>
             <div id="main_container">
