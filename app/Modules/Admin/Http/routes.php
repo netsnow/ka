@@ -26,7 +26,7 @@ Route::get('/admin/logout',  'UserController@logout');//用户退出登录
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     //error 李苗苗
-    Route::get('/_errors', 'ErrorsController@getIndex'); 
+    Route::get('/_errors', 'ErrorsController@getIndex');
 
 
     Route::get('/floor', 'FloorController@getIndex');     //xuchunlong
@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     //Route::get('/brand/edit/{id}',          'BrandController@getEdit');
     //Route::post('/brand/edit/{id}',         'BrandController@postEdit');
 
-    //账户管理
+    //账户管理－教师
     Route::get('/usermanage',               'UserManageController@getIndex');
     Route::get('/usermanage/add',           'UserManageController@getAdd');
     Route::post('/usermanage/add',          'UserManageController@postAdd');
@@ -59,7 +59,15 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('/usermanage/recharge/{id}',     'UserManageController@getRecharge');
     Route::post('/usermanage/recharge/{id}',     'UserManageController@postRecharge');
     Route::get('/usermanage/lkh/{id}',     'UserManageController@lkh');
-    
+
+    //账户管理－学生
+    Route::get('/studentmanage',               'StudentManageController@getIndex');
+    // Route::get('/studentmanage/add',           'StudentManageController@getAdd');
+    // Route::post('/studentmanage/add',          'StudentManageController@postAdd');
+    // Route::post('/studentmanage/delete',       'StudentManageController@apiDelete');
+    // Route::get('/studentmanage/edit/{id}',     'StudentManageController@getEdit');
+    // Route::post('/studentmanage/edit/{id}',    'StudentManageController@postEdit');
+
     //企业管理
     Route::get('/company',                  'CompanyController@getIndex');
     Route::get('/company/add',              'CompanyController@getAdd');
@@ -67,7 +75,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::post('/company/delete',          'CompanyController@apiDelete');
     Route::get('/company/edit/{id}',        'CompanyController@getEdit');
     Route::post('/company/edit/{id}',       'CompanyController@postEdit');
-    
+
 //    Route::get('/category',                 'CategoryController@getIndex');
 //    Route::post('/category/delete',         'CategoryController@apiDelete');
 //    Route::get('/category/add',             'CategoryController@getAdd');
@@ -94,7 +102,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     //管理员个人设置 （靳宗雨）
     Route::get('/user/setting',   'UserController@userSetting');
     Route::post('/user/update',   'UserController@updateUser');
-    
+
     //广告管理 （靳宗雨）
     Route::get('/ad',                    'AdController@getIndex');
     Route::get('/ad/add',                'AdController@getAdd');
@@ -116,7 +124,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
 //    Route::get('/setting',                    'SettingController@getIndex');
 //    Route::get('/setting/edit/{id}',          'SettingController@getEdit');
 //    Route::post('/setting/edit/{id}',         'SettingController@postEdit');
-    
+
     //商品管理 (段泽宇)
     Route::get('/goods',                    'GoodsController@getIndex');
     Route::post('/goods/delete',            'GoodsController@apiDelete');
@@ -126,7 +134,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::post('/goods/edit/{id}',         'GoodsController@postEdit');
     Route::get('/goods/copy/{id}',          'GoodsController@getCopy');
     Route::post('/goods/copy/{id}',             'GoodsController@postCopy');
-    
+
     //订单列表
     Route::get('/order',                    'OrderController@getIndex');
     Route::get('/order/edit/{id}',          'OrderController@getEdit');
@@ -140,7 +148,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('/payment/edit/{id}',          'PaymentController@getEdit');
     Route::post('/payment/edit/{id}',         'PaymentController@postEdit');
     Route::post('/payment/change',          'PaymentController@postChange');
-    
+
     // 系统设置（段泽宇）
     Route::get('/setting/edition_ios',   'SettingController@getEditionIos');
     Route::post('/setting/edition_ios',  'SettingController@postSetEditionIos');
@@ -157,7 +165,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::post('/setting/weather',  'SettingController@postSetWeather');
     Route::get('/setting/store_code',   'SettingController@getStoreCode');
     Route::post('/setting/store_code',  'SettingController@postStoreCode');
-    
+
     //事件管理
 /*     Route::get('/fact',                    'FactController@getIndex');
     Route::post('/fact/delete',            'FactController@apiDelete');
@@ -165,7 +173,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::post('/fact/add',               'FactController@postAdd');
     Route::get('/fact/edit/{id}',          'FactController@getEdit');
     Route::post('/fact/edit/{id}',         'FactController@postEdit'); */
-	
+
     //计费定价（靳宗雨）
     Route::get('/charging_price',                    'Charging_priceController@getIndex');
     Route::post('/charging_price/delete',            'Charging_priceController@apiDelete');
@@ -175,10 +183,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::post('/charging_price/bundcardid/{id}',         'Charging_priceController@postBund');
     Route::get('/charging_price/edit/{id}',          'Charging_priceController@getEdit');
     Route::post('/charging_price/edit/{id}',         'Charging_priceController@postEdit');
-	
+
     //计费管理（靳宗雨）
     Route::get('/charging',                    'ChargingController@getIndex');
-    //start  xuchunlong  
+    //start  xuchunlong
     Route::get('/room',                    'RoomController@getIndex');
     Route::post('/room/delete',            'RoomController@apiDelete');
     Route::get('/room/add',               'RoomController@getAdd');

@@ -14,7 +14,8 @@
 
 @section('body-nest')
 <div class="title">
-    <a href="/admin/usermanage" class="selected">&nbsp;教师账户&nbsp;</a>
+    <a href="/admin/usermanage" class="selected">&nbsp;教师账号&nbsp;</a>
+    <a href="/admin/studentmanage">&nbsp;学生账号&nbsp;</a>
     <a href="/admin/company">&nbsp;班级管理&nbsp;</a>
     <div class="clear"></div>
 </div>
@@ -23,7 +24,7 @@
         <form method="get">
             <div class="pull_left form_inline mb10">
                 <div class="form_group">
-                    <label class="control_label">卡号：</label>
+                    <label class="control_label">手机号：</label>
                 </div>
                 <div class="form_group mr20">
                     <input type="text" class="form_control" name="name" value="{{ Request::input('name') }}">
