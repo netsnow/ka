@@ -1,21 +1,21 @@
 @extends(tpl('admin._layout.base'))
 
-@section('title', '账户管理')
+@section('title', '账号管理')
 
 @section('title-block')
 <i class="icon_large icon_user2"></i>
-<span>账户管理</span>
+<span>账号管理</span>
 @endsection
 
 @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/usermanage">账户管理</a></li>
+<li><a href="/admin/usermanage">账号管理</a></li>
 @endsection
 
 @section('body-nest')
 <div class="title">
-    <a href="/admin/usermanage" class="selected">&nbsp;会员账户&nbsp;</a>
-    <a href="/admin/company">&nbsp;企业账户&nbsp;</a>
+    <a href="/admin/usermanage" class="selected">&nbsp;教师账户&nbsp;</a>
+    <a href="/admin/company">&nbsp;班级管理&nbsp;</a>
     <div class="clear"></div>
 </div>
 <div class="body_nest radius">
@@ -23,7 +23,7 @@
         <form method="get">
             <div class="pull_left form_inline mb10">
                 <div class="form_group">
-                    <label class="control_label">手机号：</label>
+                    <label class="control_label">卡号：</label>
                 </div>
                 <div class="form_group mr20">
                     <input type="text" class="form_control" name="name" value="{{ Request::input('name') }}">
@@ -34,7 +34,7 @@
             </div>
         </form>
         <div class="pull_right mb10">
-            <a href="/admin/usermanage/add" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;添加会员&nbsp;</a>
+            <a href="/admin/usermanage/add" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;添加教师&nbsp;</a>
         </div>
     </div>
     <table id="responsive-example-table" class="table large-only">
@@ -46,11 +46,11 @@
                     </div>
                 </th>
                 <th >手机号</th>
-                <th >真实姓名</th>
-                <th >注册时间</th>
+                <th >姓名</th>
+                <!-- <th >注册时间</th>
                 <th >账户余额</th>
-                <th>优惠金余额</th>
-                <th >所属企业</th>
+                <th>优惠金余额</th> -->
+                <th >班级</th>
                 <th width="20%">操作</th>
             </tr>
             @forelse ($result['users'] as $user)
@@ -68,15 +68,15 @@
                 @else
                 <td>{{ $user->real_name}}</td>
                 @endif
-                <td>{{ $user->created_at}}</td>
-                <td>{{ $user->account or '0.00 '}}</td>   
-                <td>{{$user->other_account or '0.00'}}</td>      
+                <!-- <td>{{ $user->created_at}}</td>
+                <td>{{ $user->account or '0.00 '}}</td>
+                <td>{{$user->other_account or '0.00'}}</td> -->
                 <td>{{ $user->company_name }}</td>
-                <td> 
-                    <a href="/admin/usermanage/recharge/{{  $user->user_id }}" class="btn btn_green"><i class="icon-pencil white"></i> 充值</a>
+                <td>
+                    <!-- <a href="/admin/usermanage/recharge/{{  $user->user_id }}" class="btn btn_green"><i class="icon-pencil white"></i> 充值</a> -->
                     <a href="/admin/usermanage/edit/{{ $user->user_id }}" class="btn btn_blue"><i class="icon-pencil white"></i> 编辑</a>
                     <a class="btn btn_red delete-single" data-id="{{ $user->user_id }}"><i class="icon-icon-bin white"></i> 删除</a>
-                    <a href="/admin/usermanage/lkh/{{ $user->user_id }}" class="btn btn_pink"><i class="icon-pencil white"></i> 查看充值记录</a>
+                    <!-- <a href="/admin/usermanage/lkh/{{ $user->user_id }}" class="btn btn_pink"><i class="icon-pencil white"></i> 查看充值记录</a> -->
                 </td>
             </tr>
             @empty
@@ -108,8 +108,8 @@
                 </ul>
             </div>
         </form>
-    </div> 
-</div> 
+    </div>
+</div>
 @endsection
 
 @section('foot-assets')

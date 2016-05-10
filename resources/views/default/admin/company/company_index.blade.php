@@ -1,23 +1,23 @@
 @extends(tpl('admin._layout.base'))
 
-@section('title', '账户管理')
+@section('title', '账号管理')
 
 @section('title-block')
 <i class="icon_large icon_user2"></i>
-<span>账户管理</span>
+<span>账号管理</span>
 @endsection
 
 @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/usermanage">账户管理</a></li>
+<li><a href="/admin/usermanage">账号管理</a></li>
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/company">企业账户</a></li>
+<li><a href="/admin/company">班级管理</a></li>
 @endsection
 
 @section('body-nest')
 <div class="title">
-    <a href="/admin/usermanage">&nbsp;会员账户&nbsp;</a>
-    <a href="/admin/company" class="selected">&nbsp;企业账户&nbsp;</a>
+    <a href="/admin/usermanage">&nbsp;教师账号&nbsp;</a>
+    <a href="/admin/company" class="selected">&nbsp;班级管理&nbsp;</a>
     <div class="clear"></div>
 </div>
 <div class="body_nest radius">
@@ -25,7 +25,7 @@
         <form method="get">
             <div class="col-lg-7 form_inline mb10">
                 <div class="form_group">
-                    <label class="control_label">企业名称：</label>
+                    <label class="control_label">班级名称：</label>
                 </div>
                 <div class="form_group mr20">
                     <input type="text" class="form_control" name="name" value="{{ Request::input('name') }}">
@@ -36,7 +36,7 @@
             </div>
         </form>
         <div class="pull_right text_right mb10">
-            <a href="/admin/company/add" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;添加企业&nbsp;</a>
+            <a href="/admin/company/add" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;添加班级&nbsp;</a>
         </div>
     </div>
     <table id="responsive-example-table" class="table large-only">
@@ -47,9 +47,9 @@
                         <input tabindex="13" type="checkbox" id="checkbox01">
                     </div>
                 </th>
-                <th >企业名称</th>
-                <th >企业简介</th>
-                <th >注册时间</th>
+                <th >班级名称</th>
+                <!-- <th >企业简介</th>
+                <th >注册时间</th> -->
                 <th width="20%">操作</th>
             </tr>
             @forelse ($result['company'] as $company)
@@ -60,8 +60,8 @@
                     </div>
                 </td>
                 <td>{{ $company->company_name}}</td>
-                <td>{{ $company->company_information}}</td>
-                <td>{{ $company->created_at}}</td>           
+                <!-- <td>{{ $company->company_information}}</td>
+                <td>{{ $company->created_at}}</td> -->
                 <td>
                     <a href="/admin/company/edit/{{  $company->company_id }}" class="btn btn_blue"><i class="icon-pencil white"></i> 编辑</a>
                     <a class="btn btn_red delete-single" data-id="{{  $company->company_id }}"><i class="icon-icon-bin white"></i> 删除</a>
@@ -97,8 +97,8 @@
                 </ul>
             </div>
         </form>
-    </div> 
-</div> 
+    </div>
+</div>
 @endsection
 
 @section('foot-assets')
