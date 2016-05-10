@@ -35,7 +35,7 @@
             </div>
         </form>
         <div class="pull_right mb10">
-            <a href="/admin/usermanage/add" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;添加学生&nbsp;</a>
+            <a href="/admin/studentmanage/add" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;添加学生&nbsp;</a>
         </div>
     </div>
     <table id="responsive-example-table" class="table large-only">
@@ -54,29 +54,29 @@
                 <th >班级</th>
                 <th width="20%">操作</th>
             </tr>
-            @forelse ($result['users'] as $user)
+            @forelse ($result['students'] as $student)
             <tr>
                 <td>
                     <div class="icheckbox_red">
-                        <input tabindex="13" type="checkbox" name="user_id[]" value="{{ $user->user_id}}">
+                        <input tabindex="13" type="checkbox" name="student_id[]" value="{{ $student->student_id}}">
                     </div>
                 </td>
-                <td>{{ $user->phone}}</td>
-                @if($user->role_id == 1 && $user->real_name != '')
-                <td>{{ $user->real_name}}(管理员{{ $user->user_name}})</td>
-                @elseif($user->role_id == 1 && $user->real_name == '')
-                <td>管理员{{ $user->user_name}}</td>
+                <td>{{ $student->phone}}</td>
+                @if($student->role_id == 1 && $student->real_name != '')
+                <td>{{ $student->real_name}}(管理员{{ $student->student_name}})</td>
+                @elseif($student->role_id == 1 && $student->real_name == '')
+                <td>管理员{{ $student->student_name}}</td>
                 @else
-                <td>{{ $user->real_name}}</td>
+                <td>{{ $student->real_name}}</td>
                 @endif
                 <!-- <td>{{ $user->created_at}}</td>
                 <td>{{ $user->account or '0.00 '}}</td>
                 <td>{{$user->other_account or '0.00'}}</td> -->
-                <td>{{ $user->company_name }}</td>
+                <td>{{ $student->company_name }}</td>
                 <td>
                     <!-- <a href="/admin/usermanage/recharge/{{  $user->user_id }}" class="btn btn_green"><i class="icon-pencil white"></i> 充值</a> -->
-                    <a href="/admin/usermanage/edit/{{ $user->user_id }}" class="btn btn_blue"><i class="icon-pencil white"></i> 编辑</a>
-                    <a class="btn btn_red delete-single" data-id="{{ $user->user_id }}"><i class="icon-icon-bin white"></i> 删除</a>
+                    <a href="/admin/studentmanage/edit/{{ $student->student_id }}" class="btn btn_blue"><i class="icon-pencil white"></i> 编辑</a>
+                    <a class="btn btn_red delete-single" data-id="{{ $student->student_id }}"><i class="icon-icon-bin white"></i> 删除</a>
                     <!-- <a href="/admin/usermanage/lkh/{{ $user->user_id }}" class="btn btn_pink"><i class="icon-pencil white"></i> 查看充值记录</a> -->
                 </td>
             </tr>
@@ -96,12 +96,12 @@
             <input type="hidden" name="page" value="1">
             <div class="pagination pull_right">
                 @if (Request::has('name'))
-                {!! $result['users']->appends(['name' => Request::input('name')])->render() !!}
+                {!! $result['students']->appends(['name' => Request::input('name')])->render() !!}
                 @else
-                {!! $result['users']->render() !!}
+                {!! $result['students']->render() !!}
                 @endif
                 <ul>
-                    <li><span>共{{ $result['users']->lastPage() }}页({{ $result['users']->total() }}条)</span></li>
+                    <li><span>共{{ $result['students']->lastPage() }}页({{ $result['students']->total() }}条)</span></li>
                     <li><span class="page_go_txtl">跳转到第</span></li>
                     <li><span class="page_go"><input type="text" id="page-num"></span></li>
                     <li><span class="total-page">页</span></li>

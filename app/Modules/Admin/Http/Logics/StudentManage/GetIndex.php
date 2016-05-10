@@ -2,7 +2,7 @@
 
 namespace App\Modules\Admin\Http\Logics\StudentManage;
 
-use App\Eloquents\User;
+use App\Eloquents\Student;
 use App\Eloquents\Order;
 use Request;
 
@@ -11,7 +11,8 @@ class GetIndex extends \BaseLogic
     protected function execute()
     {
         $this->init();
-        $this->getUserList();
+        $this->getStudentList();
+        
     }
 
     protected function init()
@@ -21,26 +22,27 @@ class GetIndex extends \BaseLogic
         $this->result['redirect'] = false;
     }
 
-    protected function getUserList()
+    protected function getStudentList()
     {
         if (Request::has('name'))
         {
-            $result = User::whereRaw('phone like "%' . Request::input('name') . '%"')
+            $result = Student::whereRaw('phone like "%' . Request::input('name') . '%"')
                            ->orderBy('created_at', 'desc')
                            ->paginate(LIMIT_PER_PAGE);
         }
         else
         {
-            $result = User::with('order')
+            $result = Student::with('order')
                            ->orderBy('created_at', 'desc')
                            ->paginate(LIMIT_PER_PAGE);
+
         }
 
         if ($this->page > $result->lastPage() && $result->lastPage() > 0)
         {
             return $this->getRedirectUrl($result->lastPage());
         }
-        $this->result['users'] = $result;
+        $this->result['students'] = $result;
     }
 
     protected function getRedirectUrl($lastPage)
@@ -58,6 +60,6 @@ class GetIndex extends \BaseLogic
                 $query[] = $key . '=' . $lastPage;
             }
         }
-        $this->result['redirectUrl'] = '/admin/usermanage?' . implode('&', $query);
+        $this->result['redirectUrl'] = '/admin/studentmanage?' . implode('&', $query);
     }
 }

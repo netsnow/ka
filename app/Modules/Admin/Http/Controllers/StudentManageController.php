@@ -19,8 +19,8 @@ class StudentManageController extends \BaseController
         if ($result['redirect'] === true)
         {
             return redirect($result['redirectUrl']);
-        }
-        return view(tpl('admin.studentmanage.index'))->with('result', $result);
+        }echo "pre";
+        return view(tpl('admin.studentmanage.index'))->with('result', $result);echo "ok";
     }
 
     public function getAdd()
