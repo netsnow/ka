@@ -72,7 +72,16 @@
                 <input type="hidden" name="company" id="company" value="无">
             </div>
         </div>
+        <div class="form_group row">
+          <label class="col-lg-3 control_label"><span class="must">*</span>教师照片：</label>
+          <div class="col-lg-3">
+            <label class="uploader">
+               <span><i class="icon_image white"></i>&nbsp;点击上传图片</span>
+               <input type="file" name="img" accept="image/*" multiple title="Click to add Files">
+           </label>
 
+          </div>
+        </div>
         <div class="form_group row">
             <div class="col-lg-3"></div>
             <div class="col-lg-1">

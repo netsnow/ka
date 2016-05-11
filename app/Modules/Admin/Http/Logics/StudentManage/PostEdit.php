@@ -131,6 +131,15 @@ class PostEdit extends \BaseLogic
         		$this->student->company_name = Request::input('company');
         	}
         }
+        if (Request::hasFile('img'))
+        {
+          $targetDir = public_path() . '/data/uploads';
+          $newName   = time() . '_' . rand( 1 , 1000000 ) . ".png";
+          Request::file('img')->move($targetDir, $newName);
+          $img = '/data/uploads/' . $newName;
+          $this->student->img  = $img;
+        }
+
         $this->student->save();
         $this->result['message'] = '学生编辑成功';
     }

@@ -11,14 +11,14 @@ class PostAdd extends \BaseLogic
 {
     protected function execute()
     {
-        try 
+        try
         {
             $this->validate();
             $this->saveUser();
             $this->result['result'] = true;
 
-        } 
-        catch (Exception $e) 
+        }
+        catch (Exception $e)
         {
             $this->result['result']  = false;
             $this->result['message'] = $e->getMessage();
@@ -33,7 +33,7 @@ class PostAdd extends \BaseLogic
         	'cardnum'  => 'required',
         	'real_name'  => 'required',
         ]);
-        if ($validator->fails()) 
+        if ($validator->fails())
         {
             throw new Exception($validator->messages()->first());
         }
@@ -49,6 +49,14 @@ class PostAdd extends \BaseLogic
         $newUser->card_num = Request::input('cardnum');
         $newUser->store_name = Request::input('store_name');
         $newUser->company_name = Request::input('company');
+        if (Request::hasFile('img'))
+        {
+          $targetDir = public_path() . '/data/uploads';
+          $newName   = time() . '_' . rand( 1 , 1000000 ) . ".png";
+          Request::file('img')->move($targetDir, $newName);
+          $img = '/data/uploads/' . $newName;
+          $newUser->img = $img;
+        }
         $newUser->save();
         $this->result['message'] = '会员添加成功';
     }

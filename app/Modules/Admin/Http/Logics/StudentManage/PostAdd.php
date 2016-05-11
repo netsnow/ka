@@ -41,6 +41,15 @@ class PostAdd extends \BaseLogic
 
     protected function saveStudent()
     {
+
+      if (Request::hasFile('img'))
+  		{
+  			$targetDir = public_path() . '/data/uploads';
+  			$newName   = time() . '_' . rand( 1 , 1000000 ) . ".png";
+  			Request::file('img')->move($targetDir, $newName);
+  			$img = '/data/uploads/' . $newName;
+
+  		}
         $newStudent = new Student;
         $newStudent->phone = Request::input('phone');
         $newStudent->real_name = Request::input('real_name');
@@ -49,6 +58,9 @@ class PostAdd extends \BaseLogic
         $newStudent->card_num = Request::input('cardnum');
         $newStudent->store_name = Request::input('store_name');
         $newStudent->company_name = Request::input('company');
+        if(Request::hasFile('img')){
+  				$newStudent->img  = $img;
+  			}
         $newStudent->save();
         $this->result['message'] = '学生添加成功';
     }

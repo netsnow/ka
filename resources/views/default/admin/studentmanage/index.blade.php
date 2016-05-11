@@ -49,6 +49,7 @@
                 <th >学号</th>
                 <th >姓名</th>
                 <th >班级</th>
+                <th >照片</th>
                 <th width="20%">操作</th>
             </tr>
             @forelse ($result['students'] as $student)
@@ -67,6 +68,7 @@
                 <td>{{ $student->real_name}}</td>
                 @endif
                 <td>{{ $student->company_name }}</td>
+                <td class="logo" ><img style="width:50px" src="{{ $student->img }}"></td>
                 <td>
                     <a href="/admin/studentmanage/edit/{{ $student->student_id }}" class="btn btn_blue"><i class="icon-pencil white"></i> 编辑</a>
                     <a class="btn btn_red delete-single2" data-id="{{ $student->student_id }}"><i class="icon-icon-bin white"></i> 删除</a>

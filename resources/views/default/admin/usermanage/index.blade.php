@@ -52,6 +52,7 @@
                 <th >账户余额</th>
                 <th>优惠金余额</th> -->
                 <th >班级</th>
+                <th >照片</th>
                 <th width="20%">操作</th>
             </tr>
             @forelse ($result['users'] as $user)
@@ -69,15 +70,11 @@
                 @else
                 <td>{{ $user->real_name}}</td>
                 @endif
-                <!-- <td>{{ $user->created_at}}</td>
-                <td>{{ $user->account or '0.00 '}}</td>
-                <td>{{$user->other_account or '0.00'}}</td> -->
                 <td>{{ $user->company_name }}</td>
+                <td class="logo" ><img style="width:50px" src="{{ $user->img }}"></td>
                 <td>
-                    <!-- <a href="/admin/usermanage/recharge/{{  $user->user_id }}" class="btn btn_green"><i class="icon-pencil white"></i> 充值</a> -->
                     <a href="/admin/usermanage/edit/{{ $user->user_id }}" class="btn btn_blue"><i class="icon-pencil white"></i> 编辑</a>
                     <a class="btn btn_red delete-single" data-id="{{ $user->user_id }}"><i class="icon-icon-bin white"></i> 删除</a>
-                    <!-- <a href="/admin/usermanage/lkh/{{ $user->user_id }}" class="btn btn_pink"><i class="icon-pencil white"></i> 查看充值记录</a> -->
                 </td>
             </tr>
             @empty
