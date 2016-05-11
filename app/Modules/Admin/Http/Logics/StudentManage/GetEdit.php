@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Modules\Admin\Http\Logics\UserManage;
+namespace App\Modules\Admin\Http\Logics\StudentManage;
 
-use App\Eloquents\User;
+use App\Eloquents\Student;
 use App\Eloquents\Company;
 use Request;
 use Exception;
@@ -11,18 +11,18 @@ class GetEdit extends \BaseLogic
 {
     protected function execute()
     {
-        $this->getUser();
+        $this->getStudent();
     }
-    
-    protected function getUser()
+
+    protected function getStudent()
     {
-        $getUser=User::find($this->userid);
-        if(!$getUser)
+        $getStudent=Student::find($this->studentid);
+        if(!$getStudent)
         {
             abort(404, '没有这个会员');
         }
         $getCompany=Company::all();
         $this->result['company']=$getCompany;
-        $this->result['user']=$getUser;
+        $this->result['student']=$getStudent;
     }
 }

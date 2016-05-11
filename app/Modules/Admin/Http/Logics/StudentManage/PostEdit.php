@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Modules\Admin\Http\Logics\UserManage;
+namespace App\Modules\Admin\Http\Logics\StudentManage;
 
-use App\Eloquents\User;
+use App\Eloquents\Student;
 use Exception;
 use Request;
 use Validator;
@@ -11,19 +11,19 @@ class PostEdit extends \BaseLogic
 {
     protected function execute()
     {
-        try 
+        try
         {
             $this->validate();
-            $this->saveUser();	
+            $this->saveStudent();
             $this->result['result'] = true;
-        } 
+        }
         catch (Exception $e)
         {
             $this->result['result']  = false;
             $this->result['message'] = $e->getMessage();
         }
     }
-    
+
     protected function validate()
     {
         $pw=Request::input('password');
@@ -36,45 +36,45 @@ class PostEdit extends \BaseLogic
         else{
             $validator = Validator::make(Request::all(), [
                     'phone'  => 'required|digits:11',
-                    'password'  => 'required|min:6|max:11',
+                    //'password'  => 'required|min:6|max:11',
                     ]);
         }
-        
-        if ($validator->fails()) 
+
+        if ($validator->fails())
         {
             throw new Exception($validator->messages()->first());
         }
-        
-        $this->user = User::find($this->userid);
-        
-        if (!$this->user) 
+
+        $this->student = Student::find($this->studentid);
+
+        if (!$this->student)
         {
             throw new Exception('会员不存在');
         }
-        
-        $getUser = User::where('phone', Request::input('phone'))
-        ->whereRaw('user_id != '.$this->userid)
+
+        $getStudent = Student::where('phone', Request::input('phone'))
+        ->whereRaw('student_id != '.$this->studentid)
         ->first();
-    
-        if ($getUser) 
+
+        if ($getStudent)
         {
-            throw new Exception('手机号已注册');
+            throw new Exception('卡号已注册');
         }
-        if (Request::has('user_name'))
+        if (Request::has('student_name'))
         {
-        $getUser1 = User::where('user_name', Request::input('user_name'))
+        $getStudent1 = Student::where('student_name', Request::input('student_name'))
         ->where('role_id','1')
-        ->whereRaw('user_id != '.$this->userid)
+        ->whereRaw('student_id != '.$this->studentid)
         ->first();
-        
-        if ($getUser1)
+
+        if ($getStudent1)
         {
         	throw new Exception('管理员登陆账号已注册');
         }
         }
     }
-    
-    protected function saveUser()
+
+    protected function saveStudent()
     {
     	$ri=Request::input('role_id');			//是否是管理员
         $pw=Request::input('password');			//密码变量
@@ -84,26 +84,26 @@ class PostEdit extends \BaseLogic
         	//选中管理员，密码为空不变密码
         	if($pw=='')
         	{
-        		$this->user->role_id = 1;
-        		$this->user->phone = Request::input('phone');
-        		$this->user->user_name = Request::input('user_name');
-        		$this->user->real_name = Request::input('real_username');
-        		$this->user->card_num = Request::input('cardnum');
-        		$this->user->store_name = Request::input('store_name');
-        		$this->user->company_name = Request::input('company');
-        		
+        		$this->student->role_id = 1;
+        		$this->student->phone = Request::input('phone');
+        		$this->student->student_name = Request::input('student_name');
+        		$this->student->real_name = Request::input('real_studentname');
+        		$this->student->card_num = Request::input('cardnum');
+        		$this->student->store_name = Request::input('store_name');
+        		$this->student->company_name = Request::input('company');
+
         	}
         	else
         	//选中管理员，密码不为空变密码
         	{
-        		$this->user->role_id = 1;
-        		$this->user->phone = Request::input('phone');
-        		$this->user->user_name = Request::input('user_name');
-        		$this->user->real_name = Request::input('real_username');
-        		$this->user->password = bcrypt($pw);
-        		$this->user->card_num = Request::input('cardnum');
-        		$this->user->store_name = Request::input('store_name');
-        		$this->user->company_name = Request::input('company');
+        		$this->student->role_id = 1;
+        		$this->student->phone = Request::input('phone');
+        		$this->student->student_name = Request::input('student_name');
+        		$this->student->real_name = Request::input('real_studentname');
+        		$this->student->password = bcrypt($pw);
+        		$this->student->card_num = Request::input('cardnum');
+        		$this->student->store_name = Request::input('store_name');
+        		$this->student->company_name = Request::input('company');
         	}
         }
         //选中普通用户情况
@@ -112,28 +112,28 @@ class PostEdit extends \BaseLogic
         	//选中普通用户，密码为空不变密码
         	if($pw=='')
         	{
-        		$this->user->role_id = 0;
-        		$this->user->phone = Request::input('phone');
-        		$this->user->real_name = Request::input('real_name');
-        		$this->user->card_num = Request::input('cardnum');
-        		$this->user->store_name = Request::input('store_name');
-        		$this->user->company_name = Request::input('company');
+        		$this->student->role_id = 0;
+        		$this->student->phone = Request::input('phone');
+        		$this->student->real_name = Request::input('real_name');
+        		$this->student->card_num = Request::input('cardnum');
+        		$this->student->store_name = Request::input('store_name');
+        		$this->student->company_name = Request::input('company');
         	}
         	else
         	//选中普通用户，密码不为空变密码
         	{
-        		$this->user->role_id = 0;
-        		$this->user->phone = Request::input('phone');
-        		$this->user->real_name = Request::input('real_name');
-        		$this->user->password = bcrypt($pw);
-        		$this->user->card_num = Request::input('cardnum');
-        		$this->user->store_name = Request::input('store_name');
-        		$this->user->company_name = Request::input('company');
+        		$this->student->role_id = 0;
+        		$this->student->phone = Request::input('phone');
+        		$this->student->real_name = Request::input('real_name');
+        		$this->student->password = bcrypt($pw);
+        		$this->student->card_num = Request::input('cardnum');
+        		$this->student->store_name = Request::input('store_name');
+        		$this->student->company_name = Request::input('company');
         	}
         }
-        $this->user->save();
-        $this->result['message'] = '会员编辑成功';
+        $this->student->save();
+        $this->result['message'] = '学生编辑成功';
     }
-    
-    
+
+
 }

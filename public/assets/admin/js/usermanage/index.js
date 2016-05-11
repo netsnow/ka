@@ -33,6 +33,37 @@ UserManageIndex.prototype.deleteSingle = function(target)
         $.notifyBar({html: '删除失败', cls : 'error'});
     });
 }
+//学生的删除
+UserManageIndex.prototype.deleteSingle2 = function(target)
+{
+    var self = this;
+    var data = {
+        student_id: [$(target).data('id')],
+        _token  : $('#csrfToken').val()
+    };
+
+    if (!confirm('您确定要删除该会员吗？')) {
+        return;
+    }
+
+    if (self.waiting === true) {
+        alert('请稍候...有其他操作动作正在执行');
+    }
+    self.waiting = true;
+    $.post('/admin/studentmanage/delete', data, function(response) {
+        if (response.result !== true) {
+            $.notifyBar({html: response.message, cls : 'error'});
+            return false;
+        }
+
+        $.notifyBar({html: response.message, cls : 'success'});
+        window.location.reload();
+    }).complete(function(){
+        self.waiting = false;
+    }).error(function(){
+        $.notifyBar({html: '删除失败', cls : 'error'});
+    });
+}
 
 UserManageIndex.prototype.deleteSelected = function()
 {

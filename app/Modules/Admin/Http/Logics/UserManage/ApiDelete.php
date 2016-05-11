@@ -10,13 +10,13 @@ class ApiDelete extends \BaseLogic
 {
     protected function execute()
     {
-        try 
+        try
         {
             $this->validate();
             $this->deleteUser();
             $this->result['result'] = true;
-        } 
-        catch (Exception $e) 
+        }
+        catch (Exception $e)
         {
             $this->result['result']  = false;
             $this->result['message'] = $e->getMessage();
@@ -25,9 +25,9 @@ class ApiDelete extends \BaseLogic
 
     protected function validate()
     {
-        foreach (Request::input('user_id') as $value) 
+        foreach (Request::input('user_id') as $value)
         {
-            if (!is_numeric($value)) 
+            if (!is_numeric($value))
             {
                 throw new Exception('system error');
             }
@@ -45,8 +45,8 @@ class ApiDelete extends \BaseLogic
     			throw new Exception($user['0']['user_name']."为管理员");
     		}
     	}
-    	
+
         User::destroy(Request::input('user_id'));
-        $this->result['message'] = '会员删除成功';
+        $this->result['message'] = '教师删除成功';
     }
 }

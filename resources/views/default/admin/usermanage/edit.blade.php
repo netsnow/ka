@@ -1,17 +1,17 @@
 @extends(tpl('admin._layout.base'))
 
-@section('title', '编辑会员')
+@section('title', '编辑教师')
 
 @section('title-block')
 <i class="icon_large icon_user2"></i>
-<span>编辑会员</span>
+<span>编辑教师</span>
 @endsection
 
 @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
 <li><a href="/admin/usermanage">会员管理</a></li>
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/usermanage/edit/{{$result['user']->user_id}}">编辑会员</a></li>
+<li><a href="/admin/usermanage/edit/{{$result['user']->user_id}}">编辑教师</a></li>
 <li class="back"><a class="btn btn_red" href="/admin/usermanage"><i class="icon_arrow_bold_left"></i>&nbsp;返回</a></li>
 @endsection
 
@@ -22,7 +22,7 @@
 @if($result['user']->role_id==0)
         <ul class="form radioGroup p10" >
         	<li class="col-lg-2"></li>
-            <li class="clearfix">     		
+            <li class="clearfix">
                 <div class="iradio_red checked" >
                     <input tabindex="13" type="radio" id="radio01" name="role_id" value="0" checked>
                 </div>
@@ -38,7 +38,7 @@
 @elseif($result['user']->role_id==1)
         <ul class="form radioGroup p10" >
         	<li class="col-lg-2"></li>
-            <li class="clearfix">     		
+            <li class="clearfix">
                 <div class="iradio_red " >
                     <input tabindex="13" type="radio" id="radio01" name="role_id" value="0">
                 </div>
@@ -58,28 +58,28 @@
                 <input type="text" name="phone" class="form_control"  value="{{$result['user']->phone}}">
             </div>
         </div>
-        
+
         <div class="form_group row normal_name">
-            <label class="col-lg-3 control_label"><span class="must">*</span>真实姓名：</label>
+            <label class="col-lg-3 control_label"><span class="must">*</span>姓名：</label>
             <div class="col-lg-6">
                 <input type="text" name="real_name" class="form_control" value="{{$result['user']->real_name}}">
             </div>
         </div>
-        
+
         <div class="form_group row none admin_name">
             <label class="col-lg-3 control_label"><span class="must">*</span>管理员登陆账号：</label>
             <div class="col-lg-6">
                 <input type="text" name="user_name" class="form_control" value="{{$result['user']->user_name}}">
             </div>
         </div>
-        
+
         <div class="form_group row none admin_name">
             <label class="col-lg-3 control_label">管理员真实姓名：</label>
             <div class="col-lg-6">
                 <input type="text" name="real_username" class="form_control" value="{{$result['user']->real_name}}">
             </div>
         </div>
-        
+
         <div class="form_group row">
             <label class="col-lg-3 control_label">密码：</label>
             <div class="col-lg-6">
@@ -98,14 +98,14 @@
                 <input type="text"  class="form_control" name="cardnum" value="{{$result['user']->card_num or ''}}">
             </div>
         </div>
-        <div class="form_group row">
+        <!-- <div class="form_group row">
             <label class="col-lg-3 control_label"></span>拥有店铺：</label>
             <div class="col-lg-6">
-                <input type="text" name="store_name"  class="form_control" value="{{ $result['user']->store_name or '' }}">	
-            </div>
+                <input type="text" name="store_name"  class="form_control" value="{{ $result['user']->store_name or '' }}">
+            </div> -->
         </div>
          <div class="form_group row">
-            <label class="col-lg-3 control_label text_right">所属企业：</label>
+            <label class="col-lg-3 control_label text_right">班级：</label>
             <div class="control_select btn_group search_list col-lg-6">
             	 <button data-toggle="dropdown" class="btn dropdown_toggle" type="button">
                     <span class="txt" id="categoryTxt">{{$result['user']->company_name or '请选择'}}</span>
@@ -117,7 +117,7 @@
                     <li class="divider"></li>
                     @foreach ($result['company'] as $company)
                     <li>
-                        
+
                          <a href="javascript:selectFloor('{{$company->company_name}}');" >{{$company->company_name}}</a>
                     </li>
                     @endforeach
@@ -151,7 +151,7 @@ $(function() {
     	$(".admin_name").removeClass("none");
     	$(".normal_name").addClass("none");
       }
-   
+
     $(".iradio_red input").click(function(){
     	var id=$(".iradio_red input:checked").attr("id");
     	if(id=="radio02"){
@@ -171,4 +171,3 @@ function selectFloor(index)
 }
 </script>
 @endsection
-

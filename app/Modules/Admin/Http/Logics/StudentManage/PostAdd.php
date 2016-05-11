@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Modules\Admin\Http\Logics\UserManage;
+namespace App\Modules\Admin\Http\Logics\StudentManage;
 
-use App\Eloquents\User;
+use App\Eloquents\Student;
 use Exception;
 use Request;
 use Validator;
@@ -11,14 +11,14 @@ class PostAdd extends \BaseLogic
 {
     protected function execute()
     {
-        try 
+        try
         {
             $this->validate();
-            $this->saveUser();
+            $this->saveStudent();
             $this->result['result'] = true;
 
-        } 
-        catch (Exception $e) 
+        }
+        catch (Exception $e)
         {
             $this->result['result']  = false;
             $this->result['message'] = $e->getMessage();
@@ -28,28 +28,28 @@ class PostAdd extends \BaseLogic
     protected function validate()
     {
         $validator = Validator::make(Request::all(), [
-            'phone'  => 'required|digits:11|unique:users',
-            'password'  => 'required|min:6',
+            'phone'  => 'required|digits:11|unique:students',
+            //'password'  => 'required|min:6',
         	'cardnum'  => 'required',
         	'real_name'  => 'required',
         ]);
-        if ($validator->fails()) 
+        if ($validator->fails())
         {
             throw new Exception($validator->messages()->first());
         }
     }
 
-    protected function saveUser()
+    protected function saveStudent()
     {
-        $newUser = new User;
-        $newUser->phone = Request::input('phone');
-        $newUser->real_name = Request::input('real_name');
+        $newStudent = new Student;
+        $newStudent->phone = Request::input('phone');
+        $newStudent->real_name = Request::input('real_name');
         $pw=Request::input('password');
-        $newUser->password = bcrypt($pw);
-        $newUser->card_num = Request::input('cardnum');
-        $newUser->store_name = Request::input('store_name');
-        $newUser->company_name = Request::input('company');
-        $newUser->save();
-        $this->result['message'] = '会员添加成功';
+        $newStudent->password = bcrypt($pw);
+        $newStudent->card_num = Request::input('cardnum');
+        $newStudent->store_name = Request::input('store_name');
+        $newStudent->company_name = Request::input('company');
+        $newStudent->save();
+        $this->result['message'] = '学生添加成功';
     }
 }

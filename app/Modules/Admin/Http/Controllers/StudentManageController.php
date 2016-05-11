@@ -19,43 +19,43 @@ class StudentManageController extends \BaseController
         if ($result['redirect'] === true)
         {
             return redirect($result['redirectUrl']);
-        }echo "pre";
-        return view(tpl('admin.studentmanage.index'))->with('result', $result);echo "ok";
+        }
+        return view(tpl('admin.studentmanage.index'))->with('result', $result);
     }
 
     public function getAdd()
     {
-    	$logic=new UserManage\GetAdd();
+    	$logic=new StudentManage\GetAdd();
     	$result=$logic->run();
-        return view(tpl('admin.usermanage.add'))->with('result', $result);
+        return view(tpl('admin.studentmanage.add'))->with('result', $result);
     }
 
     public function  postAdd()
     {
-        $logic=new UserManage\PostAdd();
+        $logic=new StudentManage\PostAdd();
         $result=$logic->run();
         return $result;
     }
 
     public function apiDelete()
     {
-        $logic = new UserManage\ApiDelete();
+        $logic = new StudentManage\ApiDelete();
         $result = $logic->run();
         return $result;
     }
 
     public function getEdit($id)
     {
-        $logic = new UserManage\GetEdit();
-        $logic->set('userid', $id);
+        $logic = new StudentManage\GetEdit();
+        $logic->set('studentid', $id);
         $result = $logic->run();
-        return view(tpl('admin.usermanage.edit'))->with('result', $result);
+        return view(tpl('admin.studentmanage.edit'))->with('result', $result);
     }
 
     public function postEdit($id)
     {
-        $logic = new UserManage\PostEdit();
-        $logic->set('userid', $id);
+        $logic = new StudentManage\PostEdit();
+        $logic->set('studentid', $id);
         $result = $logic->run();
         return $result;
     }

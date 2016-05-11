@@ -62,11 +62,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
 
     //账户管理－学生
     Route::get('/studentmanage',               'StudentManageController@getIndex');
-    // Route::get('/studentmanage/add',           'StudentManageController@getAdd');
-    // Route::post('/studentmanage/add',          'StudentManageController@postAdd');
-    // Route::post('/studentmanage/delete',       'StudentManageController@apiDelete');
-    // Route::get('/studentmanage/edit/{id}',     'StudentManageController@getEdit');
-    // Route::post('/studentmanage/edit/{id}',    'StudentManageController@postEdit');
+    Route::get('/studentmanage/add',           'StudentManageController@getAdd');
+    Route::post('/studentmanage/add',          'StudentManageController@postAdd');
+    Route::post('/studentmanage/delete',       'StudentManageController@apiDelete');
+    Route::get('/studentmanage/edit/{id}',     'StudentManageController@getEdit');
+    Route::post('/studentmanage/edit/{id}',    'StudentManageController@postEdit');
 
     //企业管理
     Route::get('/company',                  'CompanyController@getIndex');

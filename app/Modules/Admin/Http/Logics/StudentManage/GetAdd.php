@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Admin\Http\Logics\UserManage;
+namespace App\Modules\Admin\Http\Logics\StudentManage;
 
 use App\Eloquents\Company;
 use Request;
@@ -12,7 +12,7 @@ class GetAdd extends \BaseLogic
     {
         $this->getCompany();
     }
-    
+
     protected function getCompany()
     {
         $getCompany=Company::all();

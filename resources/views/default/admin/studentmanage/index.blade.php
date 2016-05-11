@@ -48,9 +48,6 @@
                 </th>
                 <th >学号</th>
                 <th >姓名</th>
-                <!-- <th >注册时间</th>
-                <th >账户余额</th>
-                <th>优惠金余额</th> -->
                 <th >班级</th>
                 <th width="20%">操作</th>
             </tr>
@@ -69,15 +66,10 @@
                 @else
                 <td>{{ $student->real_name}}</td>
                 @endif
-                <!-- <td>{{ $user->created_at}}</td>
-                <td>{{ $user->account or '0.00 '}}</td>
-                <td>{{$user->other_account or '0.00'}}</td> -->
                 <td>{{ $student->company_name }}</td>
                 <td>
-                    <!-- <a href="/admin/usermanage/recharge/{{  $user->user_id }}" class="btn btn_green"><i class="icon-pencil white"></i> 充值</a> -->
                     <a href="/admin/studentmanage/edit/{{ $student->student_id }}" class="btn btn_blue"><i class="icon-pencil white"></i> 编辑</a>
-                    <a class="btn btn_red delete-single" data-id="{{ $student->student_id }}"><i class="icon-icon-bin white"></i> 删除</a>
-                    <!-- <a href="/admin/usermanage/lkh/{{ $user->user_id }}" class="btn btn_pink"><i class="icon-pencil white"></i> 查看充值记录</a> -->
+                    <a class="btn btn_red delete-single2" data-id="{{ $student->student_id }}"><i class="icon-icon-bin white"></i> 删除</a>
                 </td>
             </tr>
             @empty
@@ -130,8 +122,8 @@ $(function() {
         return false;
     });
 
-    $(document).on('click', '.delete-single', function() {
-        usermanage.deleteSingle(this);
+    $(document).on('click', '.delete-single2', function() {
+        usermanage.deleteSingle2(this);
         return false;
     });
 });
