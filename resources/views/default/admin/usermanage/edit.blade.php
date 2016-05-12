@@ -92,7 +92,6 @@
                 <input type="text"  class="form_control" name="cardnum" value="{{$result['user']->card_num or ''}}">
             </div>
         </div>
-        </div>
          <div class="form_group row">
             <label class="col-lg-3 control_label text_right">班级：</label>
             <div class="control_select btn_group search_list col-lg-6">
