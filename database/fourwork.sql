@@ -1733,3 +1733,21 @@ CREATE TABLE `we_students` (
 INSERT INTO `we_students` VALUES ('1', 'admin', '66666666666', '$2y$10$enOQEgLB3kBq1yqP6q5Ll.Xbk9RMFmvzRpNT1hGe5tw4FRep1/FoG', '', '0', '4432524', '1', '0', '2016-04-11 09:11:32', '::1', '168', '0', null, 'GgcH4SYVVKtzIDyjpse6p2ti99waGiT2n9cjwS4tlwegjPLJgSqPBk8kxvf7', '2016-04-11 09:11:32', '2015-10-16 17:42:26', null, '20.00', '0.00', '无', null, '');
 INSERT INTO `we_students` VALUES ('19', 'lindi', '13444448888', '$2y$10$x8JA.lXBU6whuslRnd/yHOtY0w6Qiup4Ta2ezMYjWv7vwIHNcySAe', '张张', '123456', '00000002', '1', '0', '2015-11-23 12:51:23', '127.0.0.1', '3', '0', null, 'zjaS9m33e5Ea103fpB4Xd64qt8w8Xy5dCd6cljNC0PqFBAnHjE2Mcpb6Vcm9', '2015-11-23 13:41:34', '2015-10-27 15:12:16', null, '2852.00', '3.00', '天津恒通', '0', null);
 INSERT INTO `we_students` VALUES ('26', '', '15233658478', '$2y$10$VMnQmwtdDO51uflbhbRf6e2oLe7hmAb8cjUofWh/CyM0TWCWMFQy.', null, '123456', '0', '0', '0', null, null, '0', '0', null, null, '2015-10-27 15:07:48', '2015-09-16 09:26:15', null, '200.00', '500.00', '上海仪表', null, null);
+
+-- ----------------------------
+-- Table structure for `we_attendance`
+-- ----------------------------
+DROP TABLE IF EXISTS `we_attendance`;
+CREATE TABLE `we_attendance` (
+  `attendance_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `phone` varchar(13) DEFAULT NULL COMMENT '教师手机号',
+  `attendance_date` int(10) DEFAULT '0' COMMENT '应出勤日',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '出勤状态（0：未出勤；1：已出勤；2：迟到）',
+  `attendance_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '实际出勤时间',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `deleted_at` timestamp NULL DEFAULT NULL COMMENT '删除时间（软删除）',
+  PRIMARY KEY (`attendance_id`),
+  KEY `phone` (`phone`),
+  KEY `attendance_date` (`attendance_date`)
+) ENGINE=InnoDB AUTO_INCREMENT=583 DEFAULT CHARSET=utf8;

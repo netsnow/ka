@@ -33,14 +33,14 @@ class LoginIndex extends \BaseLogic
      */
     protected function login()
     {   // 用户名
-        $user_name = Request::input('user_name');
+        $phone = Request::input('user_name');
         //$checkbox = Request::has('checkbox');
         $user = [
-            'user_name' => $user_name,
+            'phone' => $phone,
             'password'  => Request::input('password'),
         ];
-        // 获取具体管理员用户信息
-        $newUser = User::where("user_name",$user_name)->whereRaw('role_id >0')->first();
+        // 获取教师用户信息
+        $newUser = User::where("phone",$phone)->whereRaw('role_id =0')->first();
         if($newUser){
            // 验证用户信息是否可以登陆
            if(Auth::attempt($user)) {
@@ -57,7 +57,7 @@ class LoginIndex extends \BaseLogic
                throw new Exception('用户名或密码不正确,请重新输入');
            }
         }else{
-           throw new Exception('您没有权限进行登录');
+           throw new Exception('您没有权限进行登录'.$phone);
         }
     }
 }

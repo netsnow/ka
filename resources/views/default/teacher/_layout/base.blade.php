@@ -42,56 +42,25 @@
             <div id="user">
                 <ul class="row">
                     <li class="img"><img src="/assets/admin/images/cmn_images/cmn_user.png"></li>
-                    <li class="name">Hi , 后台管理员!!!!!</li>
+                    <li class="name">Hi , 后台管理员</li>
                     <li class="logout"><a href="/teacher/user/setting" class="blue">[ 个人设置 ]</a></li>
                     <li class="logout"><a href="javascript:void(0)" id="logout" class="red">[ 退出登录 ]</a></li>
                 </ul>
             </div>
         </nav>
         <div class="container row">
-            <div id="side_Nav">
-                <ul class="menu_left_nest">
-                    <li class="menu_left_title oftenControl">
-                        <span>控制台菜单</span>
-                        <i class="icon_menu"></i>
-                    </li>
-                    @set($active = isset($active) ? $active : ''; $class[$active] = ' class="active"')
-    		<li{!! $class['floor'] or '' !!}><a href="/teacher/floor"><i class="icon_large icon_flag2"></i><span>&nbsp;&nbsp;园区管理！！！</span></a></li>
-                    <li{!! $class['room'] or '' !!}><a href="/teacher/room"><i class="icon_large icon_shop"></i><span>&nbsp;&nbsp;卡机管理！！！</span></a></li>
-                    <li{!! $class['seat'] or '' !!}><a href="/teacher/seat"><i class="icon_large icon_location"></i><span>&nbsp;&nbsp;工位管理</span></a></li>
-                    <li{!! $class['seat_price'] or '' !!}><a href="/teacher/seat_price"><i class="icon_large icon_pencil"></i><span>&nbsp;&nbsp;工位定价</span></a></li>
-                    <li class="driver"></li>
-                    <li{!! $class['charging'] or '' !!}><a href="/teacher/charging"><i class="icon_large icon_credit"></i><span>&nbsp;&nbsp;计费管理</span></a></li>
-                    <li{!! $class['goods'] or '' !!}><a href="/teacher/goods"><i class="icon_large icon_credit"></i><span>&nbsp;&nbsp;商品管理</span></a></li>
-                    <li{!! $class['charging_price'] or '' !!}><a href="/teacher/charging_price"><i class="icon_large icon_pencil"></i><span>&nbsp;&nbsp;计费定价</span></a></li>
-                    <li class="driver"></li>
-                    <li{!! $class['usermanage'] or '' !!}><a href="/teacher/usermanage"><i class="icon_large icon_user2"></i><span>&nbsp;&nbsp;账户管理！！！</span></a></li>
-                    <li{!! $class['order'] or '' !!}><a href="/teacher/order"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;订单管理</span></a></li>
-                    <li class="driver"></li>
-                    <li{!! $class['setting'] or '' !!}><a href="/teacher/setting"><i class="icon_large icon_star"></i><span>&nbsp;&nbsp;系统设置</span></a></li>
 
-                </ul>
-            </div>
-            <div id="main_container">
+            <div>
                 <div class="main_bg">
                     <div id="paper_top" class="row">
                         <div class="titleBlock">
                             <h2>
-                                @yield('title-block')
+                                <a href="/teacher/studentattendance"><span class="red">&nbsp;&nbsp;学生考勤&nbsp;&nbsp;</span></a>
+                                <a href="/teacher/teacherattendance"><span class="red">&nbsp;&nbsp;教师考勤</span></a>
                             </h2>
                         </div>
-                        <div class="wellcomeBlock">
-                            <i class="icon_comment green"></i>
-                            您好，<strong>{{Auth::user()->user_name}}</strong>
-                            <!-- ，欢迎使用 WeShop。 您上次登录的时间是{{Auth::user()->last_login}} ，IP 是 {{Auth::user()->last_ip}} -->
-                        </div>
                     </div>
-                    <ul id="breadcrumb">
-                        <li> <i class="icon_large icon_home3"></i> </li>
-                        <li><i class="icon_large icon_triangle_right"></i></li>
-                        <li><a href="/admin/admin">Home</a></li>
-                        @yield('breadcrumb')
-                    </ul>
+
 
                     <div class="content_wrap">
                         <div class="nest">
@@ -99,7 +68,7 @@
                         </div>
 
                     <div id="footer" class="row">
-                        <div class="copyright">Copyright 2003-2012 ShopEx Inc.,All rights reserved.</div>
+                        <div class="copyright">Copyright 2016 baixue,All rights reserved.</div>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,7 @@ $(function() {
 @section('main-section')
 <section class="page_login">
     <div class="login_tit">
-        <p>后台管理系统</p>
+        <p>教师登录入口</p>
     </div>
     <form action="login" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
