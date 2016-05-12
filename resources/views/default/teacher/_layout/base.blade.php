@@ -42,7 +42,7 @@
             <div id="user">
                 <ul class="row">
                     <li class="img"><img src="/assets/admin/images/cmn_images/cmn_user.png"></li>
-                    <li class="name">Hi , 后台管理员</li>
+                    <li class="name">Hi , {{Auth::user()->real_name}}</li>
                     <li class="logout"><a href="/teacher/user/setting" class="blue">[ 个人设置 ]</a></li>
                     <li class="logout"><a href="javascript:void(0)" id="logout" class="red">[ 退出登录 ]</a></li>
                 </ul>
