@@ -56,7 +56,7 @@
                         <div class="titleBlock">
                             <h2>
                                 <a href="/teacher/studentattendance"><span class="red">&nbsp;&nbsp;学生考勤&nbsp;&nbsp;</span></a>
-                                <a href="/teacher/teacherattendance"><span class="red">&nbsp;&nbsp;教师考勤</span></a>
+                                <a href="/teacher/order"><span class="red">&nbsp;&nbsp;教师考勤</span></a>
                             </h2>
                         </div>
                     </div>

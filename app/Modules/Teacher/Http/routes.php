@@ -23,4 +23,7 @@ Route::group(['prefix' => 'teacher','middleware' => 'auth'], function() {
     //首页 (靳宗雨)
     Route::get('/admin','AdminController@index');
 
+    //老师考勤
+    Route::get('/order',                    'OrderController@getIndex');
+
 });
