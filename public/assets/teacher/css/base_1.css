@@ -1,0 +1,66 @@
+* {
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: arial, "微软雅黑";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+ul,
+li {
+    list-style: none;
+}
+html {
+    /*height: 100%;*/
+}
+body {
+    height: 100%;
+    color: #fff;
+}
+#appoint {
+    height: 850px;
+    width: 100%;
+    overflow: hidden;
+    background: #242424!important;
+}
+#appoint header{
+    font-size: 50px;
+    padding: 25px 20px;
+}
+.h1 {
+    color: #f7ab49!important;
+    font-size: 60px;
+    border-bottom: 2px solid #666666;
+    padding-bottom: 15px;
+}
+#appointContent .appoint-time p ,#content2 .appoint-time p{
+    color: #fff;
+    font-size: 40px;
+    display: block;
+}
+#appointContent .appoint-time  p > span,#content2 .appoint-time  p > span{
+    margin: 10px 20px;
+}
+#appointContent .content > div,#content2 .content > div{
+    background: #4d4d4d;
+    border-top: 3px solid #666666;
+    margin-bottom: 15px;
+}

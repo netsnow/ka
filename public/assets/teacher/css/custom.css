@@ -1,0 +1,240 @@
+/* Custom CSS
+-------------------------------------------------- */
+/* common CSS -------------------------------------------------- */
+
+
+.panel {
+	margin-bottom: 20px;
+	background-color: #E6E6E6;
+	border: 0 solid rgba(0, 0, 0, 0);
+	border-radius: 4px;
+}
+
+.panel_body {
+	padding: 15px;
+}
+
+
+/***********************************************
+error
+***********************************************/
+
+.page_error {
+	padding: 15px;
+	width:750px;
+	margin:  20px auto 0 auto;
+	position: relative;
+	z-index: 5000;
+	color:#808080;
+}
+
+.page_error h2 {
+	font-size:30px;
+}
+
+.page_error p {
+	font-size:25px;
+}
+/***********************************************
+login
+***********************************************/
+
+.page_login {
+	width:380px;
+	margin:  100px auto 0 auto;
+}
+
+.login_tit {
+	background: rgba(48, 65, 96, 0.8);
+	border-radius: 3px 3px 0 0;
+	color: #FFFFFF;
+	padding: 1px 0 14px 25px;
+}
+
+.login_tit p {
+	color: #FFFFFF;
+	font-size: 30px;
+	font-weight: 200;
+	letter-spacing: -1px;
+	text-decoration: inherit;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.login_content {
+	-moz-border-radius: 0 0 4px 4px ;
+	-webkit-border-radius: 0 0 4px 4px;
+	-khtml-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+	z-index: 3;
+	font-size: 13px !important;
+	background-color: #ffffff;
+	padding: 20px;
+}
+
+.login_content .tit {
+	margin-bottom:5px;
+	font-weight:bold;
+	font-size:16px;
+}
+
+.login_content input {
+	font-size:16px;
+}
+
+/***********************************************
+category_manage
+***********************************************/
+
+.sort {text-align:left!important;}
+.category_first {display:table-row;}
+.category_second {display:none;}
+.category_third {display:none;}
+.category_fourth {display:none;}
+.category_fifth {display:none;}
+
+.category_first .sort span{margin-left:0px;}
+.category_second .sort span{margin-left:40px;}
+.category_third .sort span{margin-left:80px;}
+.category_fourth .sort span{margin-left:120px;}
+.category_fifth .sort span{margin-left:160px;}
+.sort span{cursor:pointer;}
+.sort .icon_primitive_square{
+	font-size: 1.8em;
+	line-height: 0;
+	vertical-align: middle;
+}
+
+
+/***********************************************
+store_add
+***********************************************/
+
+.tag_block {
+	width:100%;
+}
+.tag_block .label{
+	margin-right:4px;
+	margin-top:5px;
+}
+
+.category_block .label{background-color: #5cb85c!important;}
+.brand_block .label{background-color: #5bc0de!important;}
+
+/**********************************************
+sideNav
+***********************************************/
+#side_Nav ul.menu_left_nest li.driver{
+	/*border-top: 1px solid #657D98;*/
+	border-bottom: 1px solid #848D97;
+	height: 0;
+}
+
+/**********************************************
+setting
+***********************************************/
+.consignee-info ul li{
+	width: 33.333333333333333%;
+	float: left;
+	padding:15px;
+
+}
+.consignee-info ul li > div > a{
+	display: block;
+	height: 175px;
+	vertical-align: middle;
+	line-height: 30px;
+	white-space: normal!important;
+	padding:3.3em 0;
+	font-size: 20px;
+}
+
+/**********************************************
+usermanage
+***********************************************/
+.content_wrap .title{
+	background-color: #eee;
+	border-top: 1px solid #f5f5f5;
+	border-bottom: 1px solid #f5f5f5;
+}
+#main_container .content_wrap .title a:link{
+	text-decoration: none;
+}
+.content_wrap .title a{
+	display: block;
+	padding: 10px 20px;
+	font-size: 16px;
+	float: left;
+}
+
+.content_wrap .title a.selected{
+background-color: #fff;
+position: relative;
+top: 1px;
+}
+
+.search_content{
+	padding: 5px;
+	max-height: 170px;
+	overflow-y:scroll;
+}
+
+
+/**********************************************
+order_add
+***********************************************/
+.form_group .date input{
+	width: 46%;
+}
+.form_group .date span{
+	width: 8%;
+	text-align: center;
+	position: relative;
+	top: 3px;
+}
+.table_control .form_inline >div{
+	margin: 5px 0;
+}
+
+.form_group .mark{
+	text-align: justify;
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+.welcome_page ul li a{
+	text-align: center;
+	margin-top: 40px;
+	display: block;
+	background-color: #9DD3EB;
+	border:1px solid #e5e5e5;
+	border-radius: 50px;
+	line-height: 130px;
+}
+
+
+/**********************************************
+ad_appointment
+***********************************************/
+.slides li{
+	background: url(../images/cmn_images/appointment_bg01.png) scroll repeat-x 0 0;
+}
+
+#appointment {
+	color: #fff;
+    height: 720px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#appointment .date {
+    font-size: 3.5em;
+}
+
+#appointment .order {
+    font-size: 2.3em;
+    line-height: 50px;
+}
+
+
