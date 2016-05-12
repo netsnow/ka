@@ -86,23 +86,12 @@
                 <input type="password" id="pw" class="form_control" name="password" value="">
             </div>
         </div>
-        <!-- <div class="form_group row">
-            <label class="col-lg-3 control_label"><span class="must">*</span>门禁卡号:</label>
-            <div class="col-lg-6">
-                <input type="text"  class="form_control" name="cardroomnum" value="{{$result['user']->card_room_num or ''}}">
-            </div>
-        </div> -->
         <div class="form_group row">
             <label class="col-lg-3 control_label"><span class="must">*</span>一卡通卡号：</label>
             <div class="col-lg-6">
                 <input type="text"  class="form_control" name="cardnum" value="{{$result['user']->card_num or ''}}">
             </div>
         </div>
-        <!-- <div class="form_group row">
-            <label class="col-lg-3 control_label"></span>拥有店铺：</label>
-            <div class="col-lg-6">
-                <input type="text" name="store_name"  class="form_control" value="{{ $result['user']->store_name or '' }}">
-            </div> -->
         </div>
          <div class="form_group row">
             <label class="col-lg-3 control_label text_right">班级：</label>
