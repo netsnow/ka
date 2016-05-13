@@ -65,6 +65,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     //考勤导入
     Route::get('/order',                    'OrderController@getIndex');
     Route::get('/order/import',             'OrderController@getImport');
+    Route::post('/order/import',            'OrderController@postImport');
 
 //    Route::get('/category',                 'CategoryController@getIndex');
 //    Route::post('/category/delete',         'CategoryController@apiDelete');

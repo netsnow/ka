@@ -15,11 +15,11 @@ ImportDataIndex.prototype.initForm = function()
                 return false;
             }
 
-            if ($('#studentFile').val() == '' && 
+            if ($('#studentFile').val() == '' &&
                 $('#teacherFile').val() == '') {
                 $.notifyBar({html: '请选择教师信息或者学生信息Excel文件', cls: 'error'});
                 return false;
-            } 
+            }
 
             self.waiting = true;
         },

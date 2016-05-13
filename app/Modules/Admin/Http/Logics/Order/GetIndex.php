@@ -33,7 +33,7 @@ class GetIndex extends \BaseLogic
     protected function getOrderList()
     {
         $qb= Order::where('status',99);
-        $qb=$qb->join('users', 'order.buyer_phone', '=', 'users.phone');
+        $qb=$qb->leftjoin('users', 'order.buyer_phone', '=', 'users.phone');
         $date=Request::input('attendance_date');
         $name=Request::input('teacher_name');
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2016-05-12 15:25:28
+-- Generation Time: 2016-05-13 10:54:49
 -- 服务器版本： 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -1346,7 +1346,7 @@ CREATE TABLE IF NOT EXISTS `we_order` (
   `order_type` varchar(20) DEFAULT NULL COMMENT '订单类型（room：会议室预约；bath：洗浴；sleep：睡眠舱）',
   `buyer_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '买家ID（与users表关联）',
   `buyer_name` varchar(100) DEFAULT NULL COMMENT '买家名称',
-  `status` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '订单状态（0：为付款；1：已付款）',
+  `status` tinyint(3) UNSIGNED DEFAULT '99' COMMENT '订单状态（0：未出勤；1：已出勤；2:迟到；99:未记入）',
   `payment_id` int(10) UNSIGNED DEFAULT '0' COMMENT '用户支付方式的id',
   `bill_other` varchar(225) DEFAULT NULL COMMENT '支付宝或等等 返回来的其他有用信息',
   `bill_number` varchar(60) DEFAULT NULL COMMENT '支付完成支付宝或等等的流水单号',
@@ -1363,26 +1363,14 @@ CREATE TABLE IF NOT EXISTS `we_order` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted_at` timestamp NULL DEFAULT NULL COMMENT '删除时间（软删除）',
   PRIMARY KEY (`order_id`),
-  KEY `order_sn` (`order_sn`),
-  KEY `buyer_name` (`buyer_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=583 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `buyer_phone` (`buyer_phone`,`attendance_date`)
+) ENGINE=InnoDB AUTO_INCREMENT=633 DEFAULT CHARSET=utf8;
 
 --
 -- 插入之前先把表清空（truncate） `we_order`
 --
 
 TRUNCATE TABLE `we_order`;
---
--- 转存表中的数据 `we_order`
---
-
-INSERT INTO `we_order` VALUES(576, '121313', 'goods', 1, NULL, 2, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '1.00', '20160501', '0000-00-00 00:00:00', '2015-11-20 03:46:30', '2016-05-12 12:58:16', NULL);
-INSERT INTO `we_order` VALUES(577, '23123123123', 'room', 1, 'admin', 0, 0, NULL, NULL, NULL, '18622185062', '', NULL, '/data/uploads/1447732899_Chrysanthemum.jpg', 'kele', '2131.00', '20160502', '0000-00-00 00:00:00', '2015-11-18 06:43:34', '2016-05-12 13:14:37', NULL);
-INSERT INTO `we_order` VALUES(578, '', NULL, 1, '333', 2, 0, NULL, NULL, NULL, '18622185062', '', NULL, '/data/uploads/1447058688_Lighthouse.jpg', 'kele', '0.00', '20160503', '0000-00-00 00:00:00', '2015-11-19 09:12:27', '2016-05-12 12:58:20', NULL);
-INSERT INTO `we_order` VALUES(580, '1450944651-1-37993', 'seat', 1, NULL, 1, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '600.00', '20160504', '0000-00-00 00:00:00', '2015-12-24 08:10:51', '2016-05-12 13:14:43', NULL);
-INSERT INTO `we_order` VALUES(581, '1450945325-1-56867', 'seat', 1, NULL, 0, 0, NULL, NULL, NULL, '66666666666', '', NULL, NULL, NULL, '600.00', '20160505', '0000-00-00 00:00:00', '2015-12-24 08:22:05', '2016-05-12 13:14:45', NULL);
-INSERT INTO `we_order` VALUES(582, '1450946572-1-99728', 'seat', 1, NULL, 1, 0, NULL, NULL, NULL, '66666666666', '', NULL, NULL, NULL, '3200.00', '20160506', '0000-00-00 00:00:00', '2015-12-24 08:42:52', '2016-05-12 12:46:55', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -1959,14 +1947,14 @@ TRUNCATE TABLE `we_users`;
 -- 转存表中的数据 `we_users`
 --
 
-INSERT INTO `we_users` VALUES(1, 'admin', '66666666666', '$2y$10$enOQEgLB3kBq1yqP6q5Ll.Xbk9RMFmvzRpNT1hGe5tw4FRep1/FoG', '管理员', 0, '4432524', 1, 0, '2016-05-12 13:16:07', '::1', 192, 0, NULL, 'ODcMIErfyZbSIjEOiK9o5qBQseQearYyWPjNdaaoTr3qgc0yzPV2AijuteEK', '2016-05-12 13:16:07', '2015-10-16 09:42:26', NULL, '20.00', '0.00', '无', NULL, '', '');
+INSERT INTO `we_users` VALUES(1, 'admin', '66666666666', '$2y$10$enOQEgLB3kBq1yqP6q5Ll.Xbk9RMFmvzRpNT1hGe5tw4FRep1/FoG', '管理员', 0, '4432524', 1, 0, '2016-05-13 07:30:31', '::1', 195, 0, NULL, 'ODcMIErfyZbSIjEOiK9o5qBQseQearYyWPjNdaaoTr3qgc0yzPV2AijuteEK', '2016-05-13 07:30:31', '2015-10-16 09:42:26', NULL, '20.00', '0.00', '无', NULL, '', '');
 INSERT INTO `we_users` VALUES(19, 'wang', '13444448888', '$2y$10$x8JA.lXBU6whuslRnd/yHOtY0w6Qiup4Ta2ezMYjWv7vwIHNcySAe', '王校长', 123456, '00000002', 1, 0, '2015-11-23 04:51:23', '127.0.0.1', 3, 0, NULL, 'zjaS9m33e5Ea103fpB4Xd64qt8w8Xy5dCd6cljNC0PqFBAnHjE2Mcpb6Vcm9', '2016-05-12 06:00:27', '2015-10-27 07:12:16', NULL, '2852.00', '3.00', '无', 0, NULL, '/data/uploads/1463032827_205046.png');
 INSERT INTO `we_users` VALUES(30, 'zhou', '15555555555', '$2y$10$72z/QDHgMxYTslW4TUCEguyUSC/9dPmLT29dyOqJo0apRfTIjuNF6', '周会计', 0, '0', 1, 0, '2015-11-03 13:09:41', '127.0.0.1', 4, 0, NULL, 'j6R1AsSW2vTt6rIpS6hBLYlOkdPHvULknXBQDXlpwLlv0xQoMYPWnnPmfHy0', '2016-05-10 12:33:37', '2015-09-16 05:32:44', NULL, NULL, NULL, '无', NULL, '', '');
 INSERT INTO `we_users` VALUES(58, '', '13865478963', '$2y$10$wjFDK8YJcx6Wx4m2mBtWT.Tzd./hZOTuTtOBddGMSC569MVhLBA1S', '董老师', 0, '4512121', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:11:10', '2015-09-28 03:36:26', NULL, NULL, NULL, '04级1班', NULL, NULL, '');
 INSERT INTO `we_users` VALUES(59, '', '13865478964', '$2y$10$Djw6N9etlOaTmxcQMEsK9eS2VnHQhfHkUrwAL7apSaEN3htVU1MOS', '王老师', 0, '4125123', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:11:01', '2015-09-28 03:36:55', NULL, NULL, NULL, '02级2班', NULL, NULL, '');
 INSERT INTO `we_users` VALUES(61, '', '11111111111', '$2y$10$it0PK23th./5GRc5/Pd3Wemy14P7sWcYuOffVHD3tT17vaqop2Nti', '李老师', 0, '133434', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:10:53', '2015-09-29 08:21:06', NULL, NULL, '40.00', '04级2班', NULL, NULL, '');
 INSERT INTO `we_users` VALUES(620, '', '15620743937', '$2y$10$6vSSEsGzpJJcLficOlns6eRH5lwIthhmVmax.0Uychpl.StEKG1P6', '张老师', 0, '123123', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:10:43', '2015-10-08 02:58:11', NULL, '1186.00', '200.00', '03级1班', NULL, NULL, '');
-INSERT INTO `we_users` VALUES(622, '', '18622185062', '$2y$10$a7iPp8N8ovsGRqI.NMSSG.4xCjeDBQ26BSd7DSlOcNfqXvayrqow.', '白老师', 0, '2123674', 0, 0, '2016-05-12 13:21:03', '::1', 6, 0, NULL, 'AzHVBU17vS1Qjdi4X4bUnHRJ22yw733mJ2jqDVZrE4BHWj2533Ri3mcuw7LQ', '2016-05-12 13:21:03', '2016-05-11 11:42:17', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463032813_758014.png');
+INSERT INTO `we_users` VALUES(622, '', '18622185062', '$2y$10$a7iPp8N8ovsGRqI.NMSSG.4xCjeDBQ26BSd7DSlOcNfqXvayrqow.', '白老师', 0, '2123674', 0, 0, '2016-05-12 13:21:03', '::1', 6, 0, NULL, 'mTmLT4iESRqDiVzvdrTfZA81CI4QX2ZNyRqgemFINUUNlmj997mKY5Urbhij', '2016-05-12 13:32:57', '2016-05-11 11:42:17', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463032813_758014.png');
 INSERT INTO `we_users` VALUES(623, '', '18711111111', '$2y$10$xfx.DIF8Z.bpveVwZ3jHquksMe9aJWQNaI6YTDc8oZKMzm.NhNlq6', '刘老师', 0, '111', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:58:46', '2016-05-11 13:58:46', NULL, '0.00', '0.00', '02级2班', 0, NULL, '/data/uploads/1462975126_206987.png');
 INSERT INTO `we_users` VALUES(624, '', '19211111111', '$2y$10$97MSiSED7DTggjNXTZMX4O/EII2gO0PwsgqKM5ZFeBKFUt9Cx514e', '凉老师', 0, '22', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-12 13:16:50', '2016-05-11 14:11:11', NULL, '0.00', '0.00', '04级1班', 0, NULL, '/data/uploads/1463059010_805466.png');
 

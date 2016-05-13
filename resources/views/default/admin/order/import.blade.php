@@ -27,7 +27,7 @@
         <div class="col-lg-2">
             <label class="uploader">
                 <span><i class="icon_image white"></i>&nbsp;点击上传</span>
-                <input type="file" name="teacherFile" id="teacherFile" multiple title="Click to add Files">
+                <input type="file" name="attendanceFile" id="attendanceFile" multiple title="Click to add Files">
             </label>
         </div>
     </div>
