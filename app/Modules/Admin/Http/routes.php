@@ -67,6 +67,14 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('/order/import',             'OrderController@getImport');
     Route::post('/order/import',            'OrderController@postImport');
 
+    //广告管理 （靳宗雨）
+    Route::get('/ad',                    'AdController@getIndex');
+    Route::get('/ad/add',                'AdController@getAdd');
+    Route::post('/ad/add',               'AdController@postAdd');
+    Route::get('/ad/edit/{id}',          'AdController@getEdit');
+    Route::post('/ad/edit/{id}',         'AdController@postEdit');
+    Route::post('/ad/delete',            'AdController@apiDelete');
+
 //    Route::get('/category',                 'CategoryController@getIndex');
 //    Route::post('/category/delete',         'CategoryController@apiDelete');
 //    Route::get('/category/add',             'CategoryController@getAdd');
@@ -94,13 +102,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('/user/setting',   'UserController@userSetting');
     Route::post('/user/update',   'UserController@updateUser');
 
-    //广告管理 （靳宗雨）
-    Route::get('/ad',                    'AdController@getIndex');
-    Route::get('/ad/add',                'AdController@getAdd');
-    Route::post('/ad/add',               'AdController@postAdd');
-    Route::get('/ad/edit/{id}',          'AdController@getEdit');
-    Route::post('/ad/edit/{id}',         'AdController@postEdit');
-    Route::post('/ad/delete',            'AdController@apiDelete');
+
 
 //    Route::get('/store', 'StoreController@index');
 //    Route::post('/store/delete', 'StoreController@storeDel');

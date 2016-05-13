@@ -61,6 +61,7 @@ function selectRoom(index)
                   <li><a href="javascript:void(0)" name="menu01" data-value="0">未出勤</a></li>
                   <li><a href="javascript:void(0)" name="menu02" data-value="1">已出勤</a></li>
                   <li><a href="javascript:void(0)" name="menu03" data-value="2">迟到</a></li>
+                  <li><a href="javascript:void(0)" name="menu03" data-value="99">未记入</a></li>
                 </ul>
                 <input type="hidden" name="status" value="{{ $result['status'] or ''}}">
               </div>
@@ -91,6 +92,8 @@ function selectRoom(index)
 				<td>已出勤</td>
           @elseif($order->status==2)
         <td>迟到</td>
+        @elseif($order->status==99)
+      <td>未记入</td>
 			    @endif
 			</tr>
 			@empty
