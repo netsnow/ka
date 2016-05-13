@@ -7,35 +7,31 @@ use Request;
 
 class OrderController extends \BaseController
 {
-	
+
     public function __construct()
     {
         view()->share('active', 'order');
     }
-   
+
     public function getIndex()
     {
         $logic = new Order\GetIndex();
         $result = $logic->run();
-        if ($result['redirect'] === true) 
+        if ($result['redirect'] === true)
         {
             return redirect($result['redirectUrl']);
         }
         return view(tpl('admin.order.index'))->with('result', $result);
     }
-    
-    public function getEdit($id)
+
+    public function getImport()
     {
-    	$logic = new Order\GetEdit();
-    	$logic->set('orderid', $id);
-    	$result = $logic->run();
-    	return view(tpl('admin.order.edit'))->with('result', $result);
+    	return view(tpl('admin.order.import'));
     }
-    
-    public function postEdit($id)
+
+    public function postImport()
     {
-        $logic = new Order\PostEdit();
-    	$logic->set('orderid', $id);
+      $logic = new Order\PostImport();
     	$result = $logic->run();
     	return $result;
     }

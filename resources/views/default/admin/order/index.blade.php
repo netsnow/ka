@@ -2,10 +2,10 @@
 
 @section('title-block')
 <i class="icon_large icon_shopping_cart"></i>
-<span>订单管理</span>
+<span>教师考勤管理</span>
 @endsection @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="order">订单管理</a></li>
+<li><a href="order">教师考勤管理</a></li>
 @endsection @section('foot-assets') {!!
 script("third-party/jquery/jquery.validate.min.js")!!} {!!
 script("third-party/jquery/jquery.form.min.js")!!} {!!
@@ -13,7 +13,7 @@ script('/assets/admin/js/order/order_index.js') !!}
 <script type="text/javascript">
 $(function() {
     var order = new OrderIndex();
-    
+
     $(document).on('click', 'a.gopage', function() {
         $('#pagination').submit();
     });
@@ -32,99 +32,38 @@ $(function() {
 });
 
 function selectRoom(index)
-{ 
+{
     $('#order_type').val("");
     $('#order_type').val(index);
-    
+
 }
 </script>
 @endsection @section('body-nest')
 <div class="body_nest radius">
 	<div class="row table_control">
+    <div class="pull_left mb10">
+        <a href="/admin/order/import" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;导入考勤数据&nbsp;</a>
+    </div>
 		<form method="get">
 			    <div class=" form_inline text_right mb10">
 				    <div class="form_group">
-					    <label class="control_label">订单号：</label>
+					    <label class="control_label">考勤日：</label>
 				    </div>
-				    <div class="form_group">
-					    <input type="text" name="order_sn" class="form_control wid" value="{{ $result['order_sn'] or '' }}">
+            <div class="form_group">
+  					    <input type="text" name="attendance_date" class="form_control wid" value="{{ $result['attendance_date'] or '' }}">
+  				  </div>
+            <div class="form_group">
+					    <label class="control_label">教师姓名：</label>
 				    </div>
-				    <div class="form_group ml15">
-	        			<label class="control_label">
-	        				<span class="must"></span>订单类型：</label>
-	        			<div class="control_select btn_group text_left">
-	                    	<button data-toggle="dropdown" class="btn dropdown_toggle" type="button">
-	                        	<span class="txt" id="floorTxt"  >{{ $result['type'] or '请选择' }}</span>
-	                        	<span class="icon-triangle-down"></span>
-	                    	</button>
-		                    <ul role="menu" class="  dropdown_menu "  id="floorSelect">
-		                        <li><a href="javascript:javascript:selectRoom();" name="menu" >请选择</a></li>
-		                        <li class="divider"></li>
-		                      
-		                        <li>
-		                            <a href="javascript:selectRoom('room');" id="会议室">房间预定</a>
-		                        </li>
-		                            <li>
-		                            <a href="javascript:selectRoom('seat');" id="工位">工位</a>
-		                        </li>
-		                            <li>
-		                            <a href="javascript:selectRoom('sleep');" id="睡眠舱">睡眠舱</a>
-		                        </li>
-		                            <li>
-		                            <a href="javascript:selectRoom('bath');" id="洗浴">洗浴</a>
-		                        </li>
-		                        	<li>
-		                            <a href="javascript:selectRoom('goods');" id="商品购买">商品购买</a>
-		                        </li>
-		                    </ul>
-	                    	<input type="hidden" name="order_type" id="order_type" value="{{ $result['order_type'] or '' }}"/>
-	                	</div>
-	    			</div><!-- /.form_group -->
-				  
-				    <div class="form_group ml15">
-					    <label class="control_label">买家手机号：</label>
-				    </div>
-				    <div class="form_group">
-					    <input type="text" name="buyer_phone" class="form_control wid" value="{{ $result['buyer_phone'] or '' }}">
-				    </div>
-				    <div class="form_group ml15">
-					    <label class="control_label">订单状态：</label>
-				    </div>
-				    <div class="form_group">
-					    <div class="control_select btn_group wid">
-						    <button data-toggle="dropdown" class="btn dropdown_toggle"type="button">
-							    <span class="txt">{{ $result['status_type'] or '请选择' }}</span> <span class="icon_triangle-down"></span>
-						    </button>
-						    <ul role="menu" class="dropdown_menu left0 text_left wid">
-						        <li><a href="javascript:javascript:selectRoom();" name="menu" >请选择</a></li>
-		                        <li class="divider"></li>
-		                        
-							    <li><a href="javascript:void(0)" name="menu01" data-value="0">待付款</a></li>
-							    <li><a href="javascript:void(0)" name="menu02" data-value="1">已付款</a></li>
-						    </ul>
-						    <input type="hidden" name="status" value="{{ $result['status'] or ''}}">
-					    </div>
-				    </div>
-				    
-				    <div class="pull_right">
-					    <div class="form_group">
-					    	<div class="form_group ml15">
-							    <label class="control_label">下单时间：</label>
-						    </div>
-						    <div class="form_group">
-							    <input type="date" name="start_date" class="form_control datepicker " value="{{ $result['start_date'] or ''}}">
-						    </div>
-						    <div class="form_group">—</div>
-						    <div class="form_group mr20">
-							    <input type="date" name="end_date" class="form_control datepicker " value="{{ $result['end_date'] or ''}}">
-						    </div>
-						    <div class="form_group">
+            <div class="form_group">
+  					    <input type="text" name="teacher_name" class="form_control wid" value="{{ $result['teacher_name'] or '' }}">
+  				  </div>
+						<div class="form_group">
 							    <button href="#" class="btn btn_green"><i class="icon_search3 white"></i>&nbsp;查找&nbsp;</button>
-						    </div>
-					    </div>
-			    	</div>
-			    </div>
+						</div>
+					</div>
 	    </form>
+    </div>
 	</div>
     @if (isset($result['error']))
     {{ $result['error'] }}
@@ -132,54 +71,28 @@ function selectRoom(index)
 	<table id="responsive-example-table" class="table large-only">
 		<tbody>
 			<tr class="text-right">
-				<th width="14%">订单号</th>
-				<th width="18%">买家手机号</th>
-				<th width="10%">订单类型</th>
-				<th width="18%">下单时间</th>
-				<th width="12%">订单总额</th>
-				<th width="11%">支付方式</th>
-				<th width="12%">订单状态</th>
-				<th width="14%">操作</th>
+				<th width="14%">考勤日</th>
+				<th width="18%">教师手机号</th>
+				<th width="10%">教师姓名</th>
+				<th width="18%">教师班级</th>
 			</tr>
 			@forelse ($result['orders'] as $order)
 			<tr>
-				<td>{{ $order->order_sn }}</td>
+				<td>{{ $order->attendance_date }}</td>
 				<td>{{ $order->buyer_phone }}</td>
-				 @if($order->order_type =='room')
-                <td>房间预定</td>
-                @elseif($order->order_type=='seat')
-                <td>工位</td>
-                @elseif($order->order_type=='sleep')
-                <td>睡眠舱</td>
-                @elseif($order->order_type=='bath')
-                <td>洗浴</td>
-                @elseif($order->order_type=='goods')
-                <td>商品购买</td>
-                @else
-                <td>{{ $order->order_type }}</td>
-                @endif
-				<td>{{ $order->created_at }}</td>
-				<td>{{ $order->order_amount }}</td>
-				<td>{{ $order->payment_name }}</td>
-			    @if( $order->status==0)
-				<td>待付款</td>
-			    @elseif($order->status==1)
-				<td>已付款</td>
-			    @endif
-				<td><a href="/admin/order/edit/{{$order->order_id}}" class="btn btn_blue"><i
-						class="icon_pencil white"></i>&nbsp;查看&nbsp;</a>
-				</td>
+				<td>{{ $order->real_name }}</td>
+				<td>{{ $order->company_name }}</td>
 			</tr>
 			@empty
 			<tr>
-				<td colSpan="9">没有订单数据</td>
+				<td colSpan="9">没有数据</td>
 			</tr>
 			@endforelse
 		</tbody>
 	</table>
 	<div class="table_bottom row">
 		<form method="get" id="pagination">
-		
+
 		    @if (Request::has('status'))
             <input type="hidden" name="status" value="{{ Request::input('status') }}">
             @endif
@@ -195,9 +108,9 @@ function selectRoom(index)
             @if (Request::has('end_date'))
             <input type="hidden" name="end_date" value="{{ Request::input('end_date') }}">
             @endif
-            
+
 			@if (Request::has('name'))
-			<input type="hidden" name="name"value="{{ Request::input('name') }}"> 
+			<input type="hidden" name="name"value="{{ Request::input('name') }}">
 			@endif
 			<input type="hidden" name="page" value="{{ Request::input('page') or 1 }}">
 			<div class="pagination pull_right">
@@ -225,4 +138,3 @@ function selectRoom(index)
 @section('hidden-items')
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 @endsection
-

@@ -36,6 +36,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function order()
     {
-        return $this->hasMany('App\Eloquents\Order','buyer_id');
+        return $this->hasMany('App\Eloquents\Order','buyer_phone');
     }
 }

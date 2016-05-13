@@ -66,7 +66,7 @@
                     <li{!! $class['charging_price'] or '' !!}><a href="/admin/charging_price"><i class="icon_large icon_pencil"></i><span>&nbsp;&nbsp;计费定价</span></a></li>
                     <li class="driver"></li>
                     <li{!! $class['usermanage'] or '' !!}><a href="/admin/usermanage"><i class="icon_large icon_user2"></i><span>&nbsp;&nbsp;账户管理！！！</span></a></li>
-                    <li{!! $class['order'] or '' !!}><a href="/admin/order"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;订单管理</span></a></li>
+                    <li{!! $class['order'] or '' !!}><a href="/admin/order"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;考勤管理！！！</span></a></li>
                     <li class="driver"></li>
                     <li{!! $class['setting'] or '' !!}><a href="/admin/setting"><i class="icon_large icon_star"></i><span>&nbsp;&nbsp;系统设置</span></a></li>
 
