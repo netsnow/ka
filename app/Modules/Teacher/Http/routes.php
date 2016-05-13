@@ -12,9 +12,9 @@
 */
 
 //登陆（靳宗雨）
-Route::get('/teacher/login',       'UserController@getIndex');//登陆界面
+Route::get('/teacher/login',        'UserController@getIndex');//登陆界面
 Route::post('/teacher/login',       'UserController@login');//验证登陆
-Route::get('/teacher/logout',  'UserController@logout');//用户退出登录
+Route::get('/teacher/logout',       'UserController@logout');//用户退出登录
 
 Route::group(['prefix' => 'teacher','middleware' => 'auth'], function() {
     //error 李苗苗
@@ -22,6 +22,9 @@ Route::group(['prefix' => 'teacher','middleware' => 'auth'], function() {
 
     //首页 (靳宗雨)
     Route::get('/admin','AdminController@index');
+
+    //学生考勤
+    Route::get('/student',                  'StudentController@getIndex');
 
     //老师考勤
     Route::get('/order',                    'OrderController@getIndex');

@@ -135,7 +135,7 @@ sideNav
 setting
 ***********************************************/
 .consignee-info ul li{
-	width: 33.333333333333333%;
+	width: 14.2857%;
 	float: left;
 	padding:15px;
 
@@ -236,5 +236,3 @@ ad_appointment
     font-size: 2.3em;
     line-height: 50px;
 }
-
-

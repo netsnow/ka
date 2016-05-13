@@ -62,7 +62,7 @@ class GetIndex extends \BaseLogic
         }
 
         $result = $qb->orderBy('attendance_date', 'desc')
-            ->paginate(LIMIT_PER_PAGE);
+            ->paginate(50);
         $this->result['orders'] = $result;
 
         if ($this->page > $result->lastPage() && $result->lastPage() > 0)

@@ -10,9 +10,11 @@
 <title>@yield('title')</title>
 
 <!-- CSS -->
+{!! style('/assets/teacher/css/templatemo-style.css') !!}
 {!! style('/third-party/fonts_icon/css/fonts.css') !!}
-{!! style('/assets/admin/css/base.css') !!}
-{!! style('/assets/admin/css/custom.css') !!}
+{!! style('/assets/teacher/css/base.css') !!}
+{!! style('/assets/teacher/css/custom.css') !!}
+
 
 @yield('custom-styles')
 </head>
@@ -55,7 +57,7 @@
                     <div id="paper_top" class="row">
                         <div class="titleBlock">
                             <h2>
-                                <a href="/teacher/studentattendance"><span class="red">&nbsp;&nbsp;学生考勤&nbsp;&nbsp;</span></a>
+                                <a href="/teacher/student"><span class="red">&nbsp;&nbsp;学生考勤&nbsp;&nbsp;</span></a>
                                 <a href="/teacher/order"><span class="red">&nbsp;&nbsp;教师考勤</span></a>
                             </h2>
                         </div>
