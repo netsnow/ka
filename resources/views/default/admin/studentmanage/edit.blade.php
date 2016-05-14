@@ -102,7 +102,7 @@
 {!! script('/third-party/jquery-validate/additional-methods.min.js') !!}
 {!! script('/third-party/jquery-form/jquery.form.min.js') !!}
 
-{!! script('/assets/admin/js/usermanage/edit.js') !!}
+{!! script('/assets/admin/js/studentmanage/edit.js') !!}
 <script type="text/javascript">
 $(function() {
     var editor = new UserManageEditor();
