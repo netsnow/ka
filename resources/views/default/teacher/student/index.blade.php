@@ -44,9 +44,9 @@ function selectRoom(index)
         @forelse ($result['students'] as $student)
         <li>
           <div class="templatemo-content-widget white-bg col-1 text-center">
-            <i class="fa fa-times"></i>
-            <tr class="logo" ><img style="width:70px" src="{{ $student->img }}"></tr>
+            <tr class="logo" ><img style="width:100%" src="{{ $student->img }}"></tr>
             <tr>{{ $student->real_name}}</tr>
+            <tr><button type="submit" class="btn btn_green">补签</button></tr>
           </div>
         </li>
         @empty
