@@ -39,7 +39,8 @@ class UpdateUser extends \BaseLogic
     protected function checkPassword()
     {
         $user = [
-        'user_name' => Request::input('user_name'),
+        //'user_name' => Request::input('user_name'),
+        'user_id'  => Auth::user()->user_id,
         'password'  => Request::input('password'),
         ];
         if (!Auth::attempt($user)) {

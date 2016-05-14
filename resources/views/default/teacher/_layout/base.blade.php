@@ -86,8 +86,8 @@
     {!! script('/third-party/jquery/jquery.min.js') !!}
     {!! script('/third-party/calendar/date.js') !!}
     {!! script('/third-party/clock/jquery.clock.js') !!}
-    {!! script('/assets/admin/js/main.js') !!}
-    {!! script('/assets/admin/js/base.js') !!}
+    {!! script('/assets/teacher/js/main.js') !!}
+    {!! script('/assets/teacher/js/base.js') !!}
 
     {!! script('/third-party/jquery-notifyBar/js/jquery.notifyBar.js') !!}
     {!! style('/third-party/jquery-notifyBar/css/jquery.notifyBar.css') !!}

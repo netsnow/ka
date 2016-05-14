@@ -84,7 +84,7 @@ $(window).resize(function() {
     	}else{
     		$(this).removeClass("checked");
     	}*/
-    	
+
         var disable = $(this).hasClass("disabled");
         var checked = $(this).hasClass("checked");
         if( disable == false){
@@ -187,7 +187,7 @@ $(window).resize(function() {
         $(this).parent(".uploader").after("<p class='myFileName'>" + myfile + "</p>");
         $(this).blur();
     });
-	
+
 //-------------------------------------------------------------
 //category
 
@@ -247,18 +247,18 @@ $(window).resize(function() {
 
 
 //-------------------------------------------------------------
-//openModel	
+//openModel
     function openModel(msg, opt) {
 		var height = $(document).height();
         var model = "<div class='popup_container'><div class='popup_base'></div><div class='popup_block'><div class='popup_tit'><p>提示信息</p><i class='icon_x2 white'></i></div><div class='popup_content'><div class='form_group row'><div class='col-lg-12'><p class='tit'>"+msg+"</p></div></div><div class='row'><div class='col-lg-5 col-lg-offset-1'><button id='sure' class='btn btn_green yes'>&nbsp;&nbsp;确定&nbsp;&nbsp;</button></div><div class='col-lg-5 text_right'><button id='cancel' class='btn btn_red cancel'>&nbsp;&nbsp;取消&nbsp;&nbsp;</button></div></div></div></div></div>";
         $("body").append(model);
         $(".popup_container").height(height);
         $(".popup_container").show();
-        
+
         $(".popup_tit .icon_x2").click(function(){
             $(".popup_container").remove();
         });
-	
+
 		$("#sure").click(function(){
 	        $(".popup_container").remove();
 	        opt.success();
@@ -270,7 +270,7 @@ $(window).resize(function() {
 		});
 };
 
-function openAlert(msg) { 
+function openAlert(msg) {
         var height = $(document).height();
         var model = "<div class='popup_container'><div class='popup_base'></div><div class='popup_block'><div class='popup_tit'><p>提示</p><i class='icon_x2 white'></i></div><div class='popup_content'><div class='form_group row'><div class='col-lg-12'><p class='tit'>"+msg+"</p></div></div><div class='row'><div class='col-lg-12 text_center'><button id='true' class='btn btn_green yes'>&nbsp;&nbsp;确定&nbsp;&nbsp;</button></div></div></div></div></div>";
         $("body").append(model);
@@ -288,10 +288,10 @@ function openAlert(msg) {
 //logout
     $("#logout").click(function(){
     	openModel('是否确认退出登陆?', {
-    		success: function() {location.replace("/admin/logout");}
+    		success: function() {location.replace("/teacher/logout");}
     	});
     });
-    
+
 //-------------------------------------------------------------
 // reset
  $("#reset").click(function(){
@@ -302,7 +302,7 @@ function openAlert(msg) {
 
 var s="<div class='form_group row'><label class='col-lg-3'><input type='text' class='form_control' name='weather_name[]' value=''></label><div class='col-lg-6'><input type='text' class='form_control' name='weather_remind[]' value=''>"+"</div></div>";
 $(".add_weather").click(function(){
-    $(".form_list").append(s); 
+    $(".form_list").append(s);
 });
 
 // 下拉搜索
@@ -313,7 +313,7 @@ $(".search_list button").click(function(){
 //输入筛选
 $(".search_content input").keyup(function(){
     var s=$(".search_content input").val();
-    
+
     if($(this).val()!=''){
         $(".search_content li").hide().filter(':contains("' +s +'")').show();
     }else{

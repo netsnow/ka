@@ -48,7 +48,7 @@ UserIndex.prototype.formInit = function() {
     $('form input').on('blur', function() {
         validator.element(this);
     });
-    
+
     // ajax提交
     $('form').ajaxForm({
         success: function(response) {
@@ -58,7 +58,7 @@ UserIndex.prototype.formInit = function() {
             }
 
             $.notifyBar({html: response.message, cls : 'success'});
-            location.replace("/admin/admin");
+            location.replace("/teacher/admin");
         }
     });
 }

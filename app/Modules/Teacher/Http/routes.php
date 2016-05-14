@@ -29,4 +29,8 @@ Route::group(['prefix' => 'teacher','middleware' => 'auth'], function() {
     //老师考勤
     Route::get('/order',                    'OrderController@getIndex');
 
+    //管理员个人设置 （靳宗雨）
+    Route::get('/user/setting',   'UserController@userSetting');
+    Route::post('/user/update',   'UserController@updateUser');
+
 });

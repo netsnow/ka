@@ -17,7 +17,6 @@ class StudentController extends \BaseController
     {
         $logic = new Student\GetIndex();
         $result = $logic->run();
-        echo "zz";
         return view(tpl('teacher.student.index'))->with('result', $result);
     }
 

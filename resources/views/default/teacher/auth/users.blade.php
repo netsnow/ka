@@ -30,10 +30,7 @@ $(function() {
     <div class="nest">
     <div class="body_nest">
         <div class="form_group row">
-            <label class="col-lg-3 control_label">用户名：</label>
-            <div class="col-lg-6">
-                <input type="text" name="user_name" value="{{Auth::user()->user_name}}" class="form_control">
-            </div>
+            <label class="col-lg-3 control_label"></label>
         </div>
         <div class="form_group row">
             <label class="col-lg-3 control_label"><span class="must">*</span>旧密码：</label>
