@@ -27,8 +27,17 @@ class GetIndex extends \BaseLogic
 
     protected function getStudentList()
     {
+      $today = "20".date('ymd',time());
       $company = Auth::user()->company_name;
-      $qb= Student::where('company_name',$company);
+      $qb= Student::where('company_name',$company)
+      ->leftjoin('students_checkin', function ($join) {
+            $join->on('students.student_id', '=', 'students_checkin.student_id');
+            //     ->where('students_checkin.checkin_date','=',$today);
+        });
+      //$checkin= StudentCheckin::where('students_checkin.checkin_date',$today);
+      //$qb->leftjoin('students_checkin', 'students.student_id', '=', 'students_checkin.student_id');
+         //->where('students_checkin.status',Null)
+         //->where('students_checkin.checkin_date',$today);
       $result = $qb->orderBy('real_name', 'desc')
       ->paginate(50);
       $this->result['students'] = $result;

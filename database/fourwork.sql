@@ -1961,3 +1961,21 @@ INSERT INTO `we_users` VALUES(624, '', '19211111111', '$2y$10$97MSiSED7DTggjNXTZ
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `we_students_check`
+--
+
+DROP TABLE IF EXISTS `we_students_checkin`;
+CREATE TABLE IF NOT EXISTS `we_students_checkin` (
+  `checkin_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '打卡ID',
+  `student_id` int(10)  COMMENT '用户ID',
+  `checkin_date` int(8) DEFAULT '0' COMMENT '打卡时间',
+  `status` int(5) DEFAULT '0' COMMENT '0:未出勤；1:出勤；2:迟到',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
+  `deleted_at` timestamp NULL DEFAULT NULL COMMENT '删除时间',
+  PRIMARY KEY (`checkin_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;

@@ -63,3 +63,9 @@ function selectRoom(index)
 @section('hidden-items')
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 @endsection
+<script>
+  var t=5000;
+  setTimeout(function(){
+    location.href="/teacher/student";
+  },t);
+</script>
