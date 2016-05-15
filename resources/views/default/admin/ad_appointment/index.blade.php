@@ -22,14 +22,8 @@
 			</ul>
 		</div>
 	</div>
-	
-	<script>
 
-	var t=($(".ws_images").find("li").length)*5000;
-		setTimeout(function(){
-			location.href="/admin/ad_appointment/appoint?room_id={{ $result['fangjian'] }}";
-		},t);
-	</script>
+
 	{!! script('/assets/admin/js/index/wowslider.js') !!}
 	{!! script('/assets/admin/js/index/script.js') !!}
 </body>
