@@ -46,10 +46,14 @@ $(document).ready(function () {
 				 //alert("Hello World!");
          layer.open({
            type: 1,
-           title: 'hello',
-           content: '<img src="/1.jpg" />',
+           title: '王同学',
+           content: '<img src="/data/uploads/'+'1463207610_495247.png" />',
            time: '5000'
           });
+					var au = document.createElement("audio");
+          au.preload="auto";
+          au.src = "/data/uploads/test.mp3";
+          au.play();
     });
     // 后端推送来在线数据时
     socket.on('update_online_count', function(online_stat){
