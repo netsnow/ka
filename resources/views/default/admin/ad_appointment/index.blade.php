@@ -46,9 +46,13 @@ $(document).ready(function () {
 				 //alert("Hello World!");
          layer.open({
            type: 1,
-           title: '王同学',
-           content: '<img src="/data/uploads/'+'1463207610_495247.png" />',
-           time: '5000'
+					 title: false,
+					 skin: 'layui-layer-lan',
+					 closeBtn: 0,
+           title: ['王同学', 'font-size:15px;'],
+           content: '<div style="border-style: outset;weith:15px"><img src="/data/uploads/'+'1463207610_495247.png" /></div>',
+           time: '5000',
+					 shift:5
           });
 					var au = document.createElement("audio");
           au.preload="auto";

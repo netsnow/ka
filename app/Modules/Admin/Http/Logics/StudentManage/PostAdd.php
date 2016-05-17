@@ -50,6 +50,13 @@ class PostAdd extends \BaseLogic
   			$img = '/data/uploads/' . $newName;
 
   		}
+        $baidu_auth = curl_init();
+        curl_setopt($baidu_auth, CURLOPT_URL, "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=B9Lu0wxY0T0B3ixtEy3VQ7Q7&client_secret=588b6fa0100126ccf530aadfb1e07992&");
+        $output = curl_exec($baidu_auth);
+        curl_close($baidu_auth);
+
+        $token = (Array)json_decode($output)->access_token;
+
         $newStudent = new Student;
         $newStudent->phone = Request::input('phone');
         $newStudent->real_name = Request::input('real_name');
@@ -58,6 +65,7 @@ class PostAdd extends \BaseLogic
         $newStudent->card_num = Request::input('cardnum');
         $newStudent->store_name = Request::input('store_name');
         $newStudent->company_name = Request::input('company');
+        $newStudent->audio = $token;
         if(Request::hasFile('img')){
   				$newStudent->img  = $img;
   			}
