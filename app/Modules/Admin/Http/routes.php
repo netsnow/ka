@@ -30,6 +30,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
 
     //首页 (靳宗雨)
     Route::get('/admin','AdminController@index');
+    //testapi
+    Route::get('/testapi','ApiController@testapi');
 
     //Route::get('/brand',                    'BrandController@getIndex');
     //Route::post('/brand/delete',            'BrandController@apiDelete');
