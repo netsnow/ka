@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2016-05-13 10:54:49
+-- Generation Time: 2016-05-18 15:47:35
 -- 服务器版本： 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -220,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `we_ad` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`ad_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=216 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=218 DEFAULT CHARSET=utf8;
 
 --
 -- 插入之前先把表清空（truncate） `we_ad`
@@ -240,10 +240,12 @@ INSERT INTO `we_ad` VALUES(208, NULL, NULL, '/data/uploads/1446792898_1435218496
 INSERT INTO `we_ad` VALUES(209, NULL, NULL, '/data/uploads/1447924887_Penguins.jpg', NULL, '0', '1', '2015-11-19 09:24:36', '2015-11-06 06:58:17', '2015-11-19 09:24:36');
 INSERT INTO `we_ad` VALUES(210, NULL, NULL, '/data/uploads/1447924877_Desert.jpg', NULL, '0', '1', '2015-11-19 09:24:12', '2015-11-06 06:58:26', '2015-11-19 09:24:12');
 INSERT INTO `we_ad` VALUES(211, NULL, NULL, '/data/uploads/1447924982_Hydrangeas.jpg', NULL, '0', '1', '2015-11-19 09:24:08', '2015-11-19 09:23:02', '2015-11-19 09:24:08');
-INSERT INTO `we_ad` VALUES(212, NULL, NULL, '/data/uploads/1462852949_34475.png', NULL, '0', '1', NULL, '2015-11-19 09:25:47', '2016-05-10 04:02:29');
+INSERT INTO `we_ad` VALUES(212, NULL, NULL, '/data/uploads/1463396599_756117.png', NULL, '0', '1', NULL, '2015-11-19 09:25:47', '2016-05-16 11:03:19');
 INSERT INTO `we_ad` VALUES(213, NULL, NULL, '/data/uploads/1447930322_Tulips.jpg', NULL, '10', '1', '2015-11-19 10:54:46', '2015-11-19 10:52:02', '2015-11-19 10:54:46');
 INSERT INTO `we_ad` VALUES(214, NULL, NULL, '/data/uploads/1447930409_Chrysanthemum.jpg', NULL, '0', '1', '2015-11-19 10:54:39', '2015-11-19 10:53:29', '2015-11-19 10:54:39');
-INSERT INTO `we_ad` VALUES(215, NULL, NULL, '/data/uploads/1462852912_24049.png', NULL, '0', '1', NULL, '2015-11-19 10:54:28', '2016-05-10 04:01:52');
+INSERT INTO `we_ad` VALUES(215, NULL, NULL, '/data/uploads/1463396590_102611.png', NULL, '0', '1', NULL, '2015-11-19 10:54:28', '2016-05-16 11:03:10');
+INSERT INTO `we_ad` VALUES(216, NULL, NULL, '/data/uploads/1463396608_846184.png', NULL, '0', '1', NULL, '2016-05-16 11:03:28', '2016-05-16 11:03:28');
+INSERT INTO `we_ad` VALUES(217, NULL, NULL, '/data/uploads/1463396616_550245.png', NULL, '0', '1', NULL, '2016-05-16 11:03:36', '2016-05-16 11:03:36');
 
 -- --------------------------------------------------------
 
@@ -1364,13 +1366,46 @@ CREATE TABLE IF NOT EXISTS `we_order` (
   `deleted_at` timestamp NULL DEFAULT NULL COMMENT '删除时间（软删除）',
   PRIMARY KEY (`order_id`),
   UNIQUE KEY `buyer_phone` (`buyer_phone`,`attendance_date`)
-) ENGINE=InnoDB AUTO_INCREMENT=633 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=678 DEFAULT CHARSET=utf8;
 
 --
 -- 插入之前先把表清空（truncate） `we_order`
 --
 
 TRUNCATE TABLE `we_order`;
+--
+-- 转存表中的数据 `we_order`
+--
+
+INSERT INTO `we_order` VALUES(650, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161111', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(651, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161112', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(652, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161113', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(653, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161114', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(654, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161115', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(655, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161116', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(656, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161117', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(657, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161118', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(658, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161119', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(659, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161120', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(660, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161121', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(661, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161122', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(662, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161123', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(663, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161124', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(664, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161125', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(665, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161126', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(666, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161127', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(667, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161128', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(668, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161129', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(669, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '18622185062', '', NULL, NULL, NULL, '0.00', '20161130', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(670, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '11111111111', '', NULL, NULL, NULL, '0.00', '20161111', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(671, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '11111111111', '', NULL, NULL, NULL, '0.00', '20161112', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(672, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '11111111111', '', NULL, NULL, NULL, '0.00', '20161113', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(673, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '11111111111', '', NULL, NULL, NULL, '0.00', '20161114', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(674, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '11111111111', '', NULL, NULL, NULL, '0.00', '20161115', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(675, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '11111111111', '', NULL, NULL, NULL, '0.00', '20161116', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(676, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '11111111111', '', NULL, NULL, NULL, '0.00', '20161117', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+INSERT INTO `we_order` VALUES(677, '', NULL, 0, NULL, 99, 0, NULL, NULL, NULL, '11111111111', '', NULL, NULL, NULL, '0.00', '20161118', '0000-00-00 00:00:00', '2016-05-14 06:27:18', '2016-05-14 06:27:18', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -1629,28 +1664,28 @@ INSERT INTO `we_room` VALUES(1003, 'A203', NULL, 49, 100, '10.00', 'boardroom', 
 INSERT INTO `we_room` VALUES(1004, 'C004', NULL, 57, 211, '1.00', 'photography', '123', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-09-23 07:53:34', '2015-09-23 07:53:34');
 INSERT INTO `we_room` VALUES(1005, 'B001', 4, 61, 31313, '31.00', 'workshop', '1313', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-09-23 08:05:11', '2015-09-23 08:05:11');
 INSERT INTO `we_room` VALUES(1006, 'B002', 2, 61, 12313, '123123.00', 'workshop', '123123', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-09-23 09:29:43', '2015-10-19 04:40:07');
-INSERT INTO `we_room` VALUES(1007, 'A002', NULL, 63, 123123, '123123.00', 'boardroom', '12313', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-09-24 04:18:55', '2015-09-24 04:18:55');
+INSERT INTO `we_room` VALUES(1007, 'A002', NULL, 63, 123123, '123123.00', 'boardroom', '12313', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:13:06', '2015-09-24 04:18:55', '2016-05-14 07:13:06');
 INSERT INTO `we_room` VALUES(1008, 'B003', 2, 61, 55, '663.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-09-24 04:50:23', '2015-10-19 04:40:22');
 INSERT INTO `we_room` VALUES(1009, 'B004', 2, 63, 5856, '565.00', 'workshop', '56', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-09-24 04:52:56', '2015-10-19 04:52:11');
-INSERT INTO `we_room` VALUES(1010, 'D001', NULL, 61, 2131232131, '123123.00', 'roadshow', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-09-24 05:32:51', '2015-09-24 05:32:51');
+INSERT INTO `we_room` VALUES(1010, 'D001', NULL, 61, 2131232131, '123123.00', 'roadshow', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:13:06', '2015-09-24 05:32:51', '2016-05-14 07:13:06');
 INSERT INTO `we_room` VALUES(1011, 'B005', 2, 61, 11, '11.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-09-24 07:02:29', '2015-10-19 04:52:04');
 INSERT INTO `we_room` VALUES(1012, 'C005', NULL, 61, 11, '11.00', 'photography', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2015-10-14 08:51:24', '2015-09-25 05:47:58', '2015-10-14 08:51:24');
 INSERT INTO `we_room` VALUES(1013, 'B006', 2, 61, 111, '11.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-09-25 05:52:44', '2015-10-19 04:40:43');
 INSERT INTO `we_room` VALUES(1016, 'C006', NULL, 61, 21313131, '12313.00', 'photography', '21313', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2015-10-14 08:51:38', '2015-09-25 07:06:33', '2015-10-14 08:51:38');
-INSERT INTO `we_room` VALUES(1031, 'A111', 2, 61, 2, '4.00', 'workshop', 'd', '/data/uploads/1444718286_Koala.jpg', NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-13 06:38:06', '2015-10-19 04:37:03');
-INSERT INTO `we_room` VALUES(1019, 'A010', NULL, 61, 10, '300.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-07 06:01:30', '2015-10-07 06:01:30');
-INSERT INTO `we_room` VALUES(1020, 'A011', NULL, 61, 20, '350.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-07 06:03:11', '2015-10-07 06:03:11');
-INSERT INTO `we_room` VALUES(1021, 'A013', NULL, 61, 30, '500.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-07 06:03:31', '2015-10-07 06:03:31');
-INSERT INTO `we_room` VALUES(1022, 'A014', NULL, 61, 35, '360.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-07 06:03:52', '2015-10-07 06:03:52');
-INSERT INTO `we_room` VALUES(1023, 'A015', NULL, 61, 55, '210.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-07 06:04:15', '2015-10-07 06:04:15');
-INSERT INTO `we_room` VALUES(1024, 'A016', NULL, 61, 22, '320.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-07 06:04:31', '2015-10-07 06:04:31');
-INSERT INTO `we_room` VALUES(1028, 'A003', 4, 61, 1233, '12.00', 'workshop', '12313123', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-08 00:43:40', '2015-10-08 00:43:40');
-INSERT INTO `we_room` VALUES(1029, 'A004', NULL, 61, 35, '2131.00', 'boardroom', '231', '/data/uploads/1444265272_Hydrangeas.jpg', NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-08 00:47:11', '2015-10-08 00:47:11');
-INSERT INTO `we_room` VALUES(1030, 'A005', NULL, 61, 231, '213123.00', 'boardroom', '123123', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-08 01:20:15', '2015-10-08 01:20:15');
-INSERT INTO `we_room` VALUES(1032, '12312131', 0, 61, 12, '0.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-13 08:26:05', '2015-10-13 08:26:05');
-INSERT INTO `we_room` VALUES(1033, '4541', 4, 63, 5, '0.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-13 08:39:14', '2015-10-13 08:39:14');
-INSERT INTO `we_room` VALUES(1034, '4546', 0, 61, 34, '0.00', 'roadshow', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-13 08:39:36', '2015-10-13 08:39:36');
-INSERT INTO `we_room` VALUES(1035, 'A1', 2, 79, 123, '0.00', 'workshop', '2', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-13 10:17:37', '2015-10-15 05:14:22');
+INSERT INTO `we_room` VALUES(1031, 'A111', 2, 61, 2, '4.00', 'workshop', 'd', '/data/uploads/1444718286_Koala.jpg', NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:50', '2015-10-13 06:38:06', '2016-05-14 07:12:50');
+INSERT INTO `we_room` VALUES(1019, 'A010', NULL, 61, 10, '300.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:13:06', '2015-10-07 06:01:30', '2016-05-14 07:13:06');
+INSERT INTO `we_room` VALUES(1020, 'A011', NULL, 61, 20, '350.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:13:06', '2015-10-07 06:03:11', '2016-05-14 07:13:06');
+INSERT INTO `we_room` VALUES(1021, 'A013', NULL, 61, 30, '500.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:13:06', '2015-10-07 06:03:31', '2016-05-14 07:13:06');
+INSERT INTO `we_room` VALUES(1022, 'A014', NULL, 61, 35, '360.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:13:06', '2015-10-07 06:03:52', '2016-05-14 07:13:06');
+INSERT INTO `we_room` VALUES(1023, 'A015', NULL, 61, 55, '210.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:50', '2015-10-07 06:04:15', '2016-05-14 07:12:50');
+INSERT INTO `we_room` VALUES(1024, 'A016', NULL, 61, 22, '320.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:50', '2015-10-07 06:04:31', '2016-05-14 07:12:50');
+INSERT INTO `we_room` VALUES(1028, 'A003', 4, 61, 1233, '12.00', 'workshop', '12313123', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:50', '2015-10-08 00:43:40', '2016-05-14 07:12:50');
+INSERT INTO `we_room` VALUES(1029, 'A004', NULL, 61, 35, '2131.00', 'boardroom', '231', '/data/uploads/1444265272_Hydrangeas.jpg', NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:50', '2015-10-08 00:47:11', '2016-05-14 07:12:50');
+INSERT INTO `we_room` VALUES(1030, 'A005', NULL, 61, 231, '213123.00', 'boardroom', '123123', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:50', '2015-10-08 01:20:15', '2016-05-14 07:12:50');
+INSERT INTO `we_room` VALUES(1032, '12312131', 0, 61, 12, '0.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:50', '2015-10-13 08:26:05', '2016-05-14 07:12:50');
+INSERT INTO `we_room` VALUES(1033, '4541', 4, 63, 5, '0.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:50', '2015-10-13 08:39:14', '2016-05-14 07:12:50');
+INSERT INTO `we_room` VALUES(1034, '4546', 0, 61, 34, '0.00', 'roadshow', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:50', '2015-10-13 08:39:36', '2016-05-14 07:12:50');
+INSERT INTO `we_room` VALUES(1035, 'A1', 2, 79, 123, '0.00', 'workshop', '2', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:50', '2015-10-13 10:17:37', '2016-05-14 07:12:50');
 INSERT INTO `we_room` VALUES(1036, 'A789', 2, 61, 6, '0.00', 'workshop', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-14 07:32:40', '2015-10-14 07:32:40');
 INSERT INTO `we_room` VALUES(1039, 'A799', 2, 79, 6, '0.00', 'workshop', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-14 07:49:31', '2015-10-14 07:49:31');
 INSERT INTO `we_room` VALUES(1043, 'A777', 2, 61, 5, '0.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-15 03:14:36', '2015-10-15 03:14:36');
@@ -1660,21 +1695,21 @@ INSERT INTO `we_room` VALUES(1048, 'A789', 4, 79, 6, '0.00', 'workshop', '', NUL
 INSERT INTO `we_room` VALUES(1049, 'A666', 5, 79, 4, '0.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-15 05:44:03', '2015-10-15 05:44:03');
 INSERT INTO `we_room` VALUES(1050, 'A786', 0, 79, 4, '0.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-15 05:45:08', '2015-10-15 05:45:08');
 INSERT INTO `we_room` VALUES(1051, '123', 0, 61, 123, '0.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2015-10-16 01:21:59', '2015-10-15 05:45:25', '2015-10-16 01:21:59');
-INSERT INTO `we_room` VALUES(1052, '123', 0, 63, 123, '1.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-15 05:46:10', '2015-10-15 05:46:10');
-INSERT INTO `we_room` VALUES(1053, 'A9876', 0, 79, 5, '0.00', 'photography', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-15 05:51:18', '2015-10-15 05:51:18');
+INSERT INTO `we_room` VALUES(1052, '123', 0, 63, 123, '1.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:41', '2015-10-15 05:46:10', '2016-05-14 07:12:41');
+INSERT INTO `we_room` VALUES(1053, 'A9876', 0, 79, 5, '0.00', 'photography', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:23', '2015-10-15 05:51:18', '2016-05-14 07:12:23');
 INSERT INTO `we_room` VALUES(1054, 'A235', 2, 63, 5, '0.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-15 05:52:04', '2015-10-15 05:52:04');
-INSERT INTO `we_room` VALUES(1055, 'A123', 9, 61, 12, '0.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-15 06:01:31', '2015-10-16 00:55:56');
+INSERT INTO `we_room` VALUES(1055, 'A123', 9, 61, 12, '0.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:23', '2015-10-15 06:01:31', '2016-05-14 07:12:23');
 INSERT INTO `we_room` VALUES(1056, 'A123', 0, 79, 12, '0.00', 'photography', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-15 06:02:15', '2015-10-15 06:19:03');
-INSERT INTO `we_room` VALUES(1057, '123', 0, 61, 123, '0.00', 'boardroom', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-16 01:22:09', '2015-11-05 06:14:25');
+INSERT INTO `we_room` VALUES(1057, '123', 0, 61, 123, '0.00', 'boardroom', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:23', '2015-10-16 01:22:09', '2016-05-14 07:12:23');
 INSERT INTO `we_room` VALUES(1058, '1234', 0, 79, 1, '0.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2015-10-16 02:17:35', '2015-10-16 02:16:28', '2015-10-16 02:17:35');
 INSERT INTO `we_room` VALUES(1059, '1234', 0, 79, 1, '0.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2015-10-16 02:18:23', '2015-10-16 02:18:06', '2015-10-16 02:18:23');
-INSERT INTO `we_room` VALUES(1060, 'csa', 0, 61, 11, '0.00', 'boardroom', '', '/data/uploads/1446704073_Penguins.jpg', NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-16 03:04:59', '2015-11-05 06:14:33');
-INSERT INTO `we_room` VALUES(1061, 'b258', 2, 61, 12, '10.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-16 03:47:37', '2015-11-04 09:19:57');
-INSERT INTO `we_room` VALUES(1062, 'A1112', 0, 79, 50, '0.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-16 08:21:33', '2015-10-16 08:21:33');
-INSERT INTO `we_room` VALUES(1063, '3123123123', 0, 61, 1231312, '0.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-16 08:26:27', '2015-10-16 08:26:27');
-INSERT INTO `we_room` VALUES(1064, 'B021', 2, 61, 10, '20.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-16 11:49:01', '2015-11-04 09:19:01');
-INSERT INTO `we_room` VALUES(1065, 'Awomen', 4, 61, 12, '0.00', 'workshop', '1144122', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', 0, 0, NULL, 0, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-10-23 07:25:41', '2015-11-04 09:17:22');
-INSERT INTO `we_room` VALUES(1066, 'A99999', 2, 61, 99, '0.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', 0, 0, NULL, 0, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, NULL, '2015-11-04 09:16:23', '2015-11-17 04:04:22');
+INSERT INTO `we_room` VALUES(1060, 'csa', 0, 61, 11, '0.00', 'boardroom', '', '/data/uploads/1446704073_Penguins.jpg', NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:23', '2015-10-16 03:04:59', '2016-05-14 07:12:23');
+INSERT INTO `we_room` VALUES(1061, 'b258', 2, 61, 12, '10.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:23', '2015-10-16 03:47:37', '2016-05-14 07:12:23');
+INSERT INTO `we_room` VALUES(1062, 'A1112', 0, 79, 50, '0.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:23', '2015-10-16 08:21:33', '2016-05-14 07:12:23');
+INSERT INTO `we_room` VALUES(1063, '3123123123', 0, 61, 1231312, '0.00', 'boardroom', NULL, NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:11:08', '2015-10-16 08:26:27', '2016-05-14 07:11:08');
+INSERT INTO `we_room` VALUES(1064, 'B021', 2, 61, 10, '20.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', NULL, 0, NULL, NULL, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:11:04', '2015-10-16 11:49:01', '2016-05-14 07:11:04');
+INSERT INTO `we_room` VALUES(1065, 'Awomen', 4, 61, 12, '0.00', 'workshop', '1144122', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', 0, 0, NULL, 0, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:23', '2015-10-23 07:25:41', '2016-05-14 07:12:23');
+INSERT INTO `we_room` VALUES(1066, 'A99999', 2, 61, 99, '0.00', 'workshop', '', NULL, NULL, '', '', '', 0, 0, '0.00', 0, '', 0, 0, NULL, 0, 0, '', NULL, NULL, NULL, '', '', '', '', '', 1, 0, 1, '2016-05-14 07:12:23', '2015-11-04 09:16:23', '2016-05-14 07:12:23');
 
 -- --------------------------------------------------------
 
@@ -1746,38 +1781,38 @@ TRUNCATE TABLE `we_seat`;
 -- 转存表中的数据 `we_seat`
 --
 
-INSERT INTO `we_seat` VALUES(34, 'K2', 1031, '2015-10-13 09:00:51', '2015-10-13 09:00:51', NULL);
-INSERT INTO `we_seat` VALUES(40, '1111', 1005, '2015-10-13 02:14:37', '2015-10-13 02:14:37', NULL);
-INSERT INTO `we_seat` VALUES(50, '一栋', 1006, '2015-10-13 02:14:46', '2015-10-13 02:14:46', NULL);
-INSERT INTO `we_seat` VALUES(51, '二栋', 1006, '2015-09-24 01:01:17', '2015-09-24 01:01:17', NULL);
+INSERT INTO `we_seat` VALUES(34, 'K2', 1031, '2016-05-14 07:11:58', '2016-05-14 07:11:58', '2016-05-14 07:11:58');
+INSERT INTO `we_seat` VALUES(40, '1111', 1005, '2016-05-14 07:12:05', '2016-05-14 07:12:05', '2016-05-14 07:12:05');
+INSERT INTO `we_seat` VALUES(50, '一栋', 1006, '2016-05-14 07:12:05', '2016-05-14 07:12:05', '2016-05-14 07:12:05');
+INSERT INTO `we_seat` VALUES(51, '二栋', 1006, '2016-05-14 07:12:10', '2016-05-14 07:12:10', '2016-05-14 07:12:10');
 INSERT INTO `we_seat` VALUES(52, '红色', 1006, '2015-10-16 01:20:48', '2015-10-16 01:21:10', '2015-10-16 01:21:10');
-INSERT INTO `we_seat` VALUES(53, '学习', 1006, '2015-09-24 01:13:11', '2015-09-24 01:13:11', NULL);
-INSERT INTO `we_seat` VALUES(54, '办公', 1006, '2015-09-24 01:13:29', '2015-09-24 01:13:29', NULL);
-INSERT INTO `we_seat` VALUES(55, '娱乐', 1006, '2015-09-24 01:13:48', '2015-09-24 01:13:48', NULL);
-INSERT INTO `we_seat` VALUES(56, '商品', 1006, '2015-09-24 01:14:20', '2015-09-24 01:14:20', NULL);
-INSERT INTO `we_seat` VALUES(57, '栏2', 1005, '2015-09-24 01:14:43', '2015-09-24 01:14:43', NULL);
-INSERT INTO `we_seat` VALUES(58, '1111111', 1008, '2015-09-24 07:19:55', '2015-09-24 07:19:55', NULL);
-INSERT INTO `we_seat` VALUES(59, 'asdad', 1011, '2015-09-24 07:12:44', '2015-09-24 07:12:44', NULL);
-INSERT INTO `we_seat` VALUES(60, '34242', 1009, '2015-09-24 07:26:50', '2015-09-24 07:26:50', NULL);
-INSERT INTO `we_seat` VALUES(61, 'sdsds', 1065, '2015-10-23 07:26:20', '2015-10-23 07:26:20', NULL);
-INSERT INTO `we_seat` VALUES(68, '111', 1006, '2015-10-13 02:49:47', '2015-10-13 02:49:47', NULL);
-INSERT INTO `we_seat` VALUES(69, '22', 1006, '2015-10-13 02:49:59', '2015-10-13 02:49:59', NULL);
-INSERT INTO `we_seat` VALUES(70, '11', 1006, '2015-10-13 02:50:11', '2015-10-13 02:50:11', NULL);
-INSERT INTO `we_seat` VALUES(71, '1111', 1006, '2015-10-13 02:50:26', '2015-10-13 02:50:26', NULL);
-INSERT INTO `we_seat` VALUES(72, '234', 1006, '2015-10-13 02:50:38', '2015-10-13 02:50:38', NULL);
-INSERT INTO `we_seat` VALUES(73, '1123', 1006, '2015-10-13 02:50:49', '2015-10-13 02:50:49', NULL);
-INSERT INTO `we_seat` VALUES(74, 'A1234', 1035, '2015-10-14 03:51:03', '2015-10-14 03:51:03', NULL);
-INSERT INTO `we_seat` VALUES(75, '1234', 1036, '2015-10-14 07:33:52', '2015-10-14 07:33:52', NULL);
+INSERT INTO `we_seat` VALUES(53, '学习', 1006, '2016-05-14 07:12:10', '2016-05-14 07:12:10', '2016-05-14 07:12:10');
+INSERT INTO `we_seat` VALUES(54, '办公', 1006, '2016-05-14 07:12:10', '2016-05-14 07:12:10', '2016-05-14 07:12:10');
+INSERT INTO `we_seat` VALUES(55, '娱乐', 1006, '2016-05-14 07:12:10', '2016-05-14 07:12:10', '2016-05-14 07:12:10');
+INSERT INTO `we_seat` VALUES(56, '商品', 1006, '2016-05-14 07:12:10', '2016-05-14 07:12:10', '2016-05-14 07:12:10');
+INSERT INTO `we_seat` VALUES(57, '栏2', 1005, '2016-05-14 07:12:05', '2016-05-14 07:12:05', '2016-05-14 07:12:05');
+INSERT INTO `we_seat` VALUES(58, '1111111', 1008, '2016-05-14 07:12:05', '2016-05-14 07:12:05', '2016-05-14 07:12:05');
+INSERT INTO `we_seat` VALUES(59, 'asdad', 1011, '2016-05-14 07:12:05', '2016-05-14 07:12:05', '2016-05-14 07:12:05');
+INSERT INTO `we_seat` VALUES(60, '34242', 1009, '2016-05-14 07:12:05', '2016-05-14 07:12:05', '2016-05-14 07:12:05');
+INSERT INTO `we_seat` VALUES(61, 'sdsds', 1065, '2016-05-14 07:11:58', '2016-05-14 07:11:58', '2016-05-14 07:11:58');
+INSERT INTO `we_seat` VALUES(68, '111', 1006, '2016-05-14 07:12:05', '2016-05-14 07:12:05', '2016-05-14 07:12:05');
+INSERT INTO `we_seat` VALUES(69, '22', 1006, '2016-05-14 07:12:05', '2016-05-14 07:12:05', '2016-05-14 07:12:05');
+INSERT INTO `we_seat` VALUES(70, '11', 1006, '2016-05-14 07:12:05', '2016-05-14 07:12:05', '2016-05-14 07:12:05');
+INSERT INTO `we_seat` VALUES(71, '1111', 1006, '2016-05-14 07:12:05', '2016-05-14 07:12:05', '2016-05-14 07:12:05');
+INSERT INTO `we_seat` VALUES(72, '234', 1006, '2016-05-14 07:11:58', '2016-05-14 07:11:58', '2016-05-14 07:11:58');
+INSERT INTO `we_seat` VALUES(73, '1123', 1006, '2016-05-14 07:11:58', '2016-05-14 07:11:58', '2016-05-14 07:11:58');
+INSERT INTO `we_seat` VALUES(74, 'A1234', 1035, '2016-05-14 07:11:58', '2016-05-14 07:11:58', '2016-05-14 07:11:58');
+INSERT INTO `we_seat` VALUES(75, '1234', 1036, '2016-05-14 07:11:58', '2016-05-14 07:11:58', '2016-05-14 07:11:58');
 INSERT INTO `we_seat` VALUES(76, 'sad', 1039, '2015-10-14 08:54:24', '2015-10-14 08:54:24', '2015-10-14 08:54:24');
 INSERT INTO `we_seat` VALUES(77, 'wqrwqe', 1006, '2015-10-14 08:55:03', '2015-10-14 08:55:03', '2015-10-14 08:55:03');
 INSERT INTO `we_seat` VALUES(78, 'safsgf', 1008, '2015-10-14 08:58:07', '2015-10-14 08:58:07', '2015-10-14 08:58:07');
-INSERT INTO `we_seat` VALUES(79, 'C1', 1041, '2015-10-15 05:56:10', '2015-10-15 05:56:10', NULL);
+INSERT INTO `we_seat` VALUES(79, 'C1', 1041, '2016-05-14 07:11:58', '2016-05-14 07:11:58', '2016-05-14 07:11:58');
 INSERT INTO `we_seat` VALUES(80, '123', 1041, '2015-10-16 01:25:16', '2015-10-16 01:25:40', '2015-10-16 01:25:40');
 INSERT INTO `we_seat` VALUES(81, 'sss', 1008, '2015-10-15 07:19:41', '2015-10-15 07:19:59', '2015-10-15 07:19:59');
-INSERT INTO `we_seat` VALUES(82, 'A123-01', 1055, '2015-10-16 00:57:31', '2015-10-16 00:57:31', NULL);
-INSERT INTO `we_seat` VALUES(83, '红色', 1006, '2015-10-16 01:21:28', '2015-10-16 01:21:28', NULL);
+INSERT INTO `we_seat` VALUES(82, 'A123-01', 1055, '2016-05-14 07:11:58', '2016-05-14 07:11:58', '2016-05-14 07:11:58');
+INSERT INTO `we_seat` VALUES(83, '红色', 1006, '2016-05-14 07:11:58', '2016-05-14 07:11:58', '2016-05-14 07:11:58');
 INSERT INTO `we_seat` VALUES(84, '1234', 1005, '2015-10-16 02:19:18', '2015-10-16 02:19:37', '2015-10-16 02:19:37');
-INSERT INTO `we_seat` VALUES(85, '1234', 1005, '2015-10-16 02:20:05', '2015-10-16 02:20:05', NULL);
+INSERT INTO `we_seat` VALUES(85, '1234', 1005, '2016-05-14 07:11:58', '2016-05-14 07:11:58', '2016-05-14 07:11:58');
 
 -- --------------------------------------------------------
 
@@ -1884,9 +1919,10 @@ CREATE TABLE IF NOT EXISTS `we_students` (
   `company_id` int(10) DEFAULT '0' COMMENT '所属公司ID',
   `store_name` varchar(120) DEFAULT NULL COMMENT '商店名称',
   `img` varchar(255) DEFAULT NULL,
+  `audio` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`student_id`),
   KEY `student_name` (`student_name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 --
 -- 插入之前先把表清空（truncate） `we_students`
@@ -1897,10 +1933,22 @@ TRUNCATE TABLE `we_students`;
 -- 转存表中的数据 `we_students`
 --
 
-INSERT INTO `we_students` VALUES(27, '', '18622111236', '$2y$10$mOpLeHmxa9vOqTqjVz0Q.eiipgKWO72aASyQqeh/qs74Hjikrkj1i', '小白', 0, '11111122', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:50:10', '2016-05-11 11:55:22', NULL, '0.00', '0.00', '04级2班', 0, NULL, '/data/uploads/1462974610_170374.png');
-INSERT INTO `we_students` VALUES(29, '', '11111111112', '$2y$10$Nwoki2BhLpGXvkAK21QAK.HDCuwA0O8queTc5z3o8qcbk6lAsYl22', '小王', 0, '222', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-12 01:02:05', '2016-05-11 12:47:16', NULL, '0.00', '0.00', '04级1班', 0, NULL, '/data/uploads/1463014925_169340.png');
-INSERT INTO `we_students` VALUES(30, '', '88888888888', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:49:24', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '02级1班', 0, NULL, '/data/uploads/1462974564_831821.png');
-INSERT INTO `we_students` VALUES(33, '', '77777777777', '$2y$10$UjGV0VILqPaQYeAbBg7YtOdwHEEVXrqeN.0jAEA2p0klX1iYc3bwe', '小赵', 0, '44', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-12 01:01:31', '2016-05-11 13:41:37', NULL, '0.00', '0.00', '02级1班', 0, NULL, '/data/uploads/1463014891_9173.png');
+INSERT INTO `we_students` VALUES(27, '', '18622111236', '$2y$10$mOpLeHmxa9vOqTqjVz0Q.eiipgKWO72aASyQqeh/qs74Hjikrkj1i', '小白', 0, '11111122', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:50:10', '2016-05-11 11:55:22', NULL, '0.00', '0.00', '04级2班', 0, NULL, '/data/uploads/1462974610_170374.png', '');
+INSERT INTO `we_students` VALUES(29, '', '11111111112', '$2y$10$Nwoki2BhLpGXvkAK21QAK.HDCuwA0O8queTc5z3o8qcbk6lAsYl22', '小王', 0, '222', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-12 01:02:05', '2016-05-11 12:47:16', NULL, '0.00', '0.00', '04级1班', 0, NULL, '/data/uploads/1463014925_169340.png', '');
+INSERT INTO `we_students` VALUES(30, '', '88888888888', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲8', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-18 02:33:02', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '/data/audio/1463538782_133228.mp3');
+INSERT INTO `we_students` VALUES(34, '', '88888888881', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲1', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:38:50', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(35, '', '88888888882', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲2', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:42:07', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(36, '', '88888888883', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲3', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:42:15', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(37, '', '88888888884', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲4', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:42:22', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(38, '', '88888888885', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲5', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:42:30', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(39, '', '88888888886', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲6', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:42:38', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(40, '', '88888888887', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲7', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:42:47', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(41, '', '88888888889', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲9', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:42:56', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(42, '', '88888888890', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲10', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:43:03', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(43, '', '88888888891', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲11', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:43:14', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(44, '', '88888888892', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲12', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:43:24', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(45, '', '88888888893', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲13', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:43:35', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
+INSERT INTO `we_students` VALUES(46, '', '88888888894', '$2y$10$ClpLdH9V2vF6C7FEi8QlE.HjKeIT71p5XfcGpV86yfxraTwKqdlm6', '小洲14', 0, '231', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-14 06:43:42', '2016-05-11 13:05:28', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463207610_495247.png', '');
 
 -- --------------------------------------------------------
 
@@ -1934,6 +1982,7 @@ CREATE TABLE IF NOT EXISTS `we_users` (
   `company_id` int(10) DEFAULT '0' COMMENT '所属公司ID',
   `store_name` varchar(120) DEFAULT NULL COMMENT '商店名称',
   `img` varchar(255) NOT NULL,
+  `audio` varchar(255) NOT NULL,
   PRIMARY KEY (`user_id`),
   KEY `user_name` (`user_name`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=625 DEFAULT CHARSET=utf8;
@@ -1947,35 +1996,17 @@ TRUNCATE TABLE `we_users`;
 -- 转存表中的数据 `we_users`
 --
 
-INSERT INTO `we_users` VALUES(1, 'admin', '66666666666', '$2y$10$enOQEgLB3kBq1yqP6q5Ll.Xbk9RMFmvzRpNT1hGe5tw4FRep1/FoG', '管理员', 0, '4432524', 1, 0, '2016-05-13 07:30:31', '::1', 195, 0, NULL, 'ODcMIErfyZbSIjEOiK9o5qBQseQearYyWPjNdaaoTr3qgc0yzPV2AijuteEK', '2016-05-13 07:30:31', '2015-10-16 09:42:26', NULL, '20.00', '0.00', '无', NULL, '', '');
-INSERT INTO `we_users` VALUES(19, 'wang', '13444448888', '$2y$10$x8JA.lXBU6whuslRnd/yHOtY0w6Qiup4Ta2ezMYjWv7vwIHNcySAe', '王校长', 123456, '00000002', 1, 0, '2015-11-23 04:51:23', '127.0.0.1', 3, 0, NULL, 'zjaS9m33e5Ea103fpB4Xd64qt8w8Xy5dCd6cljNC0PqFBAnHjE2Mcpb6Vcm9', '2016-05-12 06:00:27', '2015-10-27 07:12:16', NULL, '2852.00', '3.00', '无', 0, NULL, '/data/uploads/1463032827_205046.png');
-INSERT INTO `we_users` VALUES(30, 'zhou', '15555555555', '$2y$10$72z/QDHgMxYTslW4TUCEguyUSC/9dPmLT29dyOqJo0apRfTIjuNF6', '周会计', 0, '0', 1, 0, '2015-11-03 13:09:41', '127.0.0.1', 4, 0, NULL, 'j6R1AsSW2vTt6rIpS6hBLYlOkdPHvULknXBQDXlpwLlv0xQoMYPWnnPmfHy0', '2016-05-10 12:33:37', '2015-09-16 05:32:44', NULL, NULL, NULL, '无', NULL, '', '');
-INSERT INTO `we_users` VALUES(58, '', '13865478963', '$2y$10$wjFDK8YJcx6Wx4m2mBtWT.Tzd./hZOTuTtOBddGMSC569MVhLBA1S', '董老师', 0, '4512121', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:11:10', '2015-09-28 03:36:26', NULL, NULL, NULL, '04级1班', NULL, NULL, '');
-INSERT INTO `we_users` VALUES(59, '', '13865478964', '$2y$10$Djw6N9etlOaTmxcQMEsK9eS2VnHQhfHkUrwAL7apSaEN3htVU1MOS', '王老师', 0, '4125123', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:11:01', '2015-09-28 03:36:55', NULL, NULL, NULL, '02级2班', NULL, NULL, '');
-INSERT INTO `we_users` VALUES(61, '', '11111111111', '$2y$10$it0PK23th./5GRc5/Pd3Wemy14P7sWcYuOffVHD3tT17vaqop2Nti', '李老师', 0, '133434', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:10:53', '2015-09-29 08:21:06', NULL, NULL, '40.00', '04级2班', NULL, NULL, '');
-INSERT INTO `we_users` VALUES(620, '', '15620743937', '$2y$10$6vSSEsGzpJJcLficOlns6eRH5lwIthhmVmax.0Uychpl.StEKG1P6', '张老师', 0, '123123', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:10:43', '2015-10-08 02:58:11', NULL, '1186.00', '200.00', '03级1班', NULL, NULL, '');
-INSERT INTO `we_users` VALUES(622, '', '18622185062', '$2y$10$a7iPp8N8ovsGRqI.NMSSG.4xCjeDBQ26BSd7DSlOcNfqXvayrqow.', '白老师', 0, '2123674', 0, 0, '2016-05-12 13:21:03', '::1', 6, 0, NULL, 'mTmLT4iESRqDiVzvdrTfZA81CI4QX2ZNyRqgemFINUUNlmj997mKY5Urbhij', '2016-05-12 13:32:57', '2016-05-11 11:42:17', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463032813_758014.png');
-INSERT INTO `we_users` VALUES(623, '', '18711111111', '$2y$10$xfx.DIF8Z.bpveVwZ3jHquksMe9aJWQNaI6YTDc8oZKMzm.NhNlq6', '刘老师', 0, '111', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:58:46', '2016-05-11 13:58:46', NULL, '0.00', '0.00', '02级2班', 0, NULL, '/data/uploads/1462975126_206987.png');
-INSERT INTO `we_users` VALUES(624, '', '19211111111', '$2y$10$97MSiSED7DTggjNXTZMX4O/EII2gO0PwsgqKM5ZFeBKFUt9Cx514e', '凉老师', 0, '22', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-12 13:16:50', '2016-05-11 14:11:11', NULL, '0.00', '0.00', '04级1班', 0, NULL, '/data/uploads/1463059010_805466.png');
+INSERT INTO `we_users` VALUES(1, 'admin', '66666666666', '$2y$10$enOQEgLB3kBq1yqP6q5Ll.Xbk9RMFmvzRpNT1hGe5tw4FRep1/FoG', '管理员', 0, '4432524', 1, 0, '2016-05-18 09:29:27', '::1', 206, 0, NULL, 'jmhK4AFqQYK4otvOLZaXHzlGpTMSGbJhDmbDLYKmEX5pQj8edOCpvwuH70Bs', '2016-05-18 09:29:27', '2015-10-16 09:42:26', NULL, '20.00', '0.00', '无', NULL, '', '', '');
+INSERT INTO `we_users` VALUES(19, 'wang', '13444448888', '$2y$10$x8JA.lXBU6whuslRnd/yHOtY0w6Qiup4Ta2ezMYjWv7vwIHNcySAe', '王校长', 123456, '00000002', 1, 0, '2015-11-23 04:51:23', '127.0.0.1', 3, 0, NULL, 'zjaS9m33e5Ea103fpB4Xd64qt8w8Xy5dCd6cljNC0PqFBAnHjE2Mcpb6Vcm9', '2016-05-12 06:00:27', '2015-10-27 07:12:16', NULL, '2852.00', '3.00', '无', 0, NULL, '/data/uploads/1463032827_205046.png', '');
+INSERT INTO `we_users` VALUES(30, 'zhou', '15555555555', '$2y$10$72z/QDHgMxYTslW4TUCEguyUSC/9dPmLT29dyOqJo0apRfTIjuNF6', '周会计', 0, '0', 1, 0, '2015-11-03 13:09:41', '127.0.0.1', 4, 0, NULL, 'j6R1AsSW2vTt6rIpS6hBLYlOkdPHvULknXBQDXlpwLlv0xQoMYPWnnPmfHy0', '2016-05-10 12:33:37', '2015-09-16 05:32:44', NULL, NULL, NULL, '无', NULL, '', '', '');
+INSERT INTO `we_users` VALUES(58, '', '13865478963', '$2y$10$Kshvs969pF9XTqcrxRXqDutfP44EnkzLlPbOMz5GRIGgcWi79/Ieq', '董老师', 0, '4512121', 0, 0, '2016-05-14 06:14:06', '::1', 1, 0, NULL, 'n1YmR8i4vwrrVAYWi0R6nkDyJKBRqXx4Wi1uQv40dlGeWpCTnA6xBP4IK3cA', '2016-05-14 06:14:16', '2015-09-28 03:36:26', NULL, NULL, NULL, '04级1班', NULL, NULL, '', '');
+INSERT INTO `we_users` VALUES(59, '', '13865478964', '$2y$10$Djw6N9etlOaTmxcQMEsK9eS2VnHQhfHkUrwAL7apSaEN3htVU1MOS', '王老师', 0, '4125123', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:11:01', '2015-09-28 03:36:55', NULL, NULL, NULL, '02级2班', NULL, NULL, '', '');
+INSERT INTO `we_users` VALUES(61, '', '11111111111', '$2y$10$it0PK23th./5GRc5/Pd3Wemy14P7sWcYuOffVHD3tT17vaqop2Nti', '李老师', 0, '133434', 0, 0, '2016-05-14 06:21:07', '::1', 2, 0, NULL, '594QzXIbTdZWk6zn3fBVwJAaVbbl1VDgiZvJLScy71awMMuALoLqz94iCyEo', '2016-05-14 06:21:12', '2015-09-29 08:21:06', NULL, NULL, '40.00', '04级2班', NULL, NULL, '', '');
+INSERT INTO `we_users` VALUES(620, '', '15620743937', '$2y$10$6vSSEsGzpJJcLficOlns6eRH5lwIthhmVmax.0Uychpl.StEKG1P6', '张老师', 0, '123123', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:10:43', '2015-10-08 02:58:11', NULL, '1186.00', '200.00', '03级1班', NULL, NULL, '', '');
+INSERT INTO `we_users` VALUES(622, '', '18622185062', '$2y$10$eZxBc6TswvQgrW6LMVRbe.q1OirNXee1VxLFxp8uYN1J7WovSTW1G', '白老师', 0, '2123674', 0, 0, '2016-05-16 12:34:05', '::1', 29, 0, NULL, 'ymV83m2J42L1Ng9mvUY2wypOfzNWIsR1ivof70KpCQP1eTYQKF8KyG5owkGS', '2016-05-16 12:34:05', '2016-05-11 11:42:17', NULL, '0.00', '0.00', '03级1班', 0, NULL, '/data/uploads/1463032813_758014.png', '/data/audio/1463538782_133228.mp3');
+INSERT INTO `we_users` VALUES(623, '', '18711111111', '$2y$10$xfx.DIF8Z.bpveVwZ3jHquksMe9aJWQNaI6YTDc8oZKMzm.NhNlq6', '刘老师', 0, '111', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-11 13:58:46', '2016-05-11 13:58:46', NULL, '0.00', '0.00', '02级2班', 0, NULL, '/data/uploads/1462975126_206987.png', '');
+INSERT INTO `we_users` VALUES(624, '', '19211111111', '$2y$10$97MSiSED7DTggjNXTZMX4O/EII2gO0PwsgqKM5ZFeBKFUt9Cx514e', '凉老师', 0, '22', 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2016-05-12 13:16:50', '2016-05-11 14:11:11', NULL, '0.00', '0.00', '04级1班', 0, NULL, '/data/uploads/1463059010_805466.png', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `we_students_check`
---
-
-DROP TABLE IF EXISTS `we_students_checkin`;
-CREATE TABLE IF NOT EXISTS `we_students_checkin` (
-  `checkin_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '打卡ID',
-  `student_id` int(10)  COMMENT '用户ID',
-  `checkin_date` int(8) DEFAULT '0' COMMENT '打卡时间',
-  `status` int(5) DEFAULT '0' COMMENT '0:未出勤；1:出勤；2:迟到',
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
-  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
-  `deleted_at` timestamp NULL DEFAULT NULL COMMENT '删除时间',
-  PRIMARY KEY (`checkin_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;

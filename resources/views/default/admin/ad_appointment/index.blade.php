@@ -43,26 +43,31 @@ $(document).ready(function () {
          //$('#content').html('收到消息：'+msg);
          //$('.notification.sticky').notify();
          //location.href = '/'+msg;
-				 //alert("Hello World!");
+				 var arr = new Array();
+				 arr = msg.split("|");
+				 img = arr[0];
+				 audio = arr[1];
+
          layer.open({
            type: 1,
 					 title: false,
+					 //title: ['王同学', 'font-size:15px;'],
 					 skin: 'layui-layer-lan',
+					 //area: ['500px', '300px'],
 					 closeBtn: 0,
-           title: ['王同学', 'font-size:15px;'],
-           content: '<div style="border-style: outset;weith:15px"><img src="/data/uploads/'+'1463207610_495247.png" /></div>',
+           content: '<div style="border-style: groove;weith:15px"><img src="'+img+'" /></div>',
            time: '5000',
 					 shift:5
           });
 					var au = document.createElement("audio");
           au.preload="auto";
-          au.src = "/data/uploads/test.mp3";
+          au.src = audio;
           au.play();
     });
     // 后端推送来在线数据时
-    socket.on('update_online_count', function(online_stat){
-        $('#online_box').html(online_stat);
-    });
+    //socket.on('update_online_count', function(online_stat){
+    //    $('#online_box').html(online_stat);
+    //});
 });
 </script>
 </body>

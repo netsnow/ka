@@ -18,6 +18,8 @@ Route::get('/storeOrder/{store_code}',                      'StoreCodeController
 Route::get('/admin',  'IndexController@getIndex');
 Route::get('/admin/ad_appointment', 'AppointmentController@getIndex');
 Route::get('/admin/ad_appointment/appoint', 'AppointmentController@showIndex');
+//打卡机刷卡触发的api
+Route::get('/checkin/{userid}&{machineid}&{time}','ApiController@checkinapi');
 
 //登陆（靳宗雨）
 Route::get('/admin/login',       'UserController@getIndex');//登陆界面
@@ -32,6 +34,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('/admin','AdminController@index');
     //testapi
     Route::get('/testapi','ApiController@testapi');
+
 
     //Route::get('/brand',                    'BrandController@getIndex');
     //Route::post('/brand/delete',            'BrandController@apiDelete');
