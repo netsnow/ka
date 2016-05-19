@@ -40,6 +40,7 @@
     </div>
     </form>
 </div>
+<label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp注意：1、不能导入今日及之前的考勤。2、导入数据不能有考勤日和教师手机号重复的数据。</label>
 @endsection
 
 @section('foot-assets')

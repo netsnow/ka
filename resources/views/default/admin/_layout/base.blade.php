@@ -56,21 +56,12 @@
                         <i class="icon_menu"></i>
                     </li>
                     @set($active = isset($active) ? $active : ''; $class[$active] = ' class="active"')
-    		<li{!! $class['floor'] or '' !!}><a href="/admin/floor"><i class="icon_large icon_flag2"></i><span>&nbsp;&nbsp;园区管理！！！</span></a></li>
-                    <li{!! $class['room'] or '' !!}><a href="/admin/room"><i class="icon_large icon_shop"></i><span>&nbsp;&nbsp;卡机管理！！！</span></a></li>
-                    <li{!! $class['seat'] or '' !!}><a href="/admin/seat"><i class="icon_large icon_location"></i><span>&nbsp;&nbsp;工位管理</span></a></li>
-                    <li{!! $class['seat_price'] or '' !!}><a href="/admin/seat_price"><i class="icon_large icon_pencil"></i><span>&nbsp;&nbsp;工位定价</span></a></li>
-                    <li class="driver"></li>
-                    <li{!! $class['charging'] or '' !!}><a href="/admin/charging"><i class="icon_large icon_credit"></i><span>&nbsp;&nbsp;计费管理</span></a></li>
-                    <li{!! $class['goods'] or '' !!}><a href="/admin/goods"><i class="icon_large icon_credit"></i><span>&nbsp;&nbsp;商品管理</span></a></li>
-                    <li{!! $class['charging_price'] or '' !!}><a href="/admin/charging_price"><i class="icon_large icon_pencil"></i><span>&nbsp;&nbsp;计费定价</span></a></li>
-                    <li class="driver"></li>
-                    <li{!! $class['usermanage'] or '' !!}><a href="/admin/usermanage"><i class="icon_large icon_user2"></i><span>&nbsp;&nbsp;账户管理！！！</span></a></li>
-                    <li{!! $class['order'] or '' !!}><a href="/admin/order"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;考勤管理！！！</span></a></li>
-                    <li{!! $class['ad'] or '' !!}><a href="/admin/ad"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;广告管理！！！</span></a></li>
-                    <li class="driver"></li>
-                    <li{!! $class['setting'] or '' !!}><a href="/admin/setting"><i class="icon_large icon_star"></i><span>&nbsp;&nbsp;系统设置</span></a></li>
-
+                    <li{!! $class['room'] or '' !!}><a href="/admin/room"><i class="icon_large icon_shop"></i><span>&nbsp;&nbsp;卡机管理</span></a></li>
+                    <li{!! $class['usermanage'] or '' !!}><a href="/admin/usermanage"><i class="icon_large icon_user2"></i><span>&nbsp;&nbsp;账户管理</span></a></li>
+                    <li{!! $class['order'] or '' !!}><a href="/admin/order"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;考勤管理</span></a></li>
+                    <li{!! $class['ad'] or '' !!}><a href="/admin/ad"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;广告管理</span></a></li>
+                    <li{!! $class['ad'] or '' !!}><a href="/admin/ad"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;教师考勤统计</span></a></li>
+                    <li{!! $class['ad'] or '' !!}><a href="/admin/ad"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;学生考勤统计</span></a></li>
                 </ul>
             </div>
             <div id="main_container">

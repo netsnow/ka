@@ -21,7 +21,7 @@ class GetEdit extends \BaseLogic
 	{
 		$result = Floor::all();
 		$this->result['floor'] = $result;
-	
+
 	}
 	protected function getRoom()
 	{    $room_id=$this->room_id;
@@ -38,9 +38,9 @@ class GetEdit extends \BaseLogic
 	    $floor=$floor_id->toArray();
 	    $floorid=$floor['0']['floor_id'];
 		$result = Floor::find($floorid);
-	    
+
 		$this->result['floorone'] = $result;
-	
+
 	}
     protected function getRoomtype()
 	{

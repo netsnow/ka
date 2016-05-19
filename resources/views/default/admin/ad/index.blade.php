@@ -1,17 +1,15 @@
-@extends('default.admin._layout.base') 
-@section('title', '广告轮换管理') 
+@extends('default.admin._layout.base')
+@section('title', '广告管理')
 
 @section('title-block')
 <i class="icon_large icon_image"></i>
-<span>广告轮换管理</span>
-@endsection 
+<span>广告管理</span>
+@endsection
 
 @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/setting">系统设置</a></li>
-<li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="ad">广告轮换管理</a></li>
-@endsection 
+<li><a href="/admin/ad">广告管理</a></li>
+@endsection
 
 @section('foot-assets')
 {!! script("third-party/jquery/jquery.validate.min.js")!!}
@@ -20,7 +18,7 @@
 <script type="text/javascript">
 $(function() {
     var ad = new AdIndex();
-    
+
     $(document).on('click', 'a.gopage', function() {
         $('#pagination').submit();
     });
@@ -57,7 +55,7 @@ function selectFloor(index)
             <div class="form_group">
                 <label class="control_label">房间号：</label>
             </div>
-            
+
             <div class="form_group">
                 <div class="control_select btn_group search_list col-lg-6">
             <button data-toggle="dropdown" class="btn dropdown_toggle " type="button">
@@ -74,10 +72,10 @@ function selectFloor(index)
                 @endforeach
             </ul>
             <input type="hidden" name="room" id="room" value="">
-            
+
         </div>
             </div>
-            
+
             <div class="form_group">
                 <button class="btn btn_green"><i class="icon-search3 white"></i>&nbsp;查找&nbsp;</button>
             </div>
@@ -139,18 +137,18 @@ function selectFloor(index)
 					</button>
 				</div>
 				<form method="get" id="pagination">
-					@if (Request::has('room')) 
-						<input type="hidden" name="room" value="{{ Request::input('room') }}"> 
-					@endif 
-					@if (Request::has('name')) 
-						<input type="hidden" name="name" value="{{ Request::input('name') }}"> 
-					@endif 
+					@if (Request::has('room'))
+						<input type="hidden" name="room" value="{{ Request::input('room') }}">
+					@endif
+					@if (Request::has('name'))
+						<input type="hidden" name="name" value="{{ Request::input('name') }}">
+					@endif
 						<input type="hidden" name="page" value="{{ Request::input('page') or 1 }}">
 					<div class="pagination pull_right">
-						@if (Request::has('room')) 
-							{!! $result['ads']->appends(['room' => Request::input('room')])->render() !!} 
-						@else 
-							{!! $result['ads']->render() !!} 
+						@if (Request::has('room'))
+							{!! $result['ads']->appends(['room' => Request::input('room')])->render() !!}
+						@else
+							{!! $result['ads']->render() !!}
 						@endif
 						<ul>
 							<li><span>共{{ $result['ads']->lastPage() }}页({{ $result['ads']->total() }}条)</span></li>
@@ -171,4 +169,3 @@ function selectFloor(index)
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 <input type="hidden" name="total-page" value="{{ $result['ads']->lastPage() }}">
 @endsection
-

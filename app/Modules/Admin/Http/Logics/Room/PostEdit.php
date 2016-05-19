@@ -15,30 +15,30 @@ class PostEdit extends \BaseLogic
 		try {
 			$this->validate();
 			$this->saveRoom();
-	
+
 			$this->result['result'] = true;
-	
+
 		} catch (Exception $e) {
-	
+
 			$this->result['result'] = false;
 			$this->result['message'] = $e->getMessage();
-	
+
 		}
-		
+
 	}
 	protected function validate()
 	{
 		$validator = Validator::make(Request::all(), [
 				'room_num'  => 'required|max:50',
-				'room_size'  => 'required',
+				//'room_size'  => 'required',
 				'room_descript'   => 'max:225',
-				'room_price'  => 'required',
+				//'room_price'  => 'required',
 				]);
-	
+
 		if ($validator->fails()) {
 			throw new Exception($validator->messages()->first());
 		}
-		
+
 		// 判断id是否存在
 		$this->room = Room::find($this->room_id);
 		if (!$this->room) {
@@ -47,21 +47,16 @@ class PostEdit extends \BaseLogic
 	}
 	protected function saveRoom()
 	{
-        
-	    if(Request::input('room_type')==''){
-            throw new Exception('请选择房间类型');
-        }
-        if(Request::input('room_type')=='workshop' && Request::input('seat_type')==''){
-        	throw new Exception('请选择工位类型');
-        }
-		
+
+
+
 		$room_id=$this->room_id;
-     
+
 		$room_size = Request::input('room_size');
 		$room_type = Request::input('room_type');
 		$room_price = Request::input('room_price');
 		$seat_type_id = Request::input('seat_type');
-	
+
 		if (Request::has('room_descript')) {
 			$room_descript = Request::input('room_descript');
 		}else{
@@ -73,19 +68,19 @@ class PostEdit extends \BaseLogic
 			$newName   = time() . '_' . rand( 1 , 1000000 ) . ".png";
 			Request::file('room_pic')->move($targetDir, $newName);
 			$floor_pic = '/data/uploads/' . $newName;
-			 
+
 		}else{
             	$resulturl=Room::where('room_id',$room_id)->get();
                 $floor_pic=$resulturl[0]['room_url'];
         }
-       
+
 		/* DB::table('room')
 		->where('room_id', $room_id)
 		->update(array('room_size' => $room_size,'room_type' => $room_type,'room_url' => $floor_pic,'room_descript' => $room_descript,'seat_type_id' => $seat_type_id,'room_price' => $room_price));
-		
-		
+
+
 		$this->result['message'] = '房间修改成功'; */
-		
+
 		$this->room->room_size = $room_size;
 		$this->room->room_type = $room_type;
 		$this->room->room_url = $floor_pic;
@@ -98,9 +93,9 @@ class PostEdit extends \BaseLogic
 		}
 		$this->room->room_price = $room_price;
 		$this->room->save();
-		
-		$this->result['message'] = '房间编辑成功';
-		
-		
+
+		$this->result['message'] = '卡机编辑成功';
+
+
 	}
 }
