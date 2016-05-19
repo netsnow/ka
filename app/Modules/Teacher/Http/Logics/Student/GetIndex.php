@@ -30,8 +30,8 @@ class GetIndex extends \BaseLogic
       $today = "20".date('ymd',time());
       $company = Auth::user()->company_name;
       $qb= Student::where('company_name',$company)
-      ->leftjoin('students_checkin', function ($join) {
-            $join->on('students.student_id', '=', 'students_checkin.student_id');
+      ->leftjoin('checkin_data', function ($join) {
+            $join->on('students.student_id', '=', 'checkin_data.user_id');
             //     ->where('students_checkin.checkin_date','=',$today);
         });
       //$checkin= StudentCheckin::where('students_checkin.checkin_date',$today);

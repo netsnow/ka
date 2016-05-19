@@ -35,14 +35,6 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     //testapi
     Route::get('/testapi','ApiController@testapi');
 
-
-    //Route::get('/brand',                    'BrandController@getIndex');
-    //Route::post('/brand/delete',            'BrandController@apiDelete');
-    //Route::get('/brand/add',                'BrandController@getAdd');
-    //Route::post('/brand/add',               'BrandController@postAdd');
-    //Route::get('/brand/edit/{id}',          'BrandController@getEdit');
-    //Route::post('/brand/edit/{id}',         'BrandController@postEdit');
-
     //账户管理－教师
     Route::get('/usermanage',               'UserManageController@getIndex');
     Route::get('/usermanage/add',           'UserManageController@getAdd');
@@ -79,6 +71,27 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('/ad/edit/{id}',          'AdController@getEdit');
     Route::post('/ad/edit/{id}',         'AdController@postEdit');
     Route::post('/ad/delete',            'AdController@apiDelete');
+
+    //考勤统计表
+    Route::get('/report',                    'AdController@getIndex');
+
+    //卡机管理
+    Route::get('/room',                    'RoomController@getIndex');
+    Route::post('/room/delete',            'RoomController@apiDelete');
+    Route::get('/room/add',               'RoomController@getAdd');
+    Route::post('/room/add',               'RoomController@postAdd');
+    Route::get('/room/edit/{id}',          'RoomController@getEdit');
+    Route::post('/room/edit/{id}',          'RoomController@postEdit');
+
+    //商品管理 (段泽宇)
+    Route::get('/goods',                    'GoodsController@getIndex');
+    Route::post('/goods/delete',            'GoodsController@apiDelete');
+    Route::post('/goods/add',              'GoodsController@postAdd');
+    Route::get('/goods/add',              'GoodsController@getAdd');
+    Route::get('/goods/edit/{id}',          'GoodsController@getEdit');
+    Route::post('/goods/edit/{id}',         'GoodsController@postEdit');
+    Route::get('/goods/copy/{id}',          'GoodsController@getCopy');
+    Route::post('/goods/copy/{id}',             'GoodsController@postCopy');
 
 //    Route::get('/category',                 'CategoryController@getIndex');
 //    Route::post('/category/delete',         'CategoryController@apiDelete');
@@ -182,12 +195,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     //计费管理（靳宗雨）
     Route::get('/charging',                    'ChargingController@getIndex');
     //start  xuchunlong
-    Route::get('/room',                    'RoomController@getIndex');
-    Route::post('/room/delete',            'RoomController@apiDelete');
-    Route::get('/room/add',               'RoomController@getAdd');
-    Route::post('/room/add',               'RoomController@postAdd');
-    Route::get('/room/edit/{id}',          'RoomController@getEdit');
-    Route::post('/room/edit/{id}',          'RoomController@postEdit');
+
     Route::get('/seat',                      'SeatController@getIndex');
     Route::post('/seat/delete',            'SeatController@postDelete');
     Route::get('/seat/add',            'SeatController@getAdd');

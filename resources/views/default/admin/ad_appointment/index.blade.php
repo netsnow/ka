@@ -31,12 +31,18 @@
 	{!! script('/assets/admin/js/layer/layer.js') !!}
 
 <script>
+function GetQueryString(name) {
+   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+   var r = window.location.search.substr(1).match(reg);
+   if (r!=null) return (r[2]); return null;
+}
+
 $(document).ready(function () {
     // 连接服务端
     var socket = io('http://0.0.0.0:2120');
     // 连接后登录
     socket.on('connect', function(){
-    	socket.emit('login', 1);
+    	socket.emit('login', GetQueryString("room_id"));
     });
     // 后端推送来消息时
     socket.on('new_msg', function(msg){
