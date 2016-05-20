@@ -60,8 +60,7 @@
                     <li{!! $class['usermanage'] or '' !!}><a href="/admin/usermanage"><i class="icon_large icon_user2"></i><span>&nbsp;&nbsp;账户管理</span></a></li>
                     <li{!! $class['order'] or '' !!}><a href="/admin/order"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;考勤管理</span></a></li>
                     <li{!! $class['ad'] or '' !!}><a href="/admin/ad"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;广告管理</span></a></li>
-                    <li{!! $class['ad'] or '' !!}><a href="/admin/ad"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;教师考勤统计</span></a></li>
-                    <li{!! $class['ad'] or '' !!}><a href="/admin/ad"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;学生考勤统计</span></a></li>
+                    <li{!! $class['ad'] or '' !!}><a href="/admin/report"><i class="icon_large icon_shopping_cart"></i><span>&nbsp;&nbsp;考勤统计</span></a></li>
                 </ul>
             </div>
             <div id="main_container">

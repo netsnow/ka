@@ -73,7 +73,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::post('/ad/delete',            'AdController@apiDelete');
 
     //考勤统计表
-    Route::get('/report',                    'AdController@getIndex');
+    Route::get('/report',                    'ReportController@getIndex');
 
     //卡机管理
     Route::get('/room',                    'RoomController@getIndex');
