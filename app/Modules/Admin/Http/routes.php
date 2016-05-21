@@ -74,6 +74,9 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
 
     //考勤统计表
     Route::get('/report',                    'ReportController@getIndex');
+    Route::get('/report/detail/{phone}',  'ReportController@getDetail');
+
+
 
     //卡机管理
     Route::get('/room',                    'RoomController@getIndex');

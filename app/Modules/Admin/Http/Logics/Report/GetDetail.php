@@ -2,8 +2,6 @@
 
 namespace App\Modules\Admin\Http\Logics\Report;
 
-use App\Eloquents\Attendance;
-use App\Eloquents\CheckinData;
 use App\Eloquents\User;
 use Request;
 use Auth;
@@ -12,7 +10,7 @@ use Validator;
 use Exception;
 use DB;
 
-class GetIndex extends \BaseLogic
+class GetDetail extends \BaseLogic
 {
     protected function execute()
     {
@@ -34,27 +32,20 @@ class GetIndex extends \BaseLogic
     protected function getReportList()
     {
         $qb= DB::table('order')
-            ->select('order.buyer_phone','users.*',DB::raw('floor(attendance_date/100) as attendance_month'),DB::raw('COUNT(1) as plan_day'), DB::raw('COUNT(IF(status=1,1,NULL)) as ac_day'))
-            ->leftJoin('users', 'users.phone', '=', 'order.buyer_phone')
-            ->groupby('order.buyer_phone',DB::raw('floor(attendance_date/100)'));
-        $date=Request::input('attendance_month');
-        $name=Request::input('teacher_name');
+            ->whereRaw('buyer_phone = '.$this->phone);
+        $date=Request::input('attendance_date');
 
-        if(Request::has('attendance_month')) {
-            if(!strtotime(Request::input('attendance_month'))){
+        if(Request::has('attendance_date')) {
+            if(!strtotime(Request::input('attendance_date'))){
                 throw new Exception('请输入正确的时间');
             }
             $qb->whereRaw('attendance_date like "%'.$date.'%"');
-            $this->result['attendance_month'] = Request::input('attendance_month');
-        }
-
-        if(Request::has('teacher_name')) {
-            $qb->whereRaw('real_name like "%'.$name.'%"');
-            $this->result['teacher_name'] = Request::input('teacher_name');
+            $this->result['attendance_date'] = Request::input('attendance_date');
         }
 
 
-        $result = $qb->orderBy('attendance_month', 'desc')
+
+        $result = $qb->orderBy('attendance_date', 'desc')
             ->paginate(LIMIT_PER_PAGE);
         $this->result['orders'] = $result;
 
@@ -80,6 +71,6 @@ class GetIndex extends \BaseLogic
                 $query[] = $key . '=' . $lastPage;
             }
         }
-        $this->result['redirectUrl'] = '/admin/report?' . implode('&', $query);
+        $this->result['redirectUrl'] = '/admin/order?' . implode('&', $query);
     }
 }

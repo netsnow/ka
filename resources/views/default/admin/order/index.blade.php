@@ -1,4 +1,4 @@
-@extends('default.admin._layout.base') @section('title', '订单管理')
+@extends('default.admin._layout.base') @section('title', '教师考勤管理')
 
 @section('title-block')
 <i class="icon_large icon_shopping_cart"></i>

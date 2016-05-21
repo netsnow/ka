@@ -23,6 +23,16 @@ class ReportController extends \BaseController
         }
         return view(tpl('admin.report.index'))->with('result', $result);
     }
-
+    public function getDetail($phone)
+    {
+        $logic = new Report\GetDetail();
+        $logic->set('phone', $phone);
+        $result = $logic->run();
+        if ($result['redirect'] === true)
+        {
+            return redirect($result['redirectUrl']);
+        }
+        return view(tpl('admin.report.detail'))->with('result', $result);
+    }
 
 }

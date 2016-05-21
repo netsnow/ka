@@ -1,11 +1,11 @@
-@extends('default.admin._layout.base') @section('title', '教师考勤统计')
+@extends('default.admin._layout.base') @section('title', '教师考勤详情')
 
 @section('title-block')
 <i class="icon_large icon_shopping_cart"></i>
-<span>教师考勤统计</span>
+<span>教师考勤详情</span>
 @endsection @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="report">教师考勤统计</a></li>
+<li><a href="report">教师考勤详情</a></li>
 @endsection @section('foot-assets') {!!
 script("third-party/jquery/jquery.validate.min.js")!!} {!!
 script("third-party/jquery/jquery.form.min.js")!!} {!!
@@ -44,16 +44,10 @@ function selectRoom(index)
 		<form method="get">
 			    <div class=" form_inline text_right mb10">
 				    <div class="form_group">
-					    <label class="control_label">考勤月：</label>
+					    <label class="control_label">考勤日：</label>
 				    </div>
             <div class="form_group">
-  					    <input type="text" name="attendance_month" class="form_control wid" value="{{ $result['attendance_month'] or '' }}">
-  				  </div>
-            <div class="form_group">
-					    <label class="control_label">姓名：</label>
-				    </div>
-            <div class="form_group">
-  					    <input type="text" name="teacher_name" class="form_control wid" value="{{ $result['teacher_name'] or '' }}">
+  					    <input type="text" name="attendance_date" class="form_control wid" value="{{ $result['attendance_date'] or '' }}">
   				  </div>
 						<div class="form_group">
 							    <button href="#" class="btn btn_green"><i class="icon_search3 white"></i>&nbsp;查找&nbsp;</button>
@@ -68,25 +62,15 @@ function selectRoom(index)
 	<table id="responsive-example-table" class="table large-only">
 		<tbody>
 			<tr class="text-right">
-				<th width="14%">考勤月</th>
-				<th width="18%">教师手机号</th>
-				<th width="10%">教师姓名</th>
-				<th width="18%">教师班级</th>
-        <th width="14%">应出勤天数</th>
-        <th width="14%">实出勤天数</th>
-        <th width="18%">操作</th>
+				<th width="14%">考勤日</th>
+				<th width="18%">打卡时间</th>
+				<th width="10%">出勤状态</th>
 			</tr>
 			@forelse ($result['orders'] as $order)
 			<tr>
-				<td>{{ $order->attendance_month }}</td>
-				<td>{{ $order->phone }}</td>
-				<td>{{ $order->real_name }}</td>
-				<td>{{ $order->company_name }}</td>
-        <td>{{ $order->plan_day }}</td>
-        <td>{{ $order->ac_day }}</td>
-        <td>
-            <a href="/admin/report/detail/{{ $order->phone }}" class="btn btn_blue"><i class="icon-pencil white"></i> 详情</a>
-        </td>
+				<td>{{ $order->attendance_date }}</td>
+				<td>{{ $order->check_time }}</td>
+				<td>{{ $order->status }}</td>
 			</tr>
 			@empty
 			<tr>
