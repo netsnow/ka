@@ -34,5 +34,10 @@ class ReportController extends \BaseController
         }
         return view(tpl('admin.report.detail'))->with('result', $result);
     }
+    public function getExport()
+    {
+        $logic = new Report\GetExport();
+        $result = $logic->run();
+    }
 
 }

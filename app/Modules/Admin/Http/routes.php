@@ -72,9 +72,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::post('/ad/edit/{id}',         'AdController@postEdit');
     Route::post('/ad/delete',            'AdController@apiDelete');
 
-    //考勤统计表
+    //教师考勤统计表
     Route::get('/report',                    'ReportController@getIndex');
     Route::get('/report/detail/{phone}',  'ReportController@getDetail');
+    Route::get('/report/export',             'ReportController@getExport');
 
 
 

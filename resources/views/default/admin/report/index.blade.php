@@ -41,6 +41,9 @@ function selectRoom(index)
 @endsection @section('body-nest')
 <div class="body_nest radius">
 	<div class="row table_control">
+    <div class="pull_left mb10">
+        <a href="/admin/report/export" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;导出考勤数据&nbsp;</a>
+    </div>
 		<form method="get">
 			    <div class=" form_inline text_right mb10">
 				    <div class="form_group">
