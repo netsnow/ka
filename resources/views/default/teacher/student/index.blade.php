@@ -1,11 +1,11 @@
-@extends('default.teacher._layout.base') @section('title', '订单管理')
+@extends('default.teacher._layout.base') @section('title', '学生出勤')
 
 @section('title-block')
 <i class="icon_large icon_shopping_cart"></i>
-<span>订单管理</span>
+<span>学生出勤</span>
 @endsection @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="order">订单管理</a></li>
+<li><a href="order">学生出勤</a></li>
 @endsection @section('foot-assets') {!!
 script("third-party/jquery/jquery.validate.min.js")!!} {!!
 script("third-party/jquery/jquery.form.min.js")!!} {!!
@@ -64,7 +64,7 @@ function selectRoom(index)
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 @endsection
 <script>
-  var t=5000;
+  var t=50000;
   setTimeout(function(){
     location.href="/teacher/student";
   },t);

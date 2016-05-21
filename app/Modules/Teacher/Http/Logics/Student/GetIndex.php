@@ -3,6 +3,7 @@
 namespace App\Modules\Teacher\Http\Logics\Student;
 
 use App\Eloquents\Student;
+use App\Eloquents\CheckinData;
 use Request;
 use Auth;
 use Cache;
@@ -28,18 +29,18 @@ class GetIndex extends \BaseLogic
     protected function getStudentList()
     {
       $today = "20".date('ymd',time());
+
       $company = Auth::user()->company_name;
-      $qb= Student::where('company_name',$company)
-      ->leftjoin('checkin_data', function ($join) {
-            $join->on('students.student_id', '=', 'checkin_data.user_id');
-            //     ->where('students_checkin.checkin_date','=',$today);
-        });
-      //$checkin= StudentCheckin::where('students_checkin.checkin_date',$today);
-      //$qb->leftjoin('students_checkin', 'students.student_id', '=', 'students_checkin.student_id');
-         //->where('students_checkin.status',Null)
-         //->where('students_checkin.checkin_date',$today);
-      $result = $qb->orderBy('real_name', 'desc')
-      ->paginate(50);
+      $student= Student::where('company_name',$company)->get();
+      $checkin= CheckinData::whereRaw('floor(checkin_datetime/10000) ='.$today)->get();
+      foreach($student as $key => $values){
+        foreach($checkin as $valuec){
+          if($values->student_id == $valuec->user_id){
+            $student[$key]['logins'] = 1;
+          }
+        }
+      }
+      $result = $student;
       $this->result['students'] = $result;
     }
 
