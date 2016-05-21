@@ -11,7 +11,7 @@
 <li><i class="icon_large icon_triangle_right"></i></li>
 <li><a href="/admin/usermanage">账号管理</a></li>
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/company">教师账号</a></li>
+<li><a href="/admin/company">班级管理</a></li>
 <li><i class="icon_large icon_triangle_right"></i></li>
 <li><a href="/admin/company/add">添加班级</a></li>
 <li class="back"><a class="btn btn_red" href="javascript:void(0)" onclick="history.go(-1);"><i class="icon_arrow_bold_left"></i>&nbsp;返回</a></li>

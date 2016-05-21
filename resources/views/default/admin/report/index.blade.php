@@ -1,7 +1,7 @@
 @extends('default.admin._layout.base') @section('title', '教师考勤统计')
 
 @section('title-block')
-<i class="icon_large icon_shopping_cart"></i>
+<i class="icon_large icon_pie_chart"></i>
 <span>教师考勤统计</span>
 @endsection @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>

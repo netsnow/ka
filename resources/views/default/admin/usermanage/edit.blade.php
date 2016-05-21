@@ -9,7 +9,7 @@
 
 @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/usermanage">会员管理</a></li>
+<li><a href="/admin/usermanage">账户管理</a></li>
 <li><i class="icon_large icon_triangle_right"></i></li>
 <li><a href="/admin/usermanage/edit/{{$result['user']->user_id}}">编辑教师</a></li>
 <li class="back"><a class="btn btn_red" href="/admin/usermanage"><i class="icon_arrow_bold_left"></i>&nbsp;返回</a></li>

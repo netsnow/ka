@@ -58,6 +58,6 @@ class PostAdd extends \BaseLogic
           $newUser->img = $img;
         }
         $newUser->save();
-        $this->result['message'] = '会员添加成功';
+        $this->result['message'] = '教师添加成功';
     }
 }

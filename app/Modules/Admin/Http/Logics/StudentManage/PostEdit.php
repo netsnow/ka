@@ -49,7 +49,7 @@ class PostEdit extends \BaseLogic
 
         if (!$this->student)
         {
-            throw new Exception('会员不存在');
+            throw new Exception('学生不存在');
         }
 
         $getStudent = Student::where('phone', Request::input('phone'))

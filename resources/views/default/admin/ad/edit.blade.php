@@ -3,15 +3,13 @@
 @section('title', '编辑广告')
 
 @section('title-block')
-<i class="icon_large icon_image"></i>
+<i class="icon_large icon_display"></i>
 <span>编辑广告</span>
 @endsection
 
 @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/setting">系统设置</a></li>
-<li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/ad">广告轮换管理</a></li>
+<li><a href="/admin/ad">广告管理</a></li>
 <li><i class="icon_large icon_triangle_right"></i></li>
 <li><a href="">编辑广告</a></li>
 <li class="back"><a class="btn btn_red" href="javascript:void(0)" onclick="history.go(-1);"><i class="icon-arrow-bold-left"></i>&nbsp;返回</a></li>
@@ -46,7 +44,7 @@ $(function() {
 					<li><a href="javascript:void(0)" name="menu03" value="促销">促销</a></li>
 					<li><a href="javascript:void(0)" name="menu04" value="女性">女性</a></li>
 				</ul>
-				<input type="hidden" name="side_path" value="{{ $result['ad']->side_path}}"> 
+				<input type="hidden" name="side_path" value="{{ $result['ad']->side_path}}">
 			</div>
 		</div> -->
 		<!-- <div class="form_group row">
@@ -60,9 +58,9 @@ $(function() {
 				<input type="text" name="room_num" readonly value="未查到" class="form_control">
 			</div>
 			@endif
-			
+
 		</div> -->
-		
+
 		<div class="form_group row">
 			<label class="col-lg-3 control_label"><span class="must">*</span>图片：</label>
 			<div class="col-lg-3">
@@ -89,7 +87,7 @@ $(function() {
 			<label class="col-lg-3 control_label">是否显示：</label>
 			<ul class="form radioGroup col-lg-6 clearfix mt5">
 				<li class="clearfix">
-					
+
 						@if($result['ad']->is_show > 0)
 							<div class="iradio_red  checked">
 								<input tabindex="13" type="radio" id="radio01" value="1" name="is_show" checked>
@@ -111,7 +109,7 @@ $(function() {
 								<input tabindex="13" type="radio" id="radio02"  value="0" name="is_show">
 							</div>
 						@endif
-						
+
 					 <label for="radio02" class="">不显示</label>
 				</li>
 			</ul>
@@ -128,4 +126,3 @@ $(function() {
 	</form>
 </div>
 @endsection
-

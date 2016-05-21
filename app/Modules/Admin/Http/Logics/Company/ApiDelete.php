@@ -10,13 +10,13 @@ class ApiDelete extends \BaseLogic
 {
     protected function execute()
     {
-        try 
+        try
         {
             $this->validate();
             $this->deleteCompany();
             $this->result['result'] = true;
         }
-        catch (Exception $e) 
+        catch (Exception $e)
          {
             $this->result['result']  = false;
             $this->result['message'] = $e->getMessage();
@@ -26,7 +26,7 @@ class ApiDelete extends \BaseLogic
     protected function validate()
     {
         foreach (Request::input('company_id') as $value) {
-            if (!is_numeric($value)) 
+            if (!is_numeric($value))
             {
                 throw new Exception('system error');
             }
@@ -36,6 +36,6 @@ class ApiDelete extends \BaseLogic
     protected function deleteCompany()
     {
         Company::destroy(Request::input('company_id'));
-        $this->result['message'] = '企业删除成功';
+        $this->result['message'] = '班级删除成功';
     }
 }

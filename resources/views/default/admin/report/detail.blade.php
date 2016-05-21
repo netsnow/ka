@@ -1,11 +1,14 @@
 @extends('default.admin._layout.base') @section('title', '教师考勤详情')
 
 @section('title-block')
-<i class="icon_large icon_shopping_cart"></i>
+<i class="icon_large icon_pie_chart"></i>
 <span>教师考勤详情</span>
 @endsection @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="report">教师考勤详情</a></li>
+<li><a href="/admin/report">教师考勤统计</a></li>
+<li><i class="icon_large icon_triangle_right"></i></li>
+<li><a href="/admin/report/detail">教师考勤详情</a></li>
+<li class="back"><a class="btn btn_red" href="/admin/report"><i class="icon_arrow_bold_left"></i>&nbsp;返回</a></li>
 @endsection @section('foot-assets') {!!
 script("third-party/jquery/jquery.validate.min.js")!!} {!!
 script("third-party/jquery/jquery.form.min.js")!!} {!!

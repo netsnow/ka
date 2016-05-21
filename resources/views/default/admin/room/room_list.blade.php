@@ -3,7 +3,7 @@
 @section('title', '卡机管理')
 
 @section('title-block')
-<i class="icon_large icon_shop"></i>
+<i class="icon_large icon_layers"></i>
 <span>卡机管理</span>
 @endsection
 

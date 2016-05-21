@@ -10,7 +10,7 @@ class ReportController extends \BaseController
 
     public function __construct()
     {
-        view()->share('active', 'orders');
+        view()->share('active', 'report');
     }
 
     public function getIndex()

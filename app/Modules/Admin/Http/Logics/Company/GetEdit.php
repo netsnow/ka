@@ -12,13 +12,13 @@ class GetEdit extends \BaseLogic
     {
         $this->getCompany();
     }
-    
+
     protected function getCompany()
     {
         $getCompany=Company::find($this->companyid);
         if(!$getCompany)
         {
-            abort(404, '没有这个企业');
+            abort(404, '没有这个班级');
         }
         $this->result['company']=$getCompany;
     }

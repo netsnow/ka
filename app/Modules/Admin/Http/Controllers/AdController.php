@@ -9,9 +9,9 @@ class AdController extends \BaseController
 {
 	public function __construct()
 	{
-		view()->share('active', 'setting');
+		view()->share('active', 'ad');
 	}
-	
+
     /**
      * 显示幻灯片管理页
      * @return view 管理页的视图及第一页数据
@@ -29,7 +29,7 @@ class AdController extends \BaseController
 
     /**
      * 加载新建幻灯片页面
-     * @return 
+     * @return
      */
     public function getAdd()
     {
@@ -46,7 +46,7 @@ class AdController extends \BaseController
     {
         $logic = new Ad\PostAdd();
         $result = $logic->run();
-    
+
         return $result;
     }
 

@@ -19,7 +19,7 @@ class GetEdit extends \BaseLogic
         $getStudent=Student::find($this->studentid);
         if(!$getStudent)
         {
-            abort(404, '没有这个会员');
+            abort(404, '没有这个学生');
         }
         $getCompany=Company::all();
         $this->result['company']=$getCompany;

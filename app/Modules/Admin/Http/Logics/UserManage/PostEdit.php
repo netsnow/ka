@@ -49,7 +49,7 @@ class PostEdit extends \BaseLogic
 
         if (!$this->user)
         {
-            throw new Exception('会员不存在');
+            throw new Exception('教师不存在');
         }
 
         $getUser = User::where('phone', Request::input('phone'))
@@ -140,7 +140,7 @@ class PostEdit extends \BaseLogic
           $this->user->img  = $img;
         }
         $this->user->save();
-        $this->result['message'] = '会员编辑成功';
+        $this->result['message'] = '教师编辑成功';
     }
 
 

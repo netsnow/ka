@@ -2,7 +2,7 @@
 @section('title', '广告管理')
 
 @section('title-block')
-<i class="icon_large icon_image"></i>
+<i class="icon_large icon_display"></i>
 <span>广告管理</span>
 @endsection
 

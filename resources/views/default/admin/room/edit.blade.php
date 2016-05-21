@@ -3,7 +3,7 @@
 @section('title', '编辑卡机')
 
 @section('title-block')
-<i class="icon_large icon_shop"></i>
+<i class="icon_large icon_layers"></i>
 <span>编辑卡机</span>
 @endsection
 
@@ -45,7 +45,7 @@
 	        </div>
 	    </div>
 
-	     
+
     <div class="form_group row">
         <div class="col-lg-3"></div>
         <div class="col-lg-1">

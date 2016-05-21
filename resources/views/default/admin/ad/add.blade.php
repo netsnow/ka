@@ -3,15 +3,13 @@
 @section('title', '添加广告')
 
 @section('title-block')
-<i class="icon_large icon_image"></i>
+<i class="icon_large icon_display"></i>
 <span>添加广告</span>
 @endsection
 
 @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/setting">系统设置</a></li>
-<li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/ad">广告轮换管理</a></li>
+<li><a href="/admin/ad">广告管理</a></li>
 <li><i class="icon_large icon_triangle_right"></i></li>
 <li><a href="/admin/slide/add">添加广告</a></li>
 <li class="back"><a class="btn btn_red" href="javascript:void(0)" onclick="history.go(-1);"><i class="icon_arrow_bold_left"></i>&nbsp;返回</a></li>
@@ -50,10 +48,10 @@ function selectFloor(index)
 					<li><a href="javascript:void(0)" name="menu03" data-value="促销">促销</a></li>
 					<li><a href="javascript:void(0)" name="menu04" data-value="女性">女性</a></li>
 				</ul>
-				<input type="hidden" name="side_path" value="首页"> 
+				<input type="hidden" name="side_path" value="首页">
 			</div>
 		</div> -->
-		
+
 		 <!-- <div class="form_group row">
             <label class="col-lg-3 control_label text_right"><span class="must">*</span>房间号：</label>
         <div class="control_select btn_group search_list col-lg-6">
@@ -71,7 +69,7 @@ function selectFloor(index)
                 @endforeach
             </ul>
             <input type="hidden" name="room" id="room" value="">
-            
+
         </div>
         </div> -->
 
@@ -116,11 +114,10 @@ function selectFloor(index)
 			<div class="col-lg-1">
 				<button class="btn btn_green">提交</button>
 			</div>
-<!-- 			<div> 
+<!-- 			<div>
 				<button type="reset" id="reset" class="btn btn_default">重置</button>
 			</div> -->
 		</div>
 	</form>
 </div>
 @endsection
-

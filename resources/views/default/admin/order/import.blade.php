@@ -1,13 +1,16 @@
 @extends('default.admin._layout.base') @section('title', '教师考勤导入')
 
 @section('title-block')
-<i class="icon_large icon_list2"></i>
+<i class="icon_large icon_calendar_alt_fill"></i>
 <span>教师考勤导入</span>
 @endsection
 
 @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/importdata">导入数据</a></li>
+<li><a href="/admin/order">教师考勤管理</a></li>
+<li><i class="icon_large icon_triangle_right"></i></li>
+<li><a href="#">导入数据</a></li>
+<li class="back"><a class="btn btn_red" href="/admin/order"><i class="icon_arrow_bold_left"></i>&nbsp;返回</a></li>
 @endsection
 
 @section('body-nest')
