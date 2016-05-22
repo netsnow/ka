@@ -46,7 +46,11 @@ function selectRoom(index)
           <div class="templatemo-content-widget white-bg col-1 text-center">
             <tr class="logo" ><img style="width:100%" src="{{ $student->img }}"></tr>
             <tr>{{ $student->real_name}}</tr>
-            <tr><button type="submit" class="btn btn_green">补签</button></tr>
+            @if($student->logins == 0 )
+                <a href="/teacher/student/resign/{{ $student->student_id }}" style="height:5px;padding-top:0px;padding-bottom:30px" class="btn btn_red"> 补签</a>
+            @else
+                <a style="height:5px;padding-top:0px;padding-bottom:30px" class="btn btn_blue"> 已出勤</a>
+            @endif
           </div>
         </li>
         @empty

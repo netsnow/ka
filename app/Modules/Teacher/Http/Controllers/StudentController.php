@@ -19,6 +19,12 @@ class StudentController extends \BaseController
         $result = $logic->run();
         return view(tpl('teacher.student.index'))->with('result', $result);
     }
-
+    public function getResign($studentid)
+    {
+        $logic = new Student\GetResign();
+        $logic->set('studentid', $studentid);
+        $result = $logic->run();
+        return view(tpl('teacher.student.index'))->with('result', $result);
+    }
 
 }
