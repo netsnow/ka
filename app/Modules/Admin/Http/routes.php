@@ -77,6 +77,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('/report/detail/{phone}',  'ReportController@getDetail');
     Route::get('/report/export',             'ReportController@getExport');
 
+    //学生考勤统计表
+    Route::get('/stureport',                    'StuReportController@getIndex');
+    Route::get('/stureport/detail/{student_id}',  'StuReportController@getDetail');
+    Route::get('/stureport/export',             'StuReportController@getExport');
+
 
 
     //卡机管理
