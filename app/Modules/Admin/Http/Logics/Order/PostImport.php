@@ -27,6 +27,8 @@ class PostImport extends \BaseLogic
 				$attendanceFileName = $this->moveFile($attendanceFile);
 				$data = $this->getDataFromExcel($attendanceFileName);
 				//$this->validate('s', $data);
+				$today = "20".date('ymd',time());
+				DB::table('order')->where('attendance_date','>',$today )->delete();
 				$this->saveData('s', $data);
 			}
 
@@ -79,7 +81,7 @@ class PostImport extends \BaseLogic
 
     protected function moveFile($file)
     {
-		$targetDir = public_path() . '/data/uploads/';
+		$targetDir = public_path() . '/data/excel/';
 		$newName = time(). '_' . rand( 1 , 1000000 ) . ".xlsx";
 		$file->move($targetDir, $newName);
 
@@ -129,7 +131,7 @@ class PostImport extends \BaseLogic
 				$order = new Order();
 				$order->attendance_date = $date;
 				$order->buyer_phone = $phone;
-				$order->status = 99;
+				$order->status = 0;
 
 				$order->save();
 			}
