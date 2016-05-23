@@ -29,6 +29,7 @@
          @else
           <input type="text" class="form_control" name="room_num"  readonly  value="{{ $result['room']->room_num or '' }}">
           @endif
+          <span class="must">卡机号必须和一卡通系统的卡机号相同，并不能重复</span>
         </div>
 
     </div><!-- /.form_group -->

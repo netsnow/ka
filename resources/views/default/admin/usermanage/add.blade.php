@@ -50,6 +50,7 @@
             <label class="col-lg-3 control_label"><span class="must">*</span>一卡通卡号：</label>
             <div class="col-lg-6">
                 <input type="text" name="cardnum"  class="form_control">
+                <span class="must">一卡通卡号必须和一卡通系统的卡号相同，并不能重复</span>
             </div>
          </div>
 

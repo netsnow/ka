@@ -72,8 +72,16 @@ function selectRoom(index)
 			@forelse ($result['orders'] as $order)
 			<tr>
 				<td>{{ $order->attendance_date }}</td>
+        @if ($order->check_time == 0)
+        <td>无</td>
+        @else
 				<td>{{ $order->check_time }}</td>
-				<td>{{ $order->status }}</td>
+        @endif
+        @if ($order->status == 1)
+        <td>已出勤</td>
+        @else
+				<td>未出勤</td>
+        @endif
 			</tr>
 			@empty
 			<tr>
