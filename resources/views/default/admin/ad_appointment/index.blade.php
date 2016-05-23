@@ -60,6 +60,7 @@ $(document).ready(function () {
 					 //title: ['王同学', 'font-size:15px;'],
 					 skin: 'layui-layer-lan',
 					 //area: ['500px', '300px'],
+					 offset: ['200px', '550px'],
 					 closeBtn: 0,
            content: '<div style="border-style: groove;weith:15px"><img src="'+img+'" /></div>',
            time: '5000',
