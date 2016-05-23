@@ -15,15 +15,15 @@ class Checkinapi extends \BaseLogic
     protected function execute()
     {
       //这3个是入力参数
-        echo $this->cardno."/".$this->machineid."/".$this->roleid;
-      //根据入力参数取得用户的信息
+      //echo $this->cardno."/".$this->machineid."/".$this->roleid;
+
       //学生身份
         $student = Student::where('card_num',$this->cardno)->first();
         if($student){
           $img = $student->img;
           $audio = $student->audio;
           $machineid = $this->machineid;
-          echo $img."|".$audio."|".$machineid;
+          //echo $img."|".$audio."|".$machineid;
 
           $today =date('Ymd',time());
           $today_time =date('YmdHi',time());
@@ -53,19 +53,26 @@ class Checkinapi extends \BaseLogic
             $img = $user->img;
             $audio = $user->audio;
             $machineid = $this->machineid;
-            echo $img."|".$audio."|".$machineid;
+            //echo $img."|".$audio."|".$machineid;
 
             $today =date('Ymd',time());
             $today_time =date('YmdHi',time());
-
             //把接收的数据放入本系统db，教师考勤表（order）
-            Order::where('buyer_phone',$user->phone)
-                  ->where('attendance_date',$today)
-                  ->update(['check_time' => $today_time]);
+            try
+            {
+              $qb=Order::where('buyer_phone',$user->phone)
+                  ->where('attendance_date',$today);
+              $qb->update(['status' => 1]);
+              $qb->update(['check_time' => $today_time]);
+            }
+            catch (Exception $e)
+            {
+                 echo $e->getMessage();
+            }
           }
         //调用websocket，把用户信息传给打卡终端广告机
          $room = Room::where('room_num',$machineid)->first();
-         echo "----".$room->room_id;
+         //echo $room->room_id;
          $ch = curl_init();
          curl_setopt($ch, CURLOPT_URL, "http://0.0.0.0:2121?type=publish&to=".$room->room_id."&content=".$img."|".$audio);
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
