@@ -19,7 +19,7 @@ Route::get('/admin',  'IndexController@getIndex');
 Route::get('/admin/ad_appointment', 'AppointmentController@getIndex');
 Route::get('/admin/ad_appointment/appoint', 'AppointmentController@showIndex');
 //打卡机刷卡触发的api
-Route::get('/checkin/{userid}&{machineid}&{time}','ApiController@checkinapi');
+Route::get('/checkin/{cardno}&{roleid}&{machineid}','ApiController@checkinapi');
 
 //登陆（靳宗雨）
 Route::get('/admin/login',       'UserController@getIndex');//登陆界面

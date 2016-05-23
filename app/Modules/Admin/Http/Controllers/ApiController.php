@@ -11,12 +11,12 @@ class ApiController extends \BaseController
     	$logic = new Api\Testapi();
     	$result = $logic->run();
     }
-    public function Checkinapi($userid,$machineid,$checkintime)
+    public function Checkinapi($cardno,$roleid,$machineid)
     {
       $logic = new Api\Checkinapi();
-      $logic->set('userid', $userid);
+      $logic->set('cardno', $cardno);
       $logic->set('machineid', $machineid);
-      $logic->set('checkintime', $checkintime);
+      $logic->set('roleid', $roleid);
       $result = $logic->run();
     }
 
