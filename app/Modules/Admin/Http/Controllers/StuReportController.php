@@ -21,7 +21,7 @@ class StuReportController extends \BaseController
         {
             return redirect($result['redirectUrl']);
         }
-        return view(tpl('admin.stureport.index'))->with('result', $result);
+        return view(tpl('admin.stuReport.index'))->with('result', $result);
     }
     public function getDetail($student_id)
     {
@@ -32,7 +32,7 @@ class StuReportController extends \BaseController
         {
             return redirect($result['redirectUrl']);
         }
-        return view(tpl('admin.stureport.detail'))->with('result', $result);
+        return view(tpl('admin.stuReport.detail'))->with('result', $result);
     }
     public function getExport()
     {
