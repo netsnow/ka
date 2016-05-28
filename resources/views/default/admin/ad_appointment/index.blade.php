@@ -62,7 +62,7 @@ $(document).ready(function () {
 					 //area: ['500px', '300px'],
 					 offset: ['200px', '550px'],
 					 closeBtn: 0,
-           content: '<div style="border-style: groove;weith:15px"><img src="'+img+'" /></div>',
+           content: '<div style="border-style:solid;border-width:12px;border-color:#9AFF9A"><img width="160" height="220" src="'+img+'" /></div>',
            time: '5000',
 					 shift:5
           });
