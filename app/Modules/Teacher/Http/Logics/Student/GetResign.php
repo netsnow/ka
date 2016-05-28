@@ -20,6 +20,7 @@ class GetResign extends \BaseLogic
         $newCheckinData = new CheckinData;
         $newCheckinData->user_id = $this->studentid;
         $newCheckinData->machine_id = "";
+        $newCheckinData->checkin_date = $today;
         $newCheckinData->checkin_datetime = $today*10000;
 
         try
