@@ -13,7 +13,7 @@ class ApiController extends \BaseController
     }
     public function Checkinapi($cardno,$roleid,$machineid)
     {
-      $logic = new Api\Checkinapi();
+      $logic = new Api\CheckinApi();
       $logic->set('cardno', $cardno);
       $logic->set('machineid', $machineid);
       $logic->set('roleid', $roleid);
