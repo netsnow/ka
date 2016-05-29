@@ -10,7 +10,7 @@ use App\Eloquents\CheckinData;
 use Request;
 use Exception;
 
-class Checkinapi extends \BaseLogic
+class CheckinApi extends \BaseLogic
 {
     protected function execute()
     {
