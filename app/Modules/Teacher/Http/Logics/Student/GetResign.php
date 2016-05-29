@@ -32,7 +32,8 @@ class GetResign extends \BaseLogic
         {
          echo $e->getMessage();
         }
-        header("location: /teacher/student");
+        $url = '"/teacher/student"';
+        echo "<script>window.location =".$url.";</script>";
       }
 
 
