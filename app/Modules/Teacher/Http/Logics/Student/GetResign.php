@@ -26,7 +26,6 @@ class GetResign extends \BaseLogic
         try
         {
         $newCheckinData->save();
-         echo "ok";
         }
         catch (Exception $e)
         {
