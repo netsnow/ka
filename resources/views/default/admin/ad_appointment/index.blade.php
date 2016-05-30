@@ -39,7 +39,7 @@ function GetQueryString(name) {
 
 $(document).ready(function () {
     // 连接服务端
-    var socket = io('http://0.0.0.0:2120');
+    var socket = io('http://'+document.domain+':2120');
     // 连接后登录
     socket.on('connect', function(){
     	socket.emit('login', GetQueryString("room_id"));
