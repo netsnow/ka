@@ -1,0 +1,206 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, div, p, table, tr, td, ul, li, ol {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+
+body {
+	font-family: Arial, "Times New Roman", "微软雅黑";
+	background-color: #3895dd;
+	overflow-x: hidden;
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing: 0px !important;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+td {
+	vertical-align: top;
+}
+
+img {
+	vertical-align: top;
+	line-height: 0;
+	font-size: 0;
+	border: none;
+}
+
+ul,li {
+	list-style: none;
+}
+
+#wrap {
+	position: relative;
+	min-width: 900px;
+	max-width/*\**/: 900px 0\9;
+	margin: 0 auto;
+}
+
+#headerBlock {
+	position: relative;
+	background-color: #017078;
+}
+
+#logoBlock {
+	position: absolute;
+	left: 3%;
+	top: 20%;
+	width: 10%;
+	width/*\**/: 132px\9;
+}
+
+#titBlock {
+	text-align: center;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 40px;
+	font-size: 4vw;
+	padding: 2% 0;
+	padding/*\**/: 35px 0\9;
+	letter-spacing: 0.1em;
+}
+
+#topImgBlock {
+	position: relative;
+}
+
+#headerBorder {
+	width: 100%;
+	height: 8px;
+	background: url(/assets/admin/images/adimages/top_border.png) left top repeat-x;
+}
+
+#headerBorderBot {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 4px;
+	background: url(/assets/admin/images/adimages/top_border_bot.png) left top repeat-x;
+}
+
+#midBlock {
+	background-color: #3895dd;
+	padding: 5% 0 10%;
+}
+
+/*#midMain {
+	height: 387px;
+	min-width: 635px;
+	width: 100%;
+	background: url(../imgs/mid_mainbg.jpg) left top no-repeat;
+	margin: 0 auto;
+}*/
+
+#midMain {
+	position: relative;
+}
+
+#infoBlock {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 20%;
+}
+
+#midMain p.tit {
+	width: 100%;
+	color: #e00000;
+	font-size: 80px;
+	font-size: 7vw;
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+#midMain ul {
+	width: 50%;
+	margin: 0 auto;
+	padding-left: 15%;
+}
+
+#midMain ul li {
+	color: #e00000;
+	font-size: 40px;
+	font-size: 4vw;
+	text-align: left;
+}
+
+#photoBlock {
+	position: absolute;
+	width: 25%;
+	left: 2%;
+	top: 50%;
+	z-index: 999;
+}
+
+#photoBg {
+	position: absolute;
+	left: 0;
+	z-index: 10;
+}
+
+#photoImg {
+	position: absolute;
+	left: 1%;
+	top: 2%;
+	z-index: 9;
+}
+
+#footerBlock {
+	position: absolute;
+	width: 100%;
+	height: 43px;
+	background: url(/assets/admin/images/adimages/footerBg.png) left top repeat-x;
+	bottom: 0;
+	z-index: 10;
+}
+
+#footerBg {
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	background-color: #017078;
+	bottom: 0;
+	z-index: 9;
+}
+
+@media screen and (max-width: 900px) {
+#logoBlock {
+	width: 12%;
+}
+
+#titBlock {
+	font-size: 40px;
+	padding: 30px 0;
+}
+
+#midMain p.tit {
+	font-size: 80px;
+}
+
+
+#midMain ul li {
+	font-size: 40px;
+}
+}
+
+/* -- clearfix -- */
+.group:after {
+	content: ".";
+	display: block;
+	height: 0;
+	font-size:0;
+	clear: both;
+	visibility:hidden;
+}
+.group {display: inline-block;}
+* html .group {height: 1%;}
+.group{display:block;}
+/* -- /clearfix -- */

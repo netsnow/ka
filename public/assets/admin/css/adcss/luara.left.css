@@ -1,0 +1,12 @@
+body,ul,li,ol,img{margin: 0;padding: 0;}
+li{list-style: none;}
+
+.luara-left{position:relative; padding:0; overflow:hidden;}
+.luara-left ul{position:relative; padding:inherit; margin:0;}
+.luara-left ul li{float:left; padding:inherit; margin:inherit; list-style:none;}
+.luara-left ul li img{width:inherit; height:inherit;}
+
+.flash{}
+.flash ol{position:relative; width:160px; height:20px; margin:0 auto; top:-40px;}
+.flash ol li{float:left; width:20px; height:20px; margin:5px; background: #fff;}
+.flash ol li.seleted{background:#1AA4CA;}

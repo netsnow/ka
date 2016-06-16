@@ -1,36 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-	<title>广告滑块</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible"  content="IE=edge" />
-	<meta name="description" content="" />
-	<meta name="keyword" content="" />
-	<!-- <meta http-equiv="refresh" content="15;url='/admin/ad_appointment/appoint'"> -->
-	<meta name="renderer" content="webkit">
-	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" />
+<meta charset="utf-8">
+<title>天津市河东区第一幼儿园</title>
+{!! style('/assets/admin/css/adcss/cmn.css') !!}
+{!! script('/assets/admin/js/ad/jquery.min.js') !!}
+{!! script('/assets/admin/js/ad/cmn.js') !!}
 
-	{!! style('/assets/admin/css/slider.css') !!}
-	{!! script('/assets/admin/js/index/jquery.js') !!}
-	{!! script('/assets/admin/js/socket.io/socket.io.js') !!}
+{!! style('/assets/admin/css/adcss/luara.left.css') !!}
+{!! script('/assets/admin/js/ad/jquery.luara.0.0.1.min.js') !!}
+{!! script('/assets/admin/js/socket.io/socket.io.js') !!}
+
 </head>
-<body style="background-color:#d7d7d7;margin:0">
-	<div id="wowslider-container1">
-		<div class="ws_images">
-			<ul>
-				@foreach($result['ads'] as $ad)
-				<li><a href=""><img src="{{ $ad->ad_pic }}" alt="" title="" style="width:100%!important;height:100%!important;visibility:visible!important;margin-left:0!important;"/></a></li>
-				@endforeach
-			</ul>
-		</div>
-	</div>
+
+<body>
 
 
-	{!! script('/assets/admin/js/index/wowslider.js') !!}
-	{!! script('/assets/admin/js/index/script.js') !!}
-	{!! script('/assets/admin/js/layer/layer.js') !!}
+<div id="wrap">
+
+<div id="headerBlock" class="group">
+	<div id="logoBlock"><img src="/assets/admin/images/adimages/logo.jpg" alt="" width="100%"></div>
+    <p id="titBlock">天津市河东区第一幼儿园</p>
+</div>
+<div id="headerBorder"></div>
+
+<div id="topImgBlock">
+
+    <!--图片切换骨架begin-->
+    <div class="flash">
+        <ul>
+					  @foreach($result['ads'] as $ad)
+            <li><img src="{{ $ad->ad_pic }}" alt="" width="100%"/></li>
+						@endforeach
+        </ul>
+        <ol>
+						@foreach($result['ads'] as $ad)
+            <li></li>
+						@endforeach
+        </ol>
+    </div>
+    <!--图片切换骨架end-->
+    <script>
+        $(function(){
+            $(".flash").luara({interval:3000,selected:"seleted",deriction:"left"});
+
+        });
+    </script>
+<!--<div><img src="imgs/topimg_01.jpg" width="100%"></div>-->
+<div id="headerBorderBot"></div>
+</div>
+
+<div id="midBlock">
+<div id="midMain">
+<div id="photoBlock">
+<div id="photoBg"><img src="/assets/admin/images/adimages/photoBorder.png" width="100%"></div>
+<div id="photoImg"><img id="userphoto" src="/assets/admin/images/adimages/photo.jpg" width="98%"></div>
+</div>
+<div><img src="/assets/admin/images/adimages/mid_mainbg.jpg" width="100%"></div>
+
+<div id="infoBlock">
+<p id="username" class="tit">小岳岳</p>
+<ul>
+<li>班级：小小小2班</li>
+<li>时间：2016年5月20日</li>
+<li>卡号：888888888</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="footerBlock"></div>
+<div id="footerBg"></div>
+
+</div>
 
 <script>
+
 function GetQueryString(name) {
    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
    var r = window.location.search.substr(1).match(reg);
@@ -53,23 +98,14 @@ $(document).ready(function () {
 				 arr = msg.split("|");
 				 img = arr[0];
 				 audio = arr[1];
+				 name = arr[2];
 
-         layer.open({
-           type: 1,
-					 title: false,
-					 //title: ['王同学', 'font-size:15px;'],
-					 skin: 'layui-layer-lan',
-					 //area: ['500px', '300px'],
-					 offset: ['200px', '550px'],
-					 closeBtn: 0,
-           content: '<div style="border-style:solid;border-width:12px;border-color:#9AFF9A"><img width="160" height="220" src="'+img+'" /></div>',
-           time: '5000',
-					 shift:5
-          });
-					var au = document.createElement("audio");
-          au.preload="auto";
-          au.src = audio;
-          au.play();
+				 $("#username").append(name);
+				 $("#userphoto").attr("src",img);
+				 var au = document.createElement("audio");
+         au.preload="auto";
+         au.src = audio;
+         au.play();
     });
     // 后端推送来在线数据时
     //socket.on('update_online_count', function(online_stat){
@@ -77,5 +113,6 @@ $(document).ready(function () {
     //});
 });
 </script>
+
 </body>
 </html>

@@ -72,9 +72,9 @@ class CheckinApi extends \BaseLogic
           }
         //调用websocket，把用户信息传给打卡终端广告机
          $room = Room::where('room_num',$machineid)->first();
-         //echo $room->room_id;
+         echo "|roomid=".$room->room_id;
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, "http://0.0.0.0:2121?type=publish&to=".$room->room_id."&content=".$img."|".$audio);
+         curl_setopt($ch, CURLOPT_URL, "http://0.0.0.0:2121?type=publish&to=".$room->room_id."&content=".$img."|".$audio."|xxxasa");
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
          $output = curl_exec($ch);
          curl_close($ch);
