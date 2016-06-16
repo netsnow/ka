@@ -26,5 +26,11 @@ class StudentController extends \BaseController
         $result = $logic->run();
         return view(tpl('teacher.student.index'))->with('result', $result);
     }
-
+    public function getDelsign($studentid)
+    {
+        $logic = new Student\GetDelsign();
+        $logic->set('studentid', $studentid);
+        $result = $logic->run();
+        return view(tpl('teacher.student.index'))->with('result', $result);
+    }
 }
