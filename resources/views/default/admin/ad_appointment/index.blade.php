@@ -54,7 +54,7 @@
 <div id="midMain">
 <div id="photoBlock">
 <div id="photoBg"><img src="/assets/admin/images/adimages/photoBorder.png" width="100%"></div>
-<div id="photoImg"><img id="userphoto" src="/assets/admin/images/adimages/photo.jpg" width="98%"></div>
+<div id="photoImg"><img id="userphoto" src="/assets/admin/images/adimages/photo.jpg" width="98%" height="98%"></div>
 </div>
 <div><img src="/assets/admin/images/adimages/mid_mainbg.jpg" width="100%"></div>
 
