@@ -53,7 +53,7 @@
 <div id="midBlock">
 <div id="midMain">
 <div id="photoBlock">
-<div id="photoBg"><img src="/assets/admin/images/adimages/photoBorder.png" width="100%"></div>
+<div id="photoBg"><img id="photoBgimg" src="/assets/admin/images/adimages/photoBorder.png" width="100%"></div>
 <div id="photoImg"><img id="userphoto" src="/assets/admin/images/adimages/photo.jpg" width="98%" height="98%"></div>
 </div>
 <div><img src="/assets/admin/images/adimages/mid_mainbg.jpg" width="100%"></div>
@@ -83,6 +83,8 @@ function GetQueryString(name) {
 }
 
 $(document).ready(function () {
+	$("#userphoto").width($("#photoBgimg").width()-10);
+	$("#userphoto").height($("#photoBgimg").height()-10);
     // 连接服务端
     var socket = io('http://'+document.domain+':2120');
     // 连接后登录
@@ -108,6 +110,8 @@ $(document).ready(function () {
 				 $("#checktime").text("时间："+myDate.getDate()+"日"+myDate.getHours()+"时"+myDate.getMinutes()+"分");
 				 $("#cardnum").text("卡号："+cardnum);
 				 $("#userphoto").attr("src",img);
+				 $("#userphoto").width($("#photoBgimg").width()-10);
+				 $("#userphoto").height($("#photoBgimg").height()-10);
 				 var au = document.createElement("audio");
          au.preload="auto";
          au.src = audio;
