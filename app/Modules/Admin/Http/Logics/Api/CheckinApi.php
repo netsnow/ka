@@ -23,6 +23,8 @@ class CheckinApi extends \BaseLogic
           $img = $student->img;
           $audio = $student->audio;
           $machineid = $this->machineid;
+          $name = $student->real_name;
+          $classname = $student->company_name;
           //echo $img."|".$audio."|".$machineid;
 
           $today =date('Ymd',time());
@@ -53,6 +55,8 @@ class CheckinApi extends \BaseLogic
             $img = $user->img;
             $audio = $user->audio;
             $machineid = $this->machineid;
+            $name = $user->real_name;
+            $classname = $user->company_name;
             //echo $img."|".$audio."|".$machineid;
 
             $today =date('Ymd',time());
@@ -73,8 +77,11 @@ class CheckinApi extends \BaseLogic
         //调用websocket，把用户信息传给打卡终端广告机
          $room = Room::where('room_num',$machineid)->first();
          echo "|roomid=".$room->room_id;
+         $uriname = urlencode($name);
+         $uriclassname = urlencode($classname);
+         echo $name;
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, "http://0.0.0.0:2121?type=publish&to=".$room->room_id."&content=".$img."|".$audio."|xxxasa");
+         curl_setopt($ch, CURLOPT_URL, "http://0.0.0.0:2121?type=publish&to=".$room->room_id."&content=".$img."|".$audio."|".$uriname."|".$uriclassname."|".$this->cardno);
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
          $output = curl_exec($ch);
          curl_close($ch);

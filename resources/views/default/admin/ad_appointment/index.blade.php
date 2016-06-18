@@ -59,11 +59,11 @@
 <div><img src="/assets/admin/images/adimages/mid_mainbg.jpg" width="100%"></div>
 
 <div id="infoBlock">
-<p id="username" class="tit">小岳岳</p>
+<p id="username" class="tit">用户姓名</p>
 <ul>
-<li>班级：小小小2班</li>
-<li>时间：2016年5月20日</li>
-<li>卡号：888888888</li>
+<li id="classname">班级：</li>
+<li id="checktime">时间：</li>
+<li id="cardnum">卡号：</li>
 </ul>
 </div>
 </div>
@@ -99,8 +99,14 @@ $(document).ready(function () {
 				 img = arr[0];
 				 audio = arr[1];
 				 name = arr[2];
+				 classname = arr[3];
+				 cardnum = arr[4];
 
-				 $("#username").append(name);
+				 $("#username").text(name);
+				 $("#classname").text("班级："+classname);
+				 var myDate = new Date();
+				 $("#checktime").text("时间："+myDate.getDate()+"日"+myDate.getHours()+"时"+myDate.getMinutes()+"分");
+				 $("#cardnum").text("卡号："+cardnum);
 				 $("#userphoto").attr("src",img);
 				 var au = document.createElement("audio");
          au.preload="auto";
