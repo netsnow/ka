@@ -46,6 +46,12 @@ function selectRoom(index)
     </div>
 		<form method="get">
 			    <div class=" form_inline text_right mb10">
+            <div class="form_group">
+					    <label class="control_label">班级：</label>
+				    </div>
+            <div class="form_group">
+  					    <input type="text" name="attendance_class" class="form_control wid" value="{{ $result['attendance_class'] or '' }}">
+  				  </div>
 				    <div class="form_group">
 					    <label class="control_label">考勤月：</label>
 				    </div>

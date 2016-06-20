@@ -39,6 +39,7 @@ class GetIndex extends \BaseLogic
             ->groupby('checkin_data.user_id',DB::raw('floor(checkin_datetime/1000000)'));
         $date=Request::input('attendance_month');
         $name=Request::input('student_name');
+        $class=Request::input('attendance_class');
 
         if(Request::has('attendance_month')) {
             if(!strtotime(Request::input('attendance_month'))){
@@ -52,7 +53,10 @@ class GetIndex extends \BaseLogic
             $qb->whereRaw('real_name like "%'.$name.'%"');
             $this->result['student_name'] = Request::input('student_name');
         }
-
+        if(Request::has('attendance_class')) {
+            $qb->whereRaw('company_name like "%'.$class.'%"');
+            $this->result['attendance_class'] = Request::input('attendance_class');
+        }
 
         $result = $qb->orderBy('attendance_month', 'desc')
             ->paginate(LIMIT_PER_PAGE);
