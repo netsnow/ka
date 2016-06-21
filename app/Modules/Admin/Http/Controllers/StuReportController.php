@@ -34,9 +34,12 @@ class StuReportController extends \BaseController
         }
         return view(tpl('admin.stuReport.detail'))->with('result', $result);
     }
-    public function getExport()
+    public function getExport($class,$month,$name)
     {
         $logic = new StuReport\GetExport();
+        $logic->set('class', $class);
+        $logic->set('month', $month);
+        $logic->set('name', $name);
         $result = $logic->run();
     }
 

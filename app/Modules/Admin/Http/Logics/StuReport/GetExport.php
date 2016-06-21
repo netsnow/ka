@@ -29,7 +29,21 @@ class GetExport extends \BaseLogic
           ->select('students.*',DB::raw('floor(checkin_datetime/1000000) as attendance_month'),DB::raw('COUNT(1) as ac_day'))
           ->leftJoin('students', 'students.student_id', '=', 'checkin_data.user_id')
           ->groupby('checkin_data.user_id',DB::raw('floor(checkin_datetime/1000000)'))
-            ->orderBy('attendance_month', 'desc');
+          ->orderBy('attendance_month', 'desc');
+
+          if($this->month != 'empty') {
+              $qb->whereRaw('floor(checkin_datetime/1000000) like "%'.$this->month.'%"');
+          }
+
+          if($this->name != 'empty') {
+              $qb->whereRaw('real_name like "%'.$this->name.'%"');
+          }
+          if($this->class != 'empty') {
+              $qb->whereRaw('company_name like "%'.$this->class.'%"');
+          }
+
+
+
         $objPHPExcel = new PHPExcel();
         /*以下是一些设置 ，什么作者  标题啊之类的*/
          $objPHPExcel->getProperties()->setCreator("baixue")

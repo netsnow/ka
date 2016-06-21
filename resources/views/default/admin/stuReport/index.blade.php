@@ -42,7 +42,7 @@ function selectRoom(index)
 <div class="body_nest radius">
 	<div class="row table_control">
     <div class="pull_left mb10">
-        <a href="/admin/stureport/export" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;导出考勤数据&nbsp;</a>
+        <a href="/admin/stureport/export/{{$result['attendance_class'] or 'empty'}}&{{$result['attendance_month'] or 'empty'}}&{{$result['student_name'] or 'empty'}}" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;导出考勤数据&nbsp;</a>
     </div>
 		<form method="get">
 			    <div class=" form_inline text_right mb10">
