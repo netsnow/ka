@@ -21,7 +21,7 @@
 <div class="wrap">
     <nav role="navigation" class="navbar row logo_blank">
         <div id="logo">
-            <h2>LOGO</h2>
+            <h2>河东一幼</h2>
         </div>
     </nav>
     @yield('main-section')
