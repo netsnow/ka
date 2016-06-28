@@ -68,7 +68,7 @@ function selectRoom(index)
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 @endsection
 <script>
-  var t=50000;
+  var t=30000;
   setTimeout(function(){
     location.href="/teacher/student";
   },t);

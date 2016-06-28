@@ -125,4 +125,10 @@ $(document).ready(function () {
 </script>
 
 </body>
+<script>
+  var t=30000;
+  setTimeout(function(){
+    location.href="";
+  },t);
+</script>
 </html>
