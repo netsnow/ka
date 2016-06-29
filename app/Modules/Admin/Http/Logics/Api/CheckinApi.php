@@ -61,6 +61,10 @@ class CheckinApi extends \BaseLogic
 
             $today =date('Ymd',time());
             $today_time =date('YmdHi',time());
+
+            $today_day = substr($today_time,6,2);
+            $today_hour = substr($today_time,8,2);
+            $today_min = substr($today_time,10,2);
             //把接收的数据放入本系统db，教师考勤表（order）
             try
             {
@@ -81,7 +85,7 @@ class CheckinApi extends \BaseLogic
          $uriclassname = urlencode($classname);
          echo $name;
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, "http://0.0.0.0:2121?type=publish&to=".$room->room_id."&content=".$img."|".$audio."|".$uriname."|".$uriclassname."|".$this->cardno);
+         curl_setopt($ch, CURLOPT_URL, "http://0.0.0.0:2121?type=publish&to=".$room->room_id."&content=".$img."|".$audio."|".$uriname."|".$uriclassname."|".$this->cardno."|".$today_day."|".$today_hour."|".$today_min);
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
          $output = curl_exec($ch);
          curl_close($ch);

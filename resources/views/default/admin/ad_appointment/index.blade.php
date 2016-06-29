@@ -103,11 +103,14 @@ $(document).ready(function () {
 				 name = arr[2];
 				 classname = arr[3];
 				 cardnum = arr[4];
+				 date_day = arr[5];
+				 date_hour = arr[6];
+				 date_min = arr[7];
 
 				 $("#username").text(name);
 				 $("#classname").text("班级："+classname);
 				 var myDate = new Date();
-				 $("#checktime").text("时间："+myDate.getDate()+"日"+myDate.getHours()+"时"+myDate.getMinutes()+"分");
+				 $("#checktime").text("时间："+date_day+"日"+date_hour+"时"+date_min+"分");
 				 $("#cardnum").text("卡号："+cardnum);
 				 $("#userphoto").attr("src",img);
 				 $("#userphoto").width($("#photoBgimg").width()-10);
@@ -126,7 +129,7 @@ $(document).ready(function () {
 
 </body>
 <script>
-  var t=30000;
+  var t=600000;
   setTimeout(function(){
     location.href="";
   },t);
