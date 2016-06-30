@@ -30,6 +30,10 @@ class CheckinApi extends \BaseLogic
           $today =date('Ymd',time());
           $today_time =date('YmdHi',time());
 
+          $today_day = substr($today_time,6,2);
+          $today_hour = substr($today_time,8,2);
+          $today_min = substr($today_time,10,2);
+
           //把接收的数据放入本系统db，打卡记录表（checkindata）
           $newCheckinData = new CheckinData;
 
