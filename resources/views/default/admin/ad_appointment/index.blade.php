@@ -59,11 +59,11 @@
 <div><img src="/assets/admin/images/adimages/mid_mainbg.jpg" width="100%"></div>
 
 <div id="infoBlock">
-<p id="username" class="tit">姓名</p>
+<p id="username" class="tit"></p>
 <ul>
-<li id="classname">班级：</li>
-<li id="checktime">时间：</li>
-<li id="cardnum">卡号：</li>
+<li id="classname"></li>
+<li id="checktime"></li>
+<li id="cardnum"></li>
 </ul>
 </div>
 </div>
