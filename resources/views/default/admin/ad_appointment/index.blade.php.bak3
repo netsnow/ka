@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>河东一幼</title>
+		{!! style('/assets/admin/css/adcss/bootstrap.css') !!}
+		{!! style('/assets/admin/css/adcss/style.css') !!}
+
+		{!! script('/assets/admin/js/ad/jquery.js') !!}
+		{!! script('/assets/admin/js/ad/bootstrap.js') !!}
+		{!! script('/assets/admin/js/ad/js.js') !!}
+
+	</head>
+	<body>
+		<div class="jumbotron" data-toggle = "modal" data-target="#myModal">
+			<div id="myCarousel" class="carousel slide">
+
+			   <ol class="carousel-indicators">
+					@foreach($result['ads'] as $ad)
+			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					@endforeach
+			   </ol>
+
+			   <div class="carousel-inner">
+					 @foreach($result['ads'] as $ad)
+			      <div class="item">
+			         <img width="100%" src="{{ $ad->ad_pic }}">
+			      </div>
+					 @endforeach
+
+			   </div>
+
+		</div>
+
+
+	</div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+            <div class="modal-body">
+            	<div class="main">
+            		<div style="display: block;">
+					<div class="photo "><img class="img-responsive" src="/assets/admin/images/adimages/photo.JPG"></div>
+					<div class="word1 ">姓&nbsp;&nbsp;名 :</div>
+					<div class="word1 ">班&nbsp;&nbsp;级 :</div>
+					<div class="word1 ">卡&nbsp;&nbsp;号:</div>
+					</div>
+					<div class="word2">打卡时间</div>
+				</div>
+			</div>
+
+				</div><!-- /.modal -->
+				</div>
+
+
+
+	</body>
+</html>

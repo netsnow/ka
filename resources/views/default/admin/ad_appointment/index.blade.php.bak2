@@ -6,13 +6,10 @@
 {!! style('/assets/admin/css/adcss/cmn.css') !!}
 {!! script('/assets/admin/js/ad/jquery.min.js') !!}
 {!! script('/assets/admin/js/ad/cmn.js') !!}
-{!! style('/assets/admin/css/adcss/bootstrap.css') !!}
 
 {!! style('/assets/admin/css/adcss/luara.left.css') !!}
 {!! script('/assets/admin/js/ad/jquery.luara.0.0.1.min.js') !!}
 {!! script('/assets/admin/js/socket.io/socket.io.js') !!}
-{!! script('/assets/admin/js/ad/bootstrap.js') !!}
-{!! script('/assets/admin/js/ad/js.js') !!}
 
 </head>
 
@@ -53,21 +50,23 @@
 <div id="headerBorderBot"></div>
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-	<div class="modal-body">
-		<div class="main">
-			<div style="display: block;">
-			<div id="photob" class="photo"><img id="userphoto" src="/assets/admin/images/adimages/photo.JPG"></div>
-			<div id="username" class="word1 ">姓&nbsp;&nbsp;名 :</div>
-			<div id="classname"class="word1 ">班&nbsp;&nbsp;级 :</div>
-			<div id="cardnum" class="word1 ">卡&nbsp;&nbsp;号:</div>
-			</div>
-			<div id="checktime" class="word2">打卡时间</div>
-		</div>
-	</div>
+<div id="midBlock">
+<div id="midMain">
+<div id="photoBlock">
+<div id="photoBg"><img id="photoBgimg" src="/assets/admin/images/adimages/photoBorder.png" width="100%"></div>
+<div id="photoImg"><img id="userphoto" src="/assets/admin/images/adimages/photo.jpg" width="98%" height="98%"></div>
+</div>
+<div><img src="/assets/admin/images/adimages/mid_mainbg.jpg" width="100%"></div>
 
-</div><!-- /.modal -->
+<div id="infoBlock">
+<p id="username" class="tit"></p>
+<ul>
+<li id="classname"></li>
+<li id="checktime"></li>
+<li id="cardnum"></li>
+</ul>
+</div>
+</div>
 </div>
 
 <div id="footerBlock"></div>
@@ -84,8 +83,8 @@ function GetQueryString(name) {
 }
 
 $(document).ready(function () {
-	//$("#userphoto").width($("#photoBgimg").width()-10);
-	//$("#userphoto").height($("#photoBgimg").height()-10);
+	$("#userphoto").width($("#photoBgimg").width()-10);
+	$("#userphoto").height($("#photoBgimg").height()-10);
     // 连接服务端
     var socket = io('http://'+document.domain+':2120');
     // 连接后登录
@@ -108,18 +107,14 @@ $(document).ready(function () {
 				 date_hour = arr[6];
 				 date_min = arr[7];
 
-				 $('#myModal').modal('show');
-				 $('#myModal').on('shown.bs.modal', function () {
-						 setTimeout(" $('#myModal').modal('hide')",3000);});
-
-				 $("#username").text("姓  名 :"+name);
-				 $("#classname").text("班  级："+classname);
+				 $("#username").text(name);
+				 $("#classname").text("班级："+classname);
 				 var myDate = new Date();
-				 $("#checktime").text("打卡时间："+date_day+"日"+date_hour+"时"+date_min+"分");
-				 $("#cardnum").text("卡  号："+cardnum);
+				 $("#checktime").text("时间："+date_day+"日"+date_hour+"时"+date_min+"分");
+				 $("#cardnum").text("卡号："+cardnum);
 				 $("#userphoto").attr("src",img);
-				 $("#userphoto").width($("#photob").width());
-				 $("#userphoto").height($("#photob").height());
+				 $("#userphoto").width($("#photoBgimg").width()-10);
+				 $("#userphoto").height($("#photoBgimg").height()-10);
 				 var au = document.createElement("audio");
          au.preload="auto";
          au.src = audio;
@@ -133,5 +128,10 @@ $(document).ready(function () {
 </script>
 
 </body>
-
+<script>
+  var t=600000;
+  setTimeout(function(){
+    location.href="";
+  },t);
+</script>
 </html>
