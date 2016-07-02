@@ -35,7 +35,7 @@ class GetIndex extends \BaseLogic
     {
         $qb= DB::table('checkin_data')
             ->select('students.*',DB::raw('floor(checkin_datetime/1000000) as attendance_month'),DB::raw('COUNT(1) as ac_day'))
-            ->leftJoin('students', 'students.student_id', '=', 'checkin_data.user_id')
+            ->Join('students', 'students.student_id', '=', 'checkin_data.user_id')
             ->groupby('checkin_data.user_id',DB::raw('floor(checkin_datetime/1000000)'));
         $date=Request::input('attendance_month');
         $name=Request::input('student_name');
