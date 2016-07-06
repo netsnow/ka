@@ -19,9 +19,9 @@
 <body style="width:768px;height:1366px">
 
 
-<div id="wrap">
+<div id="wrap" style="width:768px;">
 
-<div id="headerBlock" class="group">
+<div id="headerBlock" class="group" style="width:768px;">
 	<div id="logoBlock"><img src="/assets/admin/images/adimages/logo.jpg" alt="" width="100%"></div>
     <p id="titBlock">天津市河东区第一幼儿园</p>
 </div>
