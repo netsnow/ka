@@ -25,8 +25,7 @@
 	<div id="logoBlock"><img src="/assets/admin/images/adimages/logo.jpg" alt="" width="100%"></div>
     <p id="titBlock">天津市河东区第一幼儿园</p>
 </div>
-<div id="headerBorder"></div>
-<div>
+<div style="height:506px;">
 		<video width="100%" height="100%" autoplay="autoplay" loop="loop">
 			<source src="/data/video/video.mp4" type="video/mp4" >
 			</source>
