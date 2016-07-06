@@ -34,7 +34,7 @@
 <div id="topImgBlock">
 
     <!--图片切换骨架begin-->
-    <div class="flash" style="width:768px;height:730px;">
+    <div class="flash" style="width:768px;height:760px;">
         <ul >
 					  @foreach($result['ads'] as $ad)
             <li><img src="{{ $ad->ad_pic }}" alt="" width="100%"/></li>
