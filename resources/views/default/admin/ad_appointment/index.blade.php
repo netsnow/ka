@@ -26,7 +26,7 @@
     <p id="titBlock">天津市河东区第一幼儿园</p>
 </div>
 <div style="width:768px;height:432px;">
-		<video autoplay="autoplay" loop="loop">
+		<video style="width:100%;height:100%;" autoplay="autoplay" loop="loop">
 			<source src="/data/video/video.mp4" type="video/mp4" >
 			</source>
 		</video>
