@@ -64,7 +64,7 @@
 			<div style="display: block;">
 			<div id="photob" class="photo"><img id="userphoto" src="/assets/admin/images/adimages/photo.JPG"></div>
 			<div id="username" class="word1 ">姓&nbsp;&nbsp;名 :</div>
-			<div id="classname"class="word1 ">班&nbsp;&nbsp;级 :</div>
+			<div id="classname" class="word1 ">班&nbsp;&nbsp;级 :</div>
 			<div id="cardnum" class="word1 ">卡&nbsp;&nbsp;号:</div>
 			</div>
 			<div id="checktime" class="word2">打卡时间</div>
@@ -113,9 +113,6 @@ $(document).ready(function () {
 				 date_min = arr[7];
 
 				 $('#myModal').modal('show');
-				 $('#myModal').on('shown.bs.modal', function () {
-						 setTimeout(" $('#myModal').modal('hide')",3000);});
-
 				 $("#username").text("姓  名 :"+name);
 				 $("#classname").text("班  级："+classname);
 				 var myDate = new Date();
@@ -135,7 +132,12 @@ $(document).ready(function () {
     //});
 });
 </script>
-
+<script>
+  var t=300000;
+  setTimeout(function(){
+    location.href="/admin/ad_appointment?room_id="+GetQueryString("room_id");
+  },t);
+</script>
 </body>
 
 </html>

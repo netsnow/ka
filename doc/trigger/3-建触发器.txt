@@ -1,0 +1,14 @@
+CREATE OR REPLACE TRIGGER "CARD"."TI_DOOREVENT"
+  BEFORE INSERT ON "CARD"."DOOREVENT"
+  FOR EACH ROW
+  DECLARE
+  readerno nvarchar2(20);
+begin
+  if ((:new.eventname = '有效卡') or (:new.eventname = '无效卡')) then
+      select doorno INTO readerno from doors dr join Controls c on dr.ctrid = c.ctrid and c.controladdress = :new.EventDriver and dr.doorid = :new.eventreader;
+        callwebservice(:new.eventcardno,readerno);
+  end if;
+  EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+     readerno := NULL;
+end;

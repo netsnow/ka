@@ -1,0 +1,25 @@
+--用CARD用户登录，创建以下存储过程
+create or replace procedure callwebservice
+(cardno in nvarchar2,
+ controlid in nvarchar2)
+as
+              req utl_http.req;
+              resp utl_http.resp;
+              url nvarchar2(200);
+              svalue nvarchar2(4000);
+              constvalue nvarchar2(1);
+              begin
+                constvalue := 1;
+                 url  := 'http://192.168.0.248:9000/checkin/' || cardno || '&' || constvalue || '&' || controlid;
+                 req  := utl_http.begin_request(url);
+                 utl_http.set_header(req, 'Content-Type', 'text/xml; charset=utf-8');
+                 resp := utl_http.get_response(req);
+                   --LOOP
+                   utl_http.read_line(resp, svalue, TRUE);
+                   dbms_output.put_line(svalue);
+                 --END LOOP;
+                 utl_http.end_response(resp);
+                 EXCEPTION
+                 WHEN utl_http.end_of_body THEN
+                   utl_http.end_response(resp);
+                 END;

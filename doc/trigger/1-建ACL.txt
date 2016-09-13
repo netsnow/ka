@@ -1,0 +1,41 @@
+--用system 登陆Connect as SYSDBA，执行以下三个命令
+ begin
+    dbms_network_acl_admin.create_acl (
+    acl => 'UTL_INADDR.xml',
+    description => 'utl_inaddr',
+    principal => 'CARD', 
+    is_grant => TRUE,
+    privilege => 'resolve'
+    );
+    commit;
+  end;
+
+begin
+    dbms_network_acl_admin.add_privilege (
+    acl => 'UTL_INADDR.xml',
+    principal => 'CARD',
+    is_grant => TRUE,
+    privilege => 'connect'
+    );
+    commit;
+    end;
+
+begin
+    dbms_network_acl_admin.assign_acl(
+    acl => 'UTL_INADDR.xml',
+    host => '192.168.0.248',
+    lower_port=>80);
+    commit;
+    end;
+
+--以下语句不用执行。留作以后参考
+--查询
+--SELECT host, lower_port, upper_port, acl
+--FROM   dba_network_acls;
+
+-- 删除acl配置文件
+--begin
+--  dbms_network_acl_admin.drop_acl(
+--    'UTL_INADDR.xml'
+--  );
+--end;
