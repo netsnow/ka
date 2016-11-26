@@ -24,10 +24,16 @@
         <form method="get">
             <div class="pull_left form_inline mb10">
                 <div class="form_group">
-                    <label class="control_label">卡号：</label>
+                    <label class="control_label">姓名：</label>
                 </div>
                 <div class="form_group mr20">
                     <input type="text" class="form_control" name="name" value="{{ Request::input('name') }}">
+                </div>
+                <div class="form_group">
+                    <label class="control_label">班级：</label>
+                </div>
+                <div class="form_group mr20">
+                    <input type="text" class="form_control" name="class" value="{{ Request::input('class') }}">
                 </div>
                 <div class="form_group">
                     <button class="btn btn_green"><i class="icon-search3 white"></i>&nbsp;查找&nbsp;</button>
