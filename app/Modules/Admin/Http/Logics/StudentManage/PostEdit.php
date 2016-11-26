@@ -116,7 +116,7 @@ class PostEdit extends \BaseLogic
         		$this->student->phone = Request::input('phone');
         		$this->student->real_name = Request::input('real_name');
         		$this->student->card_num = Request::input('cardnum');
-        		$this->student->store_name = Request::input('store_name');
+        		$this->student->store_name = Request::input('parentphone');
         		$this->student->company_name = Request::input('company');
         	}
         	else
@@ -127,7 +127,7 @@ class PostEdit extends \BaseLogic
         		$this->student->real_name = Request::input('real_name');
         		$this->student->password = bcrypt($pw);
         		$this->student->card_num = Request::input('cardnum');
-        		$this->student->store_name = Request::input('store_name');
+        		$this->student->store_name = Request::input('parentphone');
         		$this->student->company_name = Request::input('company');
         	}
         }

@@ -46,13 +46,20 @@
                 <input type="text"  class="form_control" name="cardroomnum" value="{{$result['user']->card_room_num or ''}}">
             </div>
         </div> -->
-         <div class="form_group row">
+        <div class="form_group row">
             <label class="col-lg-3 control_label"><span class="must">*</span>一卡通卡号：</label>
             <div class="col-lg-6">
                 <input type="text" name="cardnum"  class="form_control">
                 <span class="must">一卡通卡号必须和一卡通系统的卡号相同，并不能重复</span>
             </div>
-         </div>
+        </div>
+        <div class="form_group row">
+            <label class="col-lg-3 control_label"><span class="must">*</span>家长电话：</label>
+            <div class="col-lg-6">
+                <input type="text" name="parentphone"  class="form_control">
+                <span class="must"></span>
+            </div>
+        </div>
         <div class="form_group row">
             <label class="col-lg-3 control_label text_right">班级：</label>
             <div class="control_select btn_group search_list col-lg-6">

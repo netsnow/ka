@@ -55,6 +55,12 @@
                 <input type="text"  class="form_control" name="cardnum" value="{{$result['student']->card_num or ''}}">
             </div>
         </div>
+        <div class="form_group row">
+            <label class="col-lg-3 control_label"><span class="must">*</span>家长电话：</label>
+            <div class="col-lg-6">
+                <input type="text"  class="form_control" name="parentphone" value="{{$result['student']->store_name or ''}}">
+            </div>
+        </div>
          <div class="form_group row">
             <label class="col-lg-3 control_label text_right">班级：</label>
             <div class="control_select btn_group search_list col-lg-6">

@@ -31,6 +31,7 @@ class PostAdd extends \BaseLogic
             'phone'  => 'required|digits:11|unique:students',
             //'password'  => 'required|min:6',
         	'cardnum'  => 'required',
+            'parentphone'  => 'required|digits:11',
         	'real_name'  => 'required',
         ]);
         if ($validator->fails())
@@ -78,7 +79,7 @@ class PostAdd extends \BaseLogic
         $pw=Request::input('password');
         $newStudent->password = bcrypt($pw);
         $newStudent->card_num = Request::input('cardnum');
-        $newStudent->store_name = Request::input('store_name');
+        $newStudent->store_name = Request::input('parentphone');
         $newStudent->company_name = Request::input('company');
         $newStudent->audio = '/data/audio/'.$filename;
         if(Request::hasFile('img')){
