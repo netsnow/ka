@@ -15,8 +15,8 @@ class GetResign extends \BaseLogic
 {
     protected function execute()
     {
-      $today = "20".date('ymd',time());
-
+        //$today = "20".date('ymd',time());
+        $today = $this->date;
         $newCheckinData = new CheckinData;
         $newCheckinData->user_id = $this->studentid;
         $newCheckinData->machine_id = "";
@@ -32,6 +32,7 @@ class GetResign extends \BaseLogic
          echo $e->getMessage();
         }
         $url = '"/teacher/student"';
+        $url = '"/teacher/student?attendance_date='.$today.'"';
         echo "<script>window.location =".$url.";</script>";
       }
 

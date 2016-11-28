@@ -28,7 +28,15 @@ class GetIndex extends \BaseLogic
 
     protected function getStudentList()
     {
-      $today = "20".date('ymd',time());
+      if (Request::has('attendance_date'))
+      {
+        $today = Request::input('attendance_date');
+      }
+      else
+      {
+        $today = "20".date('ymd',time());
+      }
+      
 
       $company = Auth::user()->company_name;
       $student= Student::where('company_name',$company)->get();
@@ -39,8 +47,10 @@ class GetIndex extends \BaseLogic
             $student[$key]['logins'] = 1;
           }
         }
+        $student[$key]['last_ip'] = $today;
       }
       $result = $student;
+      $this->result['attendance_date'] = $today;
       $this->result['students'] = $result;
     }
 

@@ -25,8 +25,8 @@ Route::group(['prefix' => 'teacher','middleware' => 'auth'], function() {
 
     //学生考勤
     Route::get('/student',                  'StudentController@getIndex');
-    Route::get('/student/resign/{studentid}',  'StudentController@getResign');
-    Route::get('/student/delsign/{studentid}',  'StudentController@getDelsign');
+    Route::get('/student/resign/{studentid}&{date}',  'StudentController@getResign');
+    Route::get('/student/delsign/{studentid}&{date}',  'StudentController@getDelsign');
 
     //老师考勤
     Route::get('/order',                    'OrderController@getIndex');

@@ -14,9 +14,10 @@ class GetDelsign extends \BaseLogic
 {
     protected function execute()
     {
-      $today = date('Ymd',time());
+      //$today = date('Ymd',time());
+      $today = $this->date;
       $delrow = DB::table('checkin_data')->whereRaw('user_id ='.$this->studentid.' and checkin_date ='.$today)->delete();
-      $url = '"/teacher/student"';
+      $url = '"/teacher/student?attendance_date='.$today.'"';
       echo "<script>window.location =".$url.";</script>";
     }
 
