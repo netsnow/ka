@@ -31,7 +31,6 @@ class GetResign extends \BaseLogic
         {
          echo $e->getMessage();
         }
-        $url = '"/teacher/student"';
         $url = '"/teacher/student?attendance_date='.$today.'"';
         echo "<script>window.location =".$url.";</script>";
       }

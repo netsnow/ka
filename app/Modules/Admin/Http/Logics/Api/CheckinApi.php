@@ -42,6 +42,18 @@ class CheckinApi extends \BaseLogic
           $newCheckinData->machine_id = $this->machineid;
           $newCheckinData->checkin_datetime = $today_time;
 
+          //调用websocket，把用户信息传给打卡终端广告机
+         $room = Room::where('room_num',$machineid)->first();
+         //echo "|roomid=".$room->room_id;
+         $uriname = urlencode($name);
+         $uriclassname = urlencode($classname);
+         //echo $name;
+         $ch = curl_init();
+         curl_setopt($ch, CURLOPT_URL, "http://0.0.0.0:2121?type=publish&to=".$room->room_id."&content=".$img."|".$audio."|".$uriname."|".$uriclassname."|".$this->cardno."|".$today_day."|".$today_hour."|".$today_min);
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
+         $output = curl_exec($ch);
+         curl_close($ch);
+
           try
           {
            $newCheckinData->save();
@@ -51,6 +63,17 @@ class CheckinApi extends \BaseLogic
           {
            echo $e->getMessage();
           }
+          //调用短信接口，发送短信
+          $phone = $student->store_name;
+          $content = "家长你好，".$name."已刷卡入园。";
+          $url = "http://115.28.112.245:8082/SendMT/SendMessage?UserName=hedongyiyou&UserPass=123456&Mobile=".$phone."&Content=".$content;
+          //echo $url;
+          $message = curl_init();
+          curl_setopt($message, CURLOPT_URL, $url);
+          curl_setopt($message, CURLOPT_RETURNTRANSFER, 1 );
+          $output2 = curl_exec($message);
+          curl_close($message);
+
         }
 
         //教师身份
@@ -69,6 +92,19 @@ class CheckinApi extends \BaseLogic
             $today_day = substr($today_time,6,2);
             $today_hour = substr($today_time,8,2);
             $today_min = substr($today_time,10,2);
+
+        //调用websocket，把用户信息传给打卡终端广告机
+         $room = Room::where('room_num',$machineid)->first();
+         echo "|roomid=".$room->room_id;
+         $uriname = urlencode($name);
+         $uriclassname = urlencode($classname);
+         echo $name;
+         $ch = curl_init();
+         curl_setopt($ch, CURLOPT_URL, "http://0.0.0.0:2121?type=publish&to=".$room->room_id."&content=".$img."|".$audio."|".$uriname."|".$uriclassname."|".$this->cardno."|".$today_day."|".$today_hour."|".$today_min);
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
+         $output = curl_exec($ch);
+         curl_close($ch);
+
             //把接收的数据放入本系统db，教师考勤表（order）
             try
             {
@@ -82,16 +118,6 @@ class CheckinApi extends \BaseLogic
                  echo $e->getMessage();
             }
           }
-        //调用websocket，把用户信息传给打卡终端广告机
-         $room = Room::where('room_num',$machineid)->first();
-         echo "|roomid=".$room->room_id;
-         $uriname = urlencode($name);
-         $uriclassname = urlencode($classname);
-         echo $name;
-         $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, "http://0.0.0.0:2121?type=publish&to=".$room->room_id."&content=".$img."|".$audio."|".$uriname."|".$uriclassname."|".$this->cardno."|".$today_day."|".$today_hour."|".$today_min);
-         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
-         $output = curl_exec($ch);
-         curl_close($ch);
+
     }
 }
