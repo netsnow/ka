@@ -7,6 +7,7 @@ use Exception;
 use Request;
 use Validator;
 use Crypt;
+use DB;
 
 class PostEdit extends \BaseLogic
 {
@@ -50,9 +51,15 @@ class PostEdit extends \BaseLogic
 
     protected function saveCompany()
     {
+        //students表中批量更新班级
+        $company_old = $this->company->company_name;
+        $company_new = Request::input('company_name');
+        DB::table('students')->where('company_name', $company_old)->update(['company_name' => $company_new]);
+        //班级表更新班级
         $this->company->company_name = Request::input('company_name');
         $this->company->company_information = Request::input('company_information');
         $this->company->save();
         $this->result['message'] = '班级编辑成功';
     }
+
 }
