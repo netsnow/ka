@@ -99,7 +99,7 @@ UserManageEditor.prototype.initForm = function()
             }
 
             $.notifyBar({html: response.message, cls: 'success'});
-            redirect('/admin/studentmanage');
+            //redirect('/admin/studentmanage');
         },
         complete: function() {
             self.waiting = false;

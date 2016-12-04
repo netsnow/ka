@@ -1,23 +1,7 @@
-@extends(tpl('admin._layout.base'))
-
-@section('title', '账号管理')
-
-@section('title-block')
-<i class="icon_large icon_user2"></i>
-<span>账号管理</span>
-@endsection
-
-@section('breadcrumb')
-<li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="/admin/usermanage">账号管理</a></li>
-@endsection
+@extends('default.teacher._layout.base') @section('title', '学生管理')
 
 @section('body-nest')
 <div class="title">
-    <a href="/admin/usermanage">&nbsp;教师账号&nbsp;</a>
-    <a href="/admin/studentmanage" class="selected">&nbsp;学生账号&nbsp;</a>
-    <a href="/admin/company">&nbsp;班级管理&nbsp;</a>
-    <div class="clear"></div>
 </div>
 <div class="body_nest radius">
     <div class="row">
@@ -30,21 +14,12 @@
                     <input type="text" class="form_control" name="name" value="{{ Request::input('name') }}">
                 </div>
                 <div class="form_group">
-                    <label class="control_label">班级：</label>
-                </div>
-                <div class="form_group mr20">
-                    <input type="text" class="form_control" name="class" value="{{ Request::input('class') }}">
-                </div>
-                <div class="form_group">
                     <button class="btn btn_green"><i class="icon-search3 white"></i>&nbsp;查找&nbsp;</button>
                 </div>
             </div>
         </form>
         <div class="pull_right mb10">
-            <a href="/admin/studentmanage/import" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;批量导入&nbsp;</a>
-        </div>
-        <div class="pull_right mb10">
-            <a href="/admin/studentmanage/add" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;添加学生&nbsp;</a>
+            <a href="/teacher/stumange/add" class="btn btn_green"><i class="icon-plus2 white"></i>&nbsp;添加学生&nbsp;</a>
         </div>
     </div>
     <table id="responsive-example-table" class="table large-only">
@@ -79,7 +54,7 @@
                 <td>{{ $student->company_name }}</td>
                 <td class="logo" ><img style="width:50px" src="{{ $student->img }}"></td>
                 <td>
-                    <a href="/admin/studentmanage/edit/{{ $student->student_id }}" class="btn btn_blue"><i class="icon-pencil white"></i> 编辑</a>
+                    <a href="/teacher/stumange/edit/{{ $student->student_id }}" class="btn btn_blue"><i class="icon-pencil white"></i> 编辑</a>
                     <a class="btn btn_red delete-single2" data-id="{{ $student->student_id }}"><i class="icon-icon-bin white"></i> 删除</a>
                 </td>
             </tr>

@@ -45,12 +45,15 @@ UserManageEditor.prototype.initForm = function()
                real_name: {
             	   required: true,
                },
+               parentphone: {
+                   required: true,
+               },
             } ,
             messages: {
                 phone: {
-                	required: '请输入会员手机号',
-                    minlength:'请输入11位手机号',
-                    maxlength:'请输入11位手机号',
+                	required: '请输入学生卡号',
+                    minlength:'请输入11位卡号',
+                    maxlength:'请输入11位卡号',
                     number:'请输入数字'
                 },
                 password: {
@@ -62,7 +65,10 @@ UserManageEditor.prototype.initForm = function()
                 },
                 real_name: {
               	   required: '请输入用户名',
-                 },
+                },
+                parentphone: {
+                   required: '请输入家长电话',
+                },
             }
     });
     $('.main-form input').on('keyup', function() {
@@ -92,7 +98,7 @@ UserManageEditor.prototype.initForm = function()
             }
 
             $.notifyBar({html: response.message, cls: 'success'});
-            redirect('/admin/studentmanage');
+            //redirect('/admin/studentmanage');
         },
         complete: function() {
             self.waiting = false;

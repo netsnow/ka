@@ -31,6 +31,13 @@ Route::group(['prefix' => 'teacher','middleware' => 'auth'], function() {
     //老师考勤
     Route::get('/order',                    'OrderController@getIndex');
 
+    //学生管理
+    Route::get('/stumange',                   'StumangeController@getIndex');
+    Route::get('/stumange/add',               'StumangeController@getAdd');
+    Route::post('/stumange/add',              'StumangeController@postAdd');
+    Route::get('/stumange/edit/{id}',         'StumangeController@getEdit');
+    Route::post('/stumange/edit/{id}',        'StumangeController@postEdit');
+
     //管理员个人设置 （靳宗雨）
     Route::get('/user/setting',   'UserController@userSetting');
     Route::post('/user/update',   'UserController@updateUser');
