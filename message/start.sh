@@ -1,1 +1,1 @@
-Applications/XAMPP/bin/php /Applications/XAMPP/xamppfiles/htdocs/message/start.php start
+/Applications/XAMPP/bin/php /Applications/XAMPP/xamppfiles/htdocs/message/start.php start -d

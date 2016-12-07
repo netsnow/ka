@@ -59,6 +59,17 @@ class StudentManageController extends \BaseController
         $result = $logic->run();
         return $result;
     }
+    public function getImport()
+    {
+        return view(tpl('admin.studentmanage.import'));
+    }
+
+    public function postImport()
+    {
+      $logic = new StudentManage\PostImport();
+        $result = $logic->run();
+        return $result;
+    }
 
     public function getRecharge($id)
     {
