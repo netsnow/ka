@@ -59,8 +59,7 @@
                     <li{!! $class['room'] or '' !!}><a href="/admin/room"><i class="icon_large icon_layers"></i><span>&nbsp;&nbsp;卡机管理</span></a></li>
                     <li{!! $class['usermanage'] or '' !!}><a href="/admin/usermanage"><i class="icon_large icon_user2"></i><span>&nbsp;&nbsp;账户管理</span></a></li>
                     <li{!! $class['order'] or '' !!}><a href="/admin/order"><i class="icon_large icon_calendar_alt_fill"></i><span>&nbsp;&nbsp;考勤管理</span></a></li>
-                    <li{!! $class['ad'] or '' !!}><a href="/admin/ad"><i class="icon_large icon_display"></i><span>&nbsp;&nbsp;图片广告管理</span></a></li>
-                    <li{!! $class['advideo'] or '' !!}><a href="/admin/advideo"><i class="icon_large icon_display"></i><span>&nbsp;&nbsp;视频广告管理</span></a></li>
+                    <li{!! $class['ad'] or '' !!}><a href="/admin/ad"><i class="icon_large icon_display"></i><span>&nbsp;&nbsp;广告管理</span></a></li>
                     <li{!! $class['report'] or '' !!}><a href="/admin/report"><i class="icon_large icon_pie_chart"></i><span>&nbsp;&nbsp;教师考勤统计</span></a></li>
                     <li{!! $class['stureport'] or '' !!}><a href="/admin/stureport"><i class="icon_large icon_pie_chart"></i><span>&nbsp;&nbsp;学生考勤统计</span></a></li>
                 </ul>

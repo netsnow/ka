@@ -10,8 +10,8 @@ body, div, p, table, tr, td, ul, li, ol {
 body {
 	font-family: Arial, "Times New Roman", "微软雅黑";
 	background-color: #3895dd;
-/*	overflow-x: hidden;
-	overflow: hidden;*/
+	overflow-x: hidden;
+	overflow: hidden;
 }
 
 table {
