@@ -62,6 +62,7 @@
                     <li{!! $class['ad'] or '' !!}><a href="/admin/ad"><i class="icon_large icon_display"></i><span>&nbsp;&nbsp;广告管理</span></a></li>
                     <li{!! $class['report'] or '' !!}><a href="/admin/report"><i class="icon_large icon_pie_chart"></i><span>&nbsp;&nbsp;教师考勤统计</span></a></li>
                     <li{!! $class['stureport'] or '' !!}><a href="/admin/stureport"><i class="icon_large icon_pie_chart"></i><span>&nbsp;&nbsp;学生考勤统计</span></a></li>
+                    <li{!! $class['leaderreport'] or '' !!}><a href="/admin/leaderreport"><i class="icon_large icon_pie_chart"></i><span>&nbsp;&nbsp;校领导统计表</span></a></li>
                 </ul>
             </div>
             <div id="main_container">

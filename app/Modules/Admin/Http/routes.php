@@ -82,7 +82,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('/stureport/detail/{student_id}',  'StuReportController@getDetail');
     Route::get('/stureport/export/{class}&{month}&{name}','StuReportController@getExport');
 
-
+    //校领导统计表
+    Route::get('/leaderreport',                    'LeaderReportController@getIndex');
 
     //卡机管理
     Route::get('/room',                    'RoomController@getIndex');
