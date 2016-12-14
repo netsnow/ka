@@ -41,20 +41,6 @@ script('/assets/admin/js/order/order_index.js') !!}
 @endsection @section('body-nest')
 <div class="body_nest radius">
 	<div class="row table_control">
-
-		<form method="get">
-			<div class=" form_inline text_right mb10">
-				<div class="form_group">
-					<label class="control_label">考勤月：</label>
-				</div>
-				<div class="form_group">
-					<input type="text" name="attendance_month" class="form_control wid" value="{{ $result['attendance_month'] or '' }}">
-				</div>
-				<div class="form_group">
-					<button href="#" class="btn btn_green"><i class="icon_search3 white"></i>&nbsp;查找&nbsp;</button>
-				</div>
-			</div>
-		</form>
 	</div>
 </div>
 @if (isset($result['error']))
@@ -63,18 +49,16 @@ script('/assets/admin/js/order/order_index.js') !!}
 <table id="responsive-example-table" class="table large-only">
 	<tbody>
 		<tr class="text-right">
-			<th width="14%">考勤月</th>
-			<th width="18%">园区</th>
-			<th width="14%">出勤人次</th>
+			<th width="18%">园区名</th>
+			<th width="14%">学生人数</th>
 			<th width="18%">操作</th>
 		</tr>
 		@forelse ($result['orders'] as $order)
 		<tr>
-			<td>{{ $order->attendance_month }}</td>
 			<td>{{ $order->park_name }}</td>
 			<td>{{ $order->ac_day }}</td>
 			<td>
-				<a href="/admin/stureport/detail/{{ $order->student_id }}" class="btn btn_blue"><i class="icon-pencil white"></i> 详情</a>
+				<a href="/admin/stureport/detail/{{ $order->park_name }}" class="btn btn_blue"><i class="icon-pencil white"></i> 详情</a>
 			</td>
 		</tr>
 		@empty
