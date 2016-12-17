@@ -5,7 +5,7 @@
 <span>校领导统计表</span>
 @endsection @section('breadcrumb')
 <li><i class="icon_large icon_triangle_right"></i></li>
-<li><a href="report">校领导统计表</a></li>
+<li><a href="leaderreport">校领导统计表</a></li>
 @endsection @section('foot-assets') {!!
 script("third-party/jquery/jquery.validate.min.js")!!} {!!
 script("third-party/jquery/jquery.form.min.js")!!} {!!
@@ -58,7 +58,7 @@ script('/assets/admin/js/order/order_index.js') !!}
 			<td>{{ $order->park_name }}</td>
 			<td>{{ $order->ac_day }}</td>
 			<td>
-				<a href="/admin/stureport/detail/{{ $order->park_name }}" class="btn btn_blue"><i class="icon-pencil white"></i> 详情</a>
+				<a href="/admin/stureport?attendance_class={{ $order->park_name }}" class="btn btn_blue"><i class="icon-pencil white"></i> 详情</a>
 			</td>
 		</tr>
 		@empty
