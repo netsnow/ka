@@ -34,7 +34,7 @@ class GetIndex extends \BaseLogic
     protected function getReportList()
     {
         $qb= DB::table('students')
-            ->select(DB::raw('left(company_name,2) as park_name'),DB::raw('COUNT(1) as ac_day'))
+            ->select(DB::raw('left(company_name,3) as park_name'),DB::raw('COUNT(1) as ac_day'))
             ->groupby(DB::raw('left(company_name,2)'));
 
 
