@@ -51,7 +51,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('/studentmanage/edit/{id}',     'StudentManageController@getEdit');
     Route::post('/studentmanage/edit/{id}',    'StudentManageController@postEdit');
     Route::get('/studentmanage/import',        'StudentManageController@getImport');
-    Route::post('/studentmanage/import',       'StudentManageController@posImport');
+    Route::post('/studentmanage/import',       'StudentManageController@postImport');
 
     //班级管理
     Route::get('/company',                  'CompanyController@getIndex');
