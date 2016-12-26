@@ -50,6 +50,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::post('/studentmanage/delete',       'StudentManageController@apiDelete');
     Route::get('/studentmanage/edit/{id}',     'StudentManageController@getEdit');
     Route::post('/studentmanage/edit/{id}',    'StudentManageController@postEdit');
+    Route::get('/studentmanage/import',        'StudentManageController@getImport');
+    Route::post('/studentmanage/import',       'StudentManageController@posImport');
 
     //班级管理
     Route::get('/company',                  'CompanyController@getIndex');
@@ -84,6 +86,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
 
     //校领导统计表
     Route::get('/leaderreport',                    'LeaderReportController@getIndex');
+    Route::get('/leaderreport/detail/{park_name}', 'LeaderReportController@getDetail');
 
     //卡机管理
     Route::get('/room',                    'RoomController@getIndex');
