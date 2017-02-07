@@ -17,6 +17,7 @@ Route::get('/storeOrder/{store_code}',                      'StoreCodeController
 // 广告首页 李苗苗
 Route::get('/admin',  'IndexController@getIndex');
 Route::get('/admin/ad_appointment', 'AppointmentController@getIndex');
+Route::get('/admin/ad_appointment_h', 'AppointmentController@getIndexH');
 Route::get('/admin/ad_appointment/appoint', 'AppointmentController@showIndex');
 //打卡机刷卡触发的api
 Route::get('/checkin/{cardno}&{roleid}&{machineid}','ApiController@checkinapi');

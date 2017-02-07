@@ -16,7 +16,8 @@
 			<div class="col-lg-12 welcome_page">
 			    <ul>
 			    	@foreach($result['rooms'] as $room)
-			    	<li class="col-lg-3"><a href="/admin/ad_appointment?room_id={{$room->room_id}}">{{ $room->room_num }}</a></li>
+			    	<li class="col-lg-3"><a href="/admin/ad_appointment?room_id={{$room->room_id}}">{{ $room->room_num }}（纵向）</a></li>
+			    	<li class="col-lg-3"><a href="/admin/ad_appointment_h?room_id={{$room->room_id}}">{{ $room->room_num }}（横向）</a></li>
 			    	@endforeach
 			    </ul>
 			</div>
