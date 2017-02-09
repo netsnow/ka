@@ -31,7 +31,7 @@
     <div class="flash">
         <ul >
 					  @foreach($result['ads'] as $ad)
-            <li><img src="{{ $ad->ad_pic }}" alt="" width="100%"/></li>
+            <li><img id="adpic" src="{{ $ad->ad_pic }}" alt="" width="1366px" height="432px"/></li>
 						@endforeach
         </ul>
         <ol>
@@ -131,6 +131,10 @@ $(document).ready(function () {
   setTimeout(function(){
     location.href="/admin/ad_appointment_h?room_id="+GetQueryString("room_id");
   },t);
+</script>
+<script>
+    $('#adpic').width(document.body.clientWidth);
+    $('#adpic').height(document.body.clientHeight);
 </script>
 </body>
 
