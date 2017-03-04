@@ -18,6 +18,7 @@ Route::get('/storeOrder/{store_code}',                      'StoreCodeController
 Route::get('/admin',  'IndexController@getIndex');
 Route::get('/admin/ad_appointment', 'AppointmentController@getIndex');
 Route::get('/admin/ad_appointment_h', 'AppointmentController@getIndexH');
+Route::get('/admin/ad_appointment_t', 'AppointmentController@getIndexTmp');
 Route::get('/admin/ad_appointment/appoint', 'AppointmentController@showIndex');
 //打卡机刷卡触发的api
 Route::get('/checkin/{cardno}&{roleid}&{machineid}','ApiController@checkinapi');

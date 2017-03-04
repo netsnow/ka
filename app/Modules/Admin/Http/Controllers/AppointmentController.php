@@ -18,7 +18,12 @@ class AppointmentController extends \BaseController
         $result = $logic->run();
         return view(tpl('admin.ad_appointment.indexh'))->with('result', $result);
     }
-
+    public function getIndexTmp()      //显示房间（ID）对应的图片广告
+    {
+        $logic = new Ad\Appointment();
+        $result = $logic->run();
+        return view(tpl('admin.ad_appointment.indextmp'))->with('result', $result);
+    }
     public function showIndex()		//应该根据房间号参数找出order表中对用的数据数组
     {
     	$logic = new Ad\Show();
