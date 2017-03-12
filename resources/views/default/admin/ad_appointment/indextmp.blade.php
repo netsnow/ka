@@ -135,7 +135,7 @@ $(document).ready(function () {
 <script>
   var t=300000;
   setTimeout(function(){
-    location.href="/admin/ad_appointment?room_id="+GetQueryString("room_id");
+    location.href="/admin/ad_appointment_t?room_id="+GetQueryString("room_id");
   },t);
 </script>
 </body>
