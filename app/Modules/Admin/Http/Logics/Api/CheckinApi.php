@@ -18,7 +18,8 @@ class CheckinApi extends \BaseLogic
       //echo $this->cardno."/".$this->machineid."/".$this->roleid;
 
       //学生身份
-    $student = Student::where('card_num',$this->cardno)->first();
+    $student = Student::where('card_num','like',"%".$this->cardno."%")->first();
+    //$student = Student::where('card_num',$this->cardno)->first();
     if($student){
       $img = $student->img;
 
