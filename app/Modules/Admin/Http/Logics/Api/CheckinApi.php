@@ -74,7 +74,7 @@ class CheckinApi extends \BaseLogic
           //调用短信接口，发送短信
          $phone = $student->store_name;
          $content = "家长你好，".$name."已刷卡入园。";
-         $url = "http://115.28.112.245:8082/SendMT/SendMessage?UserName=hedongyiyou&UserPass=123456&Mobile=".$phone."&Content=".$content;
+         $url = "http://115.28.112.245:8082/SendMT/SendMessage?UserName=beike&UserPass=123456&Mobile=".$phone."&Content=".$content;
           //echo $url;
          $message = curl_init();
          curl_setopt($message, CURLOPT_URL, $url);

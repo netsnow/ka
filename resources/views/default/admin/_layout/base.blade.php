@@ -20,7 +20,7 @@
     <div class="wrap">
         <nav role="navigation" class="navbar row">
             <div id="logo">
-                <a href="/admin/admin"><h2>河东一幼</h2></a>
+                <a href="/admin/admin"><h2>二幼</h2></a>
             </div>
             <div id="title_container" class="running_text pull_left clearfix">
                 <ul class="date_top">

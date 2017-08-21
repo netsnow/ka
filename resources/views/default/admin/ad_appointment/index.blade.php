@@ -22,8 +22,8 @@
 <div id="wrap" style="width:768px;">
 
 <div id="headerBlock" class="group" style="width:768px;">
-	<div id="logoBlock"><img src="/assets/admin/images/adimages/logo.jpg" alt="" width="100%"></div>
-    <p id="titBlock">天津市河东区第一幼儿园</p>
+	<!--<div id="logoBlock"><img src="/assets/admin/images/adimages/logo.jpg" alt="" width="100%"></div>-->
+    <p id="titBlock">天津市第二幼儿园</p>
 </div>
 <div style="width:768px;height:432px;">
 		<video style="width:100%;height:100%;" autoplay="autoplay" loop="loop">
