@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>天津市河东区第一幼儿园</title>
+<title>天津市河东区第二幼儿园</title>
 {!! style('/assets/admin/css/adcss/cmn.css') !!}
 {!! script('/assets/admin/js/ad/jquery.min.js') !!}
 {!! script('/assets/admin/js/ad/cmn.js') !!}
@@ -23,7 +23,7 @@
 
 <div id="headerBlock" class="group">
 	<div id="logoBlock"><img src="/assets/admin/images/adimages/logo.jpg" alt="" width="100%"></div>
-    <p id="titBlock">天津市河东区第一幼儿园</p>
+    <p id="titBlock">天津市河东区第二幼儿园</p>
 </div>
 <div id="topImgBlock">
 
